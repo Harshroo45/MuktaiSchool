@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Muktai Balgruha | Lavangi, Mangalwedha</title>
-    <meta name="description" content="Muktai Matimand Mulanche Balgruha, Lavangi. Established 2004-05.">
+    <title>Contact Us | Muktai Balgruha</title>
+    <meta name="description" content="Contact information and location of Muktai Balgruha, Lavangi, Mangalwedha, Solapur.">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
     <style>
         :root {
@@ -151,59 +151,17 @@
 
         .lang-toggle:hover { background: var(--primary); }
 
-        /* --- Hero Section --- */
-        .hero {
-            position: relative;
-            height: 75vh;
-            min-height: 500px;
-            background: #0f172a;
-            overflow: hidden;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .hero-overlay {
-            position: absolute;
-            inset: 0;
+        /* --- Page Header --- */
+        .page-header {
             background: linear-gradient(rgba(14, 116, 144, 0.8), rgba(15, 23, 42, 0.9));
-            z-index: 5;
-        }
-
-        .slide {
-            position: absolute;
-            inset: 0;
-            opacity: 0;
-            transition: opacity 2s ease-in-out;
-            background-size: cover;
-            background-position: center;
-            background-repeat: no-repeat;
-        }
-
-        .slide.active { opacity: 1; }
-
-        .hero-content {
-            position: relative;
-            z-index: 10;
-            text-align: center;
             color: white;
-            padding: 20px;
-            max-width: 900px;
+            padding: 80px 0;
+            text-align: center;
         }
 
-        .hero h1 {
-            font-size: clamp(1.8rem, 5vw, 3rem);
-            font-weight: 800;
-            margin-bottom: 20px;
-            line-height: 1.3;
-            text-shadow: 0 2px 10px rgba(0,0,0,0.3);
-        }
-
-        .hero p {
-            font-size: clamp(1rem, 2.5vw, 1.3rem);
-            font-weight: 300;
-            color: #e2e8f0;
-            margin-bottom: 30px;
+        .page-header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
         }
 
         /* --- General Sections --- */
@@ -232,76 +190,76 @@
             border-radius: 2px;
         }
 
-        /* --- Info Cards --- */
+        /* --- Grid --- */
         .grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 30px;
         }
 
-        .card {
-            background: var(--surface);
+        .grid-2 {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 40px;
+            align-items: start;
+        }
+
+        /* --- Contact Info Card --- */
+        .contact-card {
+            background: white;
             padding: 35px;
             border-radius: 16px;
             box-shadow: 0 10px 30px rgba(0,0,0,0.04);
             border: 1px solid rgba(0,0,0,0.03);
-            transition: transform 0.3s, box-shadow 0.3s;
         }
 
-        .card:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 20px 40px rgba(0,0,0,0.08);
-            border-color: var(--primary);
-        }
-
-        .card h3 {
+        .contact-card h3 {
             color: var(--primary);
-            margin-bottom: 15px;
-            font-size: 1.4rem;
+            margin-bottom: 25px;
+            font-size: 1.5rem;
         }
 
-        /* --- Institutional Profile (Details) --- */
-        .profile-section {
-            background: white;
-            border-radius: 16px;
-            overflow: hidden;
-            box-shadow: 0 4px 25px rgba(0,0,0,0.05);
+        .contact-info {
+            margin-bottom: 20px;
         }
-        
-        .profile-row {
+
+        .contact-info p {
             display: flex;
-            border-bottom: 1px solid #f1f5f9;
+            align-items: flex-start;
+            gap: 12px;
+            margin-bottom: 15px;
         }
-        
-        .profile-row:last-child { border-bottom: none; }
-        
-        .profile-label {
-            flex: 1;
-            padding: 20px;
-            background: #f8fafc;
-            font-weight: 600;
+
+        .icon {
+            color: var(--primary);
+            font-size: 1.3rem;
+            flex-shrink: 0;
+            margin-top: 2px;
+        }
+
+        .contact-info strong {
+            display: block;
             color: var(--secondary);
-            border-right: 1px solid #f1f5f9;
-            min-width: 180px;
-        }
-        
-        .profile-value {
-            flex: 2;
-            padding: 20px;
-            color: var(--text);
+            margin-bottom: 5px;
         }
 
         /* --- Map Section --- */
         .map-wrapper {
             border-radius: 16px;
             overflow: hidden;
-            height: 400px;
+            height: 500px;
             box-shadow: 0 10px 30px rgba(0,0,0,0.1);
             position: relative;
-            margin-bottom: 20px;
         }
 
-        .map-btn {
+        .map-wrapper iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        /* --- Directions Button --- */
+        .directions-btn {
             display: inline-flex;
             align-items: center;
             justify-content: center;
@@ -313,22 +271,39 @@
             border-radius: 8px;
             text-decoration: none;
             font-weight: 600;
+            margin-top: 15px;
             transition: all 0.3s;
         }
 
-        .map-btn:hover {
+        .directions-btn:hover {
             background: var(--primary);
             color: white;
         }
 
-        .contact-info p {
-            margin-bottom: 15px;
-            display: flex;
-            align-items: flex-start;
-            gap: 10px;
+        /* --- Hours Section --- */
+        .hours-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
         }
 
-        .icon { color: var(--primary); }
+        .hours-table th {
+            background: #f8fafc;
+            padding: 12px;
+            text-align: left;
+            color: var(--secondary);
+            font-weight: 600;
+            border-bottom: 2px solid var(--accent);
+        }
+
+        .hours-table td {
+            padding: 12px;
+            border-bottom: 1px solid #e2e8f0;
+        }
+
+        .hours-table tr:last-child td {
+            border-bottom: none;
+        }
 
         /* --- Footer --- */
         footer {
@@ -377,10 +352,18 @@
             .nav-links.active {
                 clip-path: circle(150% at 100% 0);
             }
-            
-            .profile-row { flex-direction: column; }
-            .profile-label { border-right: none; border-bottom: 1px solid #e2e8f0; padding: 10px 20px; }
-            .profile-value { padding: 10px 20px 20px; }
+
+            .page-header h1 {
+                font-size: 1.8rem;
+            }
+
+            .grid-2 {
+                grid-template-columns: 1fr;
+            }
+
+            .map-wrapper {
+                height: 300px;
+            }
         }
 
         /* Lang Logic */
@@ -419,72 +402,139 @@
         </div>
     </header>
 
-    <div id="home" class="hero">
-    <div class="hero-overlay"></div>
-    
-    <div class="slide active" style="background-image: url('/images/one.jpg')"></div>
-    
-    <div class="slide" style="background-image: url('/images/two.jpg')"></div>
-    
-    <div class="hero-content animate-in">
-        <h1 lang="en">Muktai Matimand Mulanche Balgruha, Lavangi</h1>
-        <h1 lang="mr">मुक्ताई मतिमंद मुलांचे बालगृह, लवंगी</h1>
-        
-        <p lang="en">Est. 2004-05 | Tahsil Mangalwedha, Dist. Solapur</p>
-        <p lang="mr">स्थापना २००४-०५ | ता. मंगळवेढा, जि. सोलापूर</p>
-    </div>
-</div>
-
-    <section id="about">
+    <div class="page-header">
         <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">
-                    <span lang="en">Our Mission & Values</span>
-                    <span lang="mr">आमचे ध्येय आणि मूल्ये</span>
-                </h2>
-            </div>
-            <div class="grid">
-                <div class="card">
-                    <h3 lang="en">Our Purpose</h3>
-                    <h3 lang="mr">उद्देश</h3>
-                    <p lang="en">To provide a safe, inclusive, and rehabilitative environment for intellectually disabled children, ensuring they receive the dignity and care they deserve.</p>
-                    <p lang="mr">मतिमंद मुलांसाठी सुरक्षित आणि पुनर्वसनाचे वातावरण प्रदान करणे, जेणेकरून त्यांना सन्मान आणि योग्य काळजी मिळेल.</p>
+            <h1 lang="en">Contact Us</h1>
+            <h1 lang="mr">आमच्याशी संपर्क साधा</h1>
+        </div>
+    </div>
+
+    <section>
+        <div class="container">
+            <div class="grid-2">
+                <div class="contact-card">
+                    <h3 lang="en">Contact Information</h3>
+                    <h3 lang="mr">संपर्क माहिती</h3>
+                    
+                    <div class="contact-info">
+                        <p>
+                            <span class="icon">📍</span>
+                            <span>
+                                <strong lang="en">Address</strong>
+                                <strong lang="mr">पत्ता</strong>
+                                <span lang="en">
+                                    Muktai Balgruha<br>
+                                    A/P Lavangi<br>
+                                    Tal. Mangalwedha<br>
+                                    Dist. Solapur<br>
+                                    Maharashtra 413305
+                                </span>
+                                <span lang="mr">
+                                    मुक्ताई बालगृह<br>
+                                    अ/प लवंगी<br>
+                                    ता. मंगळवेढा<br>
+                                    जि. सोलापूर<br>
+                                    महाराष्ट्र ४१३३०५
+                                </span>
+                            </span>
+                        </p>
+                    </div>
+
+                    <div class="contact-info">
+                        <p>
+                            <span class="icon">📞</span>
+                            <span>
+                                <strong lang="en">Phone</strong>
+                                <strong lang="mr">फोन</strong>
+                                <span lang="en">+91 - [Contact Phone Number]</span>
+                                <span lang="mr">+९१ - [संपर्क फोन क्रमांक]</span>
+                            </span>
+                        </p>
+                    </div>
+
+                    <div class="contact-info">
+                        <p>
+                            <span class="icon">✉️</span>
+                            <span>
+                                <strong lang="en">Email</strong>
+                                <strong lang="mr">ईमेल</strong>
+                                <span>muktaibalgruha@email.com</span>
+                            </span>
+                        </p>
+                    </div>
+
+                    <div class="contact-info">
+                        <p>
+                            <span class="icon">🕒</span>
+                            <span>
+                                <strong lang="en">Office Hours</strong>
+                                <strong lang="mr">कार्यालय वेळ</strong>
+                                <table class="hours-table">
+                                    <tr>
+                                        <th lang="en">Day</th>
+                                        <th lang="mr">दिवस</th>
+                                        <th>Hours</th>
+                                    </tr>
+                                    <tr>
+                                        <td lang="en">Monday - Saturday</td>
+                                        <td lang="mr">सोमवार - शनिवार</td>
+                                        <td>10:00 AM - 5:00 PM</td>
+                                    </tr>
+                                    <tr>
+                                        <td lang="en">Sunday</td>
+                                        <td lang="mr">रविवार</td>
+                                        <td lang="en">By Appointment</td>
+                                        <td lang="mr">नियुक्त्या द्वारे</td>
+                                    </tr>
+                                </table>
+                            </span>
+                        </p>
+                    </div>
+
+                    <a href="https://maps.google.com/maps?q=Lavangi+Mangalwedha+Solapur&t=k&z=13" target="_blank" class="directions-btn" lang="en">Get Directions</a>
+                    <a href="https://maps.google.com/maps?q=Lavangi+Mangalwedha+Solapur&t=k&z=13" target="_blank" class="directions-btn" lang="mr">दिशानिर्देश मिळवा</a>
                 </div>
-                <div class="card">
-                    <h3 lang="en">Holistic Development</h3>
-                    <h3 lang="mr">सर्वांगीण विकास</h3>
-                    <p lang="en">Focusing on basic life skills, vocational training, and emotional support to empower children towards self-reliance.</p>
-                    <p lang="mr">मुलांना स्वावलंबी बनवण्यासाठी जीवन कौशल्ये, व्यावसायिक प्रशिक्षण आणि भावनिक आधारावर लक्ष केंद्रित करणे.</p>
+
+                <div class="map-wrapper">
+                    <iframe 
+                        style="border:0;" 
+                        loading="lazy" 
+                        allowfullscreen 
+                        referrerpolicy="no-referrer-when-downgrade"
+                        src="https://maps.google.com/maps?q=Lavangi+Mangalwedha+Solapur&t=k&z=13&ie=UTF8&iwloc=&output=embed">
+                    </iframe>
                 </div>
-                <div class="card">
-                    <h3 lang="en">Community Care</h3>
-                    <h3 lang="mr">सामाजिक बांधिलकी</h3>
-                    <p lang="en">Serving the rural community of Mangalwedha and Solapur by supporting families with special needs children.</p>
-                    <p lang="mr">मंगळवेढा आणि सोलापूरच्या ग्रामीण भागातील दिव्यांग मुलांच्या कुटुंबांना आधार देण्याचे कार्य.</p>
-                </div>
-            </div>
-            <div style="text-align: center; margin-top: 40px;">
-                <a href="about.html" style="display: inline-block; padding: 12px 30px; background: var(--primary); color: white; text-decoration: none; border-radius: 8px; font-weight: 600; transition: 0.3s;" onmouseover="this.style.background='var(--primary-dark)'" onmouseout="this.style.background='var(--primary)'" lang="en">Learn More About Us</a>
-                <a href="about.html" style="display: inline-block; padding: 12px 30px; background: var(--primary); color: white; text-decoration: none; border-radius: 8px; font-weight: 600; transition: 0.3s;" onmouseover="this.style.background='var(--primary-dark)'" onmouseout="this.style.background='var(--primary)'" lang="mr">आमच्याबद्दल अधिक जाणून घ्या</a>
             </div>
         </div>
     </section>
 
-    <section id="cta-sections" style="background: linear-gradient(135deg, #0e7490 0%, #155e75 100%); color: white;">
+    <section style="background-color: #f1f5f9;">
         <div class="container">
-            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px;">
-                <a href="profile.html" style="background: rgba(255,255,255,0.1); backdrop-filter: blur(10px); padding: 40px; border-radius: 12px; text-decoration: none; color: white; transition: 0.3s; border: 1px solid rgba(255,255,255,0.2);" onmouseover="this.style.background='rgba(255,255,255,0.2)'" onmouseout="this.style.background='rgba(255,255,255,0.1)'">
-                    <h3 style="margin-bottom: 10px;" lang="en">📋 Institutional Profile</h3>
-                    <h3 style="margin-bottom: 10px;" lang="mr">📋 संस्थेचा तपशील</h3>
-                    <p lang="en">Explore our detailed institutional information, statistics, and facilities.</p>
-                    <p lang="mr">आमच्या संस्थेचा तपशील, आकडे आणि सुविधा जाणून घ्या।</p>
-                </a>
-                <a href="contact.html" style="background: rgba(255,255,255,0.1); backdrop-filter: blur(10px); padding: 40px; border-radius: 12px; text-decoration: none; color: white; transition: 0.3s; border: 1px solid rgba(255,255,255,0.2);" onmouseover="this.style.background='rgba(255,255,255,0.2)'" onmouseout="this.style.background='rgba(255,255,255,0.1)'">
-                    <h3 style="margin-bottom: 10px;" lang="en">📍 Get in Touch</h3>
-                    <h3 style="margin-bottom: 10px;" lang="mr">📍 आमच्याशी संपर्क साधा</h3>
-                    <p lang="en">Find our location, contact information, and directions to visit us.</p>
-                    <p lang="mr">आमचा पत्ता, संपर्क माहिती आणि आमच्याकडे येण्याचे दिशानिर्देश।</p>
-                </a>
+            <div class="section-header">
+                <h2 class="section-title">
+                    <span lang="en">How to Reach Us</span>
+                    <span lang="mr">आमच्यापर्यंत कसे पोहोचायचे</span>
+                </h2>
+            </div>
+            <div class="grid">
+                <div style="background: white; padding: 30px; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.05);">
+                    <h3 style="color: var(--primary); margin-bottom: 15px;" lang="en">By Car</h3>
+                    <h3 style="color: var(--primary); margin-bottom: 15px;" lang="mr">कार द्वारे</h3>
+                    <p lang="en">Located approximately 25 km from Solapur city center, accessible via State Highway towards Mangalwedha. Ample parking available at the facility.</p>
+                    <p lang="mr">सोलापूर शहराच्या मध्यभागापासून सुमारे २५ किमी अंतरावर, मंगळवेढाच्या दिशेने राज्य महामार्गाद्वारे प्रवेशयोग्य।</p>
+                </div>
+                <div style="background: white; padding: 30px; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.05);">
+                    <h3 style="color: var(--primary); margin-bottom: 15px;" lang="en">By Public Transport</h3>
+                    <h3 style="color: var(--primary); margin-bottom: 15px;" lang="mr">सार्वजनिक वाहतूक द्वारे</h3>
+                    <p lang="en">Regular bus services connect Solapur to Mangalwedha. From Mangalwedha, local vehicles are available to reach Lavangi village and our facility.</p>
+                    <p lang="mr">सोलापूर आणि मंगळवेढा यांना नियमित बस सेवा जोडते. मंगळवेढापासून लवंगी गावापर्यंत स्थानिक वाहने उपलब्ध आहेत।</p>
+                </div>
+                <div style="background: white; padding: 30px; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.05);">
+                    <h3 style="color: var(--primary); margin-bottom: 15px;" lang="en">Medical Emergencies</h3>
+                    <h3 style="color: var(--primary); margin-bottom: 15px;" lang="mr">वैद्यकीय आपातकाल</h3>
+                    <p lang="en">For medical emergencies, contact us immediately. Facilities are in proximity to primary health centers and district hospitals in Solapur.</p>
+                    <p lang="mr">वैद्यकीय आपातकालीन परिस्थितीत तत्काळ आमच्याशी संपर्क साधा। आम्ही सोलापूरील प्राथमिक स्वास्थ्य केंद्र व रुग्णालयांजवळ आहोत।</p>
+                </div>
             </div>
         </div>
     </section>
@@ -496,7 +546,7 @@
                     <h3 lang="en">Muktai Balgruha</h3>
                     <h3 lang="mr">मुक्ताई बालगृह</h3>
                     <p lang="en">Dedicated to the service of humanity through the care of special children.</p>
-                    <p lang="mr">दिव्यांग मुलांच्या सेवेतून माणुसकीची जपणूक.</p>
+                    <p lang="mr">दिव्यांग मुलांच्या सेवेतून माणुसकीची जपणूक।</p>
                 </div>
                 <div>
                     <h3 lang="en">Quick Links</h3>
@@ -538,18 +588,6 @@
         if (localStorage.getItem('muktai-lang') === 'mr') {
             document.body.classList.add('marathi');
         }
-
-        // Hero Slider
-        let currentSlide = 0;
-        const slides = document.querySelectorAll('.slide');
-        
-        function rotateSlides() {
-            slides[currentSlide].classList.remove('active');
-            currentSlide = (currentSlide + 1) % slides.length;
-            slides[currentSlide].classList.add('active');
-        }
-
-        setInterval(rotateSlides, 6000); 
     </script>
 </body>
 </html>

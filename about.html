@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Muktai Balgruha | Lavangi, Mangalwedha</title>
-    <meta name="description" content="Muktai Matimand Mulanche Balgruha, Lavangi. Established 2004-05.">
+    <title>About Us | Muktai Balgruha</title>
+    <meta name="description" content="Learn about Muktai Matimand Mulanche Balgruha, its mission, values, and commitment to special children.">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
     <style>
         :root {
@@ -151,59 +151,17 @@
 
         .lang-toggle:hover { background: var(--primary); }
 
-        /* --- Hero Section --- */
-        .hero {
-            position: relative;
-            height: 75vh;
-            min-height: 500px;
-            background: #0f172a;
-            overflow: hidden;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .hero-overlay {
-            position: absolute;
-            inset: 0;
+        /* --- Page Header --- */
+        .page-header {
             background: linear-gradient(rgba(14, 116, 144, 0.8), rgba(15, 23, 42, 0.9));
-            z-index: 5;
-        }
-
-        .slide {
-            position: absolute;
-            inset: 0;
-            opacity: 0;
-            transition: opacity 2s ease-in-out;
-            background-size: cover;
-            background-position: center;
-            background-repeat: no-repeat;
-        }
-
-        .slide.active { opacity: 1; }
-
-        .hero-content {
-            position: relative;
-            z-index: 10;
-            text-align: center;
             color: white;
-            padding: 20px;
-            max-width: 900px;
+            padding: 80px 0;
+            text-align: center;
         }
 
-        .hero h1 {
-            font-size: clamp(1.8rem, 5vw, 3rem);
-            font-weight: 800;
-            margin-bottom: 20px;
-            line-height: 1.3;
-            text-shadow: 0 2px 10px rgba(0,0,0,0.3);
-        }
-
-        .hero p {
-            font-size: clamp(1rem, 2.5vw, 1.3rem);
-            font-weight: 300;
-            color: #e2e8f0;
-            margin-bottom: 30px;
+        .page-header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
         }
 
         /* --- General Sections --- */
@@ -260,75 +218,17 @@
             font-size: 1.4rem;
         }
 
-        /* --- Institutional Profile (Details) --- */
-        .profile-section {
-            background: white;
-            border-radius: 16px;
-            overflow: hidden;
-            box-shadow: 0 4px 25px rgba(0,0,0,0.05);
-        }
-        
-        .profile-row {
-            display: flex;
-            border-bottom: 1px solid #f1f5f9;
-        }
-        
-        .profile-row:last-child { border-bottom: none; }
-        
-        .profile-label {
-            flex: 1;
-            padding: 20px;
-            background: #f8fafc;
-            font-weight: 600;
-            color: var(--secondary);
-            border-right: 1px solid #f1f5f9;
-            min-width: 180px;
-        }
-        
-        .profile-value {
-            flex: 2;
-            padding: 20px;
+        /* --- Text Content --- */
+        .text-content {
+            font-size: 1.05rem;
+            line-height: 1.8;
             color: var(--text);
-        }
-
-        /* --- Map Section --- */
-        .map-wrapper {
-            border-radius: 16px;
-            overflow: hidden;
-            height: 400px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-            position: relative;
             margin-bottom: 20px;
         }
 
-        .map-btn {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            width: 100%;
-            padding: 15px;
-            background: var(--surface);
+        .text-content strong {
             color: var(--primary);
-            border: 2px solid var(--primary);
-            border-radius: 8px;
-            text-decoration: none;
-            font-weight: 600;
-            transition: all 0.3s;
         }
-
-        .map-btn:hover {
-            background: var(--primary);
-            color: white;
-        }
-
-        .contact-info p {
-            margin-bottom: 15px;
-            display: flex;
-            align-items: flex-start;
-            gap: 10px;
-        }
-
-        .icon { color: var(--primary); }
 
         /* --- Footer --- */
         footer {
@@ -377,10 +277,10 @@
             .nav-links.active {
                 clip-path: circle(150% at 100% 0);
             }
-            
-            .profile-row { flex-direction: column; }
-            .profile-label { border-right: none; border-bottom: 1px solid #e2e8f0; padding: 10px 20px; }
-            .profile-value { padding: 10px 20px 20px; }
+
+            .page-header h1 {
+                font-size: 1.8rem;
+            }
         }
 
         /* Lang Logic */
@@ -419,72 +319,110 @@
         </div>
     </header>
 
-    <div id="home" class="hero">
-    <div class="hero-overlay"></div>
-    
-    <div class="slide active" style="background-image: url('/images/one.jpg')"></div>
-    
-    <div class="slide" style="background-image: url('/images/two.jpg')"></div>
-    
-    <div class="hero-content animate-in">
-        <h1 lang="en">Muktai Matimand Mulanche Balgruha, Lavangi</h1>
-        <h1 lang="mr">मुक्ताई मतिमंद मुलांचे बालगृह, लवंगी</h1>
-        
-        <p lang="en">Est. 2004-05 | Tahsil Mangalwedha, Dist. Solapur</p>
-        <p lang="mr">स्थापना २००४-०५ | ता. मंगळवेढा, जि. सोलापूर</p>
+    <div class="page-header">
+        <div class="container">
+            <h1 lang="en">About Us</h1>
+            <h1 lang="mr">आमच्याबद्दल</h1>
+        </div>
     </div>
-</div>
 
-    <section id="about">
+    <section>
         <div class="container">
             <div class="section-header">
                 <h2 class="section-title">
-                    <span lang="en">Our Mission & Values</span>
-                    <span lang="mr">आमचे ध्येय आणि मूल्ये</span>
+                    <span lang="en">Our Mission & Vision</span>
+                    <span lang="mr">आमचे ध्येय आणि दृष्टिकोन</span>
                 </h2>
             </div>
             <div class="grid">
                 <div class="card">
-                    <h3 lang="en">Our Purpose</h3>
-                    <h3 lang="mr">उद्देश</h3>
-                    <p lang="en">To provide a safe, inclusive, and rehabilitative environment for intellectually disabled children, ensuring they receive the dignity and care they deserve.</p>
-                    <p lang="mr">मतिमंद मुलांसाठी सुरक्षित आणि पुनर्वसनाचे वातावरण प्रदान करणे, जेणेकरून त्यांना सन्मान आणि योग्य काळजी मिळेल.</p>
+                    <h3 lang="en">Our Mission</h3>
+                    <h3 lang="mr">आमचे ध्येय</h3>
+                    <p lang="en">To provide a safe, inclusive, and rehabilitative environment for intellectually disabled children, ensuring they receive the dignity and care they deserve. We are committed to serving the rural communities of Mangalwedha and broader Solapur region.</p>
+                    <p lang="mr">मतिमंद मुलांसाठी सुरक्षित आणि पुनर्वसनाचे वातावरण प्रदान करणे, जेणेकरून त्यांना सन्मान आणि योग्य काळजी मिळेल. मंगळवेढा आणि सोलापूर जिल्ह्यातील ग्रामीण भागातील लोकांची सेवा करण्यासाठी आम्ही प्रतिबद्ध आहोत.</p>
                 </div>
                 <div class="card">
-                    <h3 lang="en">Holistic Development</h3>
-                    <h3 lang="mr">सर्वांगीण विकास</h3>
-                    <p lang="en">Focusing on basic life skills, vocational training, and emotional support to empower children towards self-reliance.</p>
-                    <p lang="mr">मुलांना स्वावलंबी बनवण्यासाठी जीवन कौशल्ये, व्यावसायिक प्रशिक्षण आणि भावनिक आधारावर लक्ष केंद्रित करणे.</p>
+                    <h3 lang="en">Our Vision</h3>
+                    <h3 lang="mr">आमचा दृष्टिकोन</h3>
+                    <p lang="en">To create a community where every child with intellectual disabilities is valued, supported, and empowered to reach their full potential. We envision a society that recognizes the inherent dignity of all individuals, regardless of their abilities.</p>
+                    <p lang="mr">असे समाज निर्माण करणे जिथे प्रत्येक मतिमंद मुल मूल्यवान मानली जाते, समर्थित होते आणि आपल्या पूर्ण क्षमता प्राप्त करण्यास सक्षम होते. आम्ही असे समाज दृष्टी समोर ठेवत आहोत जो प्रत्येक व्यक्तीची गरिमा ओळखतो.</p>
                 </div>
-                <div class="card">
-                    <h3 lang="en">Community Care</h3>
-                    <h3 lang="mr">सामाजिक बांधिलकी</h3>
-                    <p lang="en">Serving the rural community of Mangalwedha and Solapur by supporting families with special needs children.</p>
-                    <p lang="mr">मंगळवेढा आणि सोलापूरच्या ग्रामीण भागातील दिव्यांग मुलांच्या कुटुंबांना आधार देण्याचे कार्य.</p>
-                </div>
-            </div>
-            <div style="text-align: center; margin-top: 40px;">
-                <a href="about.html" style="display: inline-block; padding: 12px 30px; background: var(--primary); color: white; text-decoration: none; border-radius: 8px; font-weight: 600; transition: 0.3s;" onmouseover="this.style.background='var(--primary-dark)'" onmouseout="this.style.background='var(--primary)'" lang="en">Learn More About Us</a>
-                <a href="about.html" style="display: inline-block; padding: 12px 30px; background: var(--primary); color: white; text-decoration: none; border-radius: 8px; font-weight: 600; transition: 0.3s;" onmouseover="this.style.background='var(--primary-dark)'" onmouseout="this.style.background='var(--primary)'" lang="mr">आमच्याबद्दल अधिक जाणून घ्या</a>
             </div>
         </div>
     </section>
 
-    <section id="cta-sections" style="background: linear-gradient(135deg, #0e7490 0%, #155e75 100%); color: white;">
+    <section style="background-color: #f1f5f9;">
         <div class="container">
-            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px;">
-                <a href="profile.html" style="background: rgba(255,255,255,0.1); backdrop-filter: blur(10px); padding: 40px; border-radius: 12px; text-decoration: none; color: white; transition: 0.3s; border: 1px solid rgba(255,255,255,0.2);" onmouseover="this.style.background='rgba(255,255,255,0.2)'" onmouseout="this.style.background='rgba(255,255,255,0.1)'">
-                    <h3 style="margin-bottom: 10px;" lang="en">📋 Institutional Profile</h3>
-                    <h3 style="margin-bottom: 10px;" lang="mr">📋 संस्थेचा तपशील</h3>
-                    <p lang="en">Explore our detailed institutional information, statistics, and facilities.</p>
-                    <p lang="mr">आमच्या संस्थेचा तपशील, आकडे आणि सुविधा जाणून घ्या।</p>
-                </a>
-                <a href="contact.html" style="background: rgba(255,255,255,0.1); backdrop-filter: blur(10px); padding: 40px; border-radius: 12px; text-decoration: none; color: white; transition: 0.3s; border: 1px solid rgba(255,255,255,0.2);" onmouseover="this.style.background='rgba(255,255,255,0.2)'" onmouseout="this.style.background='rgba(255,255,255,0.1)'">
-                    <h3 style="margin-bottom: 10px;" lang="en">📍 Get in Touch</h3>
-                    <h3 style="margin-bottom: 10px;" lang="mr">📍 आमच्याशी संपर्क साधा</h3>
-                    <p lang="en">Find our location, contact information, and directions to visit us.</p>
-                    <p lang="mr">आमचा पत्ता, संपर्क माहिती आणि आमच्याकडे येण्याचे दिशानिर्देश।</p>
-                </a>
+            <div class="section-header">
+                <h2 class="section-title">
+                    <span lang="en">Our Core Values</span>
+                    <span lang="mr">आमचे मूल मूल्ये</span>
+                </h2>
+            </div>
+            <div class="grid">
+                <div class="card">
+                    <h3 lang="en">Dignity & Respect</h3>
+                    <h3 lang="mr">गरिमा आणि सन्मान</h3>
+                    <p lang="en">Every child deserves to be treated with respect and dignity. We uphold the fundamental human rights of all our wards and ensure their voices are heard.</p>
+                    <p lang="mr">प्रत्येक मुल सन्मान आणि गरिमेचे पात्र आहे. आम्ही सर्व मुलांच्या मानवी अधिकारांचे संरक्षण करतो.</p>
+                </div>
+                <div class="card">
+                    <h3 lang="en">Compassion</h3>
+                    <h3 lang="mr">करुणा</h3>
+                    <p lang="en">Compassion guides our actions. We approach every interaction with empathy, understanding, and genuine care for the well-being of every child.</p>
+                    <p lang="mr">करुणा आमच्या कामाचा मार्गदर्शक आहे. आम्ही प्रत्येक परस्परसंवादात सहानुभूती, समज आणि खरी काळजी दाखवतो.</p>
+                </div>
+                <div class="card">
+                    <h3 lang="en">Empowerment</h3>
+                    <h3 lang="mr">सक्षमीकरण</h3>
+                    <p lang="en">We believe in empowering children through education, vocational training, and life skills. Our goal is to foster self-reliance and independence.</p>
+                    <p lang="mr">आम्ही मुलांना शिक्षा, व्यावसायिक प्रशिक्षण आणि जीवन कौशल्यांद्वारे सक्षम बनवतो. आमचे लक्ष्य आत्मनिर्भरता वाढवणे आहे।</p>
+                </div>
+                <div class="card">
+                    <h3 lang="en">Inclusion</h3>
+                    <h3 lang="mr">समावेश</h3>
+                    <p lang="en">We foster an inclusive environment where every child feels belonged and valued. We celebrate diversity and work towards social integration.</p>
+                    <p lang="mr">आम्ही असे वातावरण तयार करतो जिथे प्रत्येक मुल अभिमानी आणि मूल्यवान वाटेल. विविधतेचा जश्न साजरा करतो।</p>
+                </div>
+                <div class="card">
+                    <h3 lang="en">Community Engagement</h3>
+                    <h3 lang="mr">समुदाय सहभागिता</h3>
+                    <p lang="en">We actively engage with the local community, families, and stakeholders to create a supportive ecosystem for special children.</p>
+                    <p lang="mr">आम्ही स्थानिक समुदाय, कुटुंबे आणि हिताधिकारींसह सक्रियपणे काम करतो.</p>
+                </div>
+                <div class="card">
+                    <h3 lang="en">Holistic Development</h3>
+                    <h3 lang="mr">सर्वांगीण विकास</h3>
+                    <p lang="en">We focus on developing children across multiple dimensions – physical, emotional, social, and vocational – to create well-rounded individuals.</p>
+                    <p lang="mr">आम्ही मुलांच्या शारीरिक, भावनिक, सामाजिक आणि व्यावसायिक विकासावर लक्ष केंद्रित करतो।</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">
+                    <span lang="en">What We Do</span>
+                    <span lang="mr">आम्ही काय करतो</span>
+                </h2>
+            </div>
+            <div class="text-content">
+                <p lang="en"><strong>Residential Care:</strong> We provide safe and nurturing residential facilities for children with intellectual disabilities, ensuring their physical and emotional well-being.</p>
+                <p lang="mr"><strong>रहीवासी काळजी:</strong> आम्ही मतिमंद मुलांसाठी सुरक्षित आणि पोषक रहीवास सुविधा प्रदान करतो.</p>
+
+                <p lang="en"><strong>Educational Support:</strong> Through structured learning programs, we help children develop basic literacy and numeracy skills tailored to their individual needs and pace.</p>
+                <p lang="mr"><strong>शैक्षणिक समर्थन:</strong> आम्ही संरचित शिक्षण कार्यक्रमांद्वारे मुलांना मूलभूत साक्षरता आणि संख्या कौशल्य विकसित करण्यात मदत करतो।</p>
+
+                <p lang="en"><strong>Vocational Training:</strong> We offer practical vocational skills training to prepare children for employment and economic independence in adulthood.</p>
+                <p lang="mr"><strong>व्यावसायिक प्रशिक्षण:</strong> आम्ही व्यावहारिक व्यावसायिक कौशल्य प्रशिक्षण प्रदान करतो जेणेकरून मुले वयस्क जीवनात कार्यरत होण्यास तयार होतील।</p>
+
+                <p lang="en"><strong>Health & Wellness:</strong> We ensure comprehensive healthcare, nutrition, and wellness programs to support the overall development of every child.</p>
+                <p lang="mr"><strong>स्वास्थ्य आणि कल्याण:</strong> आम्ही व्यापक स्वास्थ्यसेवा आणि पोषण कार्यक्रम सुनिश्चित करतो।</p>
+
+                <p lang="en"><strong>Family Support:</strong> We work closely with families to provide counseling, guidance, and support services to ensure continuity of care.</p>
+                <p lang="mr"><strong>कुटुंब समर्थन:</strong> आम्ही कुटुंबांसह परामर्श आणि मार्गदर्शन सेवा प्रदान करतो।</p>
             </div>
         </div>
     </section>
@@ -496,7 +434,7 @@
                     <h3 lang="en">Muktai Balgruha</h3>
                     <h3 lang="mr">मुक्ताई बालगृह</h3>
                     <p lang="en">Dedicated to the service of humanity through the care of special children.</p>
-                    <p lang="mr">दिव्यांग मुलांच्या सेवेतून माणुसकीची जपणूक.</p>
+                    <p lang="mr">दिव्यांग मुलांच्या सेवेतून माणुसकीची जपणूक।</p>
                 </div>
                 <div>
                     <h3 lang="en">Quick Links</h3>
@@ -538,18 +476,6 @@
         if (localStorage.getItem('muktai-lang') === 'mr') {
             document.body.classList.add('marathi');
         }
-
-        // Hero Slider
-        let currentSlide = 0;
-        const slides = document.querySelectorAll('.slide');
-        
-        function rotateSlides() {
-            slides[currentSlide].classList.remove('active');
-            currentSlide = (currentSlide + 1) % slides.length;
-            slides[currentSlide].classList.add('active');
-        }
-
-        setInterval(rotateSlides, 6000); 
     </script>
 </body>
 </html>
