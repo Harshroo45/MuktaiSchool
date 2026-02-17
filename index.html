@@ -1,0 +1,613 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Muktai Balgruha | Lavangi, Mangalwedha</title>
+    <meta name="description" content="Muktai Matimand Mulanche Balgruha, Lavangi. Established 2004-05.">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            /* Professional & Caring Palette */
+            --primary: #0e7490; /* Teal Blue */
+            --primary-dark: #155e75;
+            --secondary: #334155; /* Slate */
+            --accent: #f59e0b; /* Warm Amber */
+            --bg: #f8fafc;
+            --surface: #ffffff;
+            --text: #1e293b;
+            --text-light: #64748b;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Inter', sans-serif;
+        }
+
+        html { scroll-behavior: smooth; }
+
+        body {
+            background-color: var(--bg);
+            color: var(--text);
+            line-height: 1.7;
+            overflow-x: hidden;
+        }
+
+        /* --- Animations --- */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .animate-in {
+            animation: fadeIn 0.8s ease-out forwards;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* --- Header --- */
+        header {
+            background: var(--surface);
+            box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 90px;
+        }
+
+        .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .logo-placeholder {
+            width: 50px;
+            height: 50px;
+            background: var(--primary);
+            color: white;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 1.5rem;
+        }
+
+        .logo-text {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .logo-title {
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: var(--primary-dark);
+            line-height: 1.2;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .logo-subtitle {
+            font-size: 0.8rem;
+            color: var(--text-light);
+            font-weight: 500;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 25px;
+            align-items: center;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--secondary);
+            font-weight: 500;
+            font-size: 0.95rem;
+            transition: all 0.3s;
+            position: relative;
+        }
+
+        .nav-links a:hover { color: var(--primary); }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            bottom: -5px;
+            left: 0;
+            background-color: var(--accent);
+            transition: width 0.3s;
+        }
+
+        .nav-links a:hover::after { width: 100%; }
+
+        .lang-toggle {
+            background: var(--secondary);
+            color: white;
+            border: none;
+            padding: 8px 18px;
+            border-radius: 50px;
+            cursor: pointer;
+            font-weight: 600;
+            font-size: 0.8rem;
+            transition: background 0.3s;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .lang-toggle:hover { background: var(--primary); }
+
+        /* --- Hero Section --- */
+        .hero {
+            position: relative;
+            height: 75vh;
+            min-height: 500px;
+            background: #0f172a;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .hero-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(rgba(14, 116, 144, 0.8), rgba(15, 23, 42, 0.9));
+            z-index: 5;
+        }
+
+        .slide {
+            position: absolute;
+            inset: 0;
+            opacity: 0;
+            transition: opacity 2s ease-in-out;
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+
+        .slide.active { opacity: 1; }
+
+        .hero-content {
+            position: relative;
+            z-index: 10;
+            text-align: center;
+            color: white;
+            padding: 20px;
+            max-width: 900px;
+        }
+
+        .hero h1 {
+            font-size: clamp(1.8rem, 5vw, 3rem);
+            font-weight: 800;
+            margin-bottom: 20px;
+            line-height: 1.3;
+            text-shadow: 0 2px 10px rgba(0,0,0,0.3);
+        }
+
+        .hero p {
+            font-size: clamp(1rem, 2.5vw, 1.3rem);
+            font-weight: 300;
+            color: #e2e8f0;
+            margin-bottom: 30px;
+        }
+
+        /* --- General Sections --- */
+        section { padding: 80px 0; }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .section-title {
+            font-size: 2.2rem;
+            color: var(--secondary);
+            font-weight: 700;
+            position: relative;
+            display: inline-block;
+        }
+
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 50%;
+            height: 4px;
+            background: var(--accent);
+            margin: 15px auto 0;
+            border-radius: 2px;
+        }
+
+        /* --- Info Cards --- */
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .card {
+            background: var(--surface);
+            padding: 35px;
+            border-radius: 16px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.04);
+            border: 1px solid rgba(0,0,0,0.03);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.08);
+            border-color: var(--primary);
+        }
+
+        .card h3 {
+            color: var(--primary);
+            margin-bottom: 15px;
+            font-size: 1.4rem;
+        }
+
+        /* --- Institutional Profile (Details) --- */
+        .profile-section {
+            background: white;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 4px 25px rgba(0,0,0,0.05);
+        }
+        
+        .profile-row {
+            display: flex;
+            border-bottom: 1px solid #f1f5f9;
+        }
+        
+        .profile-row:last-child { border-bottom: none; }
+        
+        .profile-label {
+            flex: 1;
+            padding: 20px;
+            background: #f8fafc;
+            font-weight: 600;
+            color: var(--secondary);
+            border-right: 1px solid #f1f5f9;
+            min-width: 180px;
+        }
+        
+        .profile-value {
+            flex: 2;
+            padding: 20px;
+            color: var(--text);
+        }
+
+        /* --- Map Section --- */
+        .map-wrapper {
+            border-radius: 16px;
+            overflow: hidden;
+            height: 400px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            position: relative;
+            margin-bottom: 20px;
+        }
+
+        .map-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            padding: 15px;
+            background: var(--surface);
+            color: var(--primary);
+            border: 2px solid var(--primary);
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+
+        .map-btn:hover {
+            background: var(--primary);
+            color: white;
+        }
+
+        .contact-info p {
+            margin-bottom: 15px;
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+        }
+
+        .icon { color: var(--primary); }
+
+        /* --- Footer --- */
+        footer {
+            background: var(--secondary);
+            color: #f1f5f9;
+            padding: 70px 0 30px;
+            font-size: 0.95rem;
+        }
+
+        .footer-content h3 { color: var(--accent); margin-bottom: 20px; }
+        .footer-content a { color: #cbd5e1; text-decoration: none; transition: 0.3s; }
+        .footer-content a:hover { color: white; }
+
+        /* --- Mobile --- */
+        .menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            cursor: pointer;
+        }
+        .menu-toggle span {
+            display: block;
+            width: 25px;
+            height: 3px;
+            background: var(--secondary);
+            margin: 5px 0;
+        }
+
+        @media (max-width: 768px) {
+            nav { height: 70px; }
+            .menu-toggle { display: block; }
+            
+            .nav-links {
+                position: fixed;
+                top: 70px;
+                left: 0;
+                width: 100%;
+                background: white;
+                flex-direction: column;
+                padding: 30px;
+                box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+                clip-path: circle(0% at 100% 0);
+                transition: clip-path 0.5s ease-in-out;
+            }
+
+            .nav-links.active {
+                clip-path: circle(150% at 100% 0);
+            }
+            
+            .profile-row { flex-direction: column; }
+            .profile-label { border-right: none; border-bottom: 1px solid #e2e8f0; padding: 10px 20px; }
+            .profile-value { padding: 10px 20px 20px; }
+        }
+
+        /* Lang Logic */
+        [lang="mr"] { display: none; }
+        body.marathi [lang="en"] { display: none; }
+        body.marathi [lang="mr"] { display: block; }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container">
+            <nav>
+                <div class="logo-container">
+                    <div class="logo-placeholder">M</div>
+                    
+                    <div class="logo-text">
+                        <span class="logo-title" lang="en">Muktai Balgruha</span>
+                        <span class="logo-title" lang="mr">मुक्ताई बालगृह</span>
+                        <span class="logo-subtitle">LAVANGI, SOLAPUR</span>
+                    </div>
+                </div>
+
+                <button class="menu-toggle" onclick="toggleMenu()">
+                    <span></span><span></span><span></span>
+                </button>
+
+                <div class="nav-links" id="navMenu">
+                    <a href="#home"><span lang="en">Home</span><span lang="mr">मुख्य</span></a>
+                    <a href="#about"><span lang="en">About Us</span><span lang="mr">माहिती</span></a>
+                    <a href="#details"><span lang="en">Overview</span><span lang="mr">तपशील</span></a>
+                    <a href="#contact"><span lang="en">Contact</span><span lang="mr">संपर्क</span></a>
+                    <button class="lang-toggle" onclick="toggleLang()">मराठी / EN</button>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <div id="home" class="hero">
+    <div class="hero-overlay"></div>
+    
+    <div class="slide active" style="background-image: url('/images/one.jpg')"></div>
+    
+    <div class="slide" style="background-image: url('/images/two.jpg')"></div>
+    
+    <div class="hero-content animate-in">
+        <h1 lang="en">Muktai Matimand Mulanche Balgruha, Lavangi</h1>
+        <h1 lang="mr">मुक्ताई मतिमंद मुलांचे बालगृह, लवंगी</h1>
+        
+        <p lang="en">Est. 2004-05 | Tahsil Mangalwedha, Dist. Solapur</p>
+        <p lang="mr">स्थापना २००४-०५ | ता. मंगळवेढा, जि. सोलापूर</p>
+    </div>
+</div>
+
+    <section id="about">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">
+                    <span lang="en">Our Mission & Values</span>
+                    <span lang="mr">आमचे ध्येय आणि मूल्ये</span>
+                </h2>
+            </div>
+            <div class="grid">
+                <div class="card">
+                    <h3 lang="en">Our Purpose</h3>
+                    <h3 lang="mr">उद्देश</h3>
+                    <p lang="en">To provide a safe, inclusive, and rehabilitative environment for intellectually disabled children, ensuring they receive the dignity and care they deserve.</p>
+                    <p lang="mr">मतिमंद मुलांसाठी सुरक्षित आणि पुनर्वसनाचे वातावरण प्रदान करणे, जेणेकरून त्यांना सन्मान आणि योग्य काळजी मिळेल.</p>
+                </div>
+                <div class="card">
+                    <h3 lang="en">Holistic Development</h3>
+                    <h3 lang="mr">सर्वांगीण विकास</h3>
+                    <p lang="en">Focusing on basic life skills, vocational training, and emotional support to empower children towards self-reliance.</p>
+                    <p lang="mr">मुलांना स्वावलंबी बनवण्यासाठी जीवन कौशल्ये, व्यावसायिक प्रशिक्षण आणि भावनिक आधारावर लक्ष केंद्रित करणे.</p>
+                </div>
+                <div class="card">
+                    <h3 lang="en">Community Care</h3>
+                    <h3 lang="mr">सामाजिक बांधिलकी</h3>
+                    <p lang="en">Serving the rural community of Mangalwedha and Solapur by supporting families with special needs children.</p>
+                    <p lang="mr">मंगळवेढा आणि सोलापूरच्या ग्रामीण भागातील दिव्यांग मुलांच्या कुटुंबांना आधार देण्याचे कार्य.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="details" style="background-color: #f1f5f9;">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">
+                    <span lang="en">Institutional Profile</span>
+                    <span lang="mr">संस्थेचा तपशील</span>
+                </h2>
+            </div>
+            
+            <div class="profile-section">
+                <div class="profile-row">
+                    <div class="profile-label"><span lang="en">Institute Name</span><span lang="mr">संस्थेचे नाव</span></div>
+                    <div class="profile-value">
+                        <strong lang="en">Muktai Matimand Mulanche Balgruha, Lavangi</strong>
+                        <strong lang="mr">मुक्ताई मतिमंद मुलांचे बालगृह, लवंगी</strong>
+                    </div>
+                </div>
+                <div class="profile-row">
+                    <div class="profile-label"><span lang="en">Established</span><span lang="mr">स्थापना</span></div>
+                    <div class="profile-value">2004 - 05</div>
+                </div>
+                <div class="profile-row">
+                    <div class="profile-label"><span lang="en">Tahsil / Taluka</span><span lang="mr">तालुका</span></div>
+                    <div class="profile-value">Mangalwedha (मंगळवेढा)</div>
+                </div>
+                <div class="profile-row">
+                    <div class="profile-label"><span lang="en">District</span><span lang="mr">जिल्हा</span></div>
+                    <div class="profile-value">Solapur (सोलापूर)</div>
+                </div>
+                <div class="profile-row">
+                    <div class="profile-label"><span lang="en">State</span><span lang="mr">राज्य</span></div>
+                    <div class="profile-value">Maharashtra (महाराष्ट्र)</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">
+                    <span lang="en">Visit Us</span>
+                    <span lang="mr">भेट द्या</span>
+                </h2>
+            </div>
+            <div class="grid" style="align-items: center;">
+                <div class="card contact-info">
+                    <h3 lang="en">Address Details</h3>
+                    <h3 lang="mr">पत्ता तपशील</h3>
+                    
+                    <p>
+                        <span class="icon">📍</span> 
+                        <span>
+                            <strong>Muktai Balgruha</strong><br>
+                            A/P Lavangi, Tal. Mangalwedha,<br>
+                            Dist. Solapur, Maharashtra 413305
+                        </span>
+                    </p>
+                    <p>
+                        <span class="icon">🕒</span>
+                        <span>
+                            <span lang="en">Office Hours: 10:00 AM - 5:00 PM</span>
+                            <span lang="mr">कार्यालय वेळ: सकाळी १०:०० - सायं ५:००</span>
+                        </span>
+                    </p>
+                </div>
+                
+                <div class="map-wrapper">
+                    <iframe 
+                        width="100%" 
+                        height="100%" 
+                        style="border:0;" 
+                        loading="lazy" 
+                        allowfullscreen 
+                        referrerpolicy="no-referrer-when-downgrade"
+                        src="https://maps.google.com/maps?q=Lavangi+Mangalwedha+Solapur&t=k&z=13&ie=UTF8&iwloc=&output=embed">
+                    </iframe>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="grid footer-content">
+                <div>
+                    <h3 lang="en">Muktai Balgruha</h3>
+                    <h3 lang="mr">मुक्ताई बालगृह</h3>
+                    <p lang="en">Dedicated to the service of humanity through the care of special children.</p>
+                    <p lang="mr">दिव्यांग मुलांच्या सेवेतून माणुसकीची जपणूक.</p>
+                </div>
+                <div>
+                    <h3 lang="en">Quick Links</h3>
+                    <h3 lang="mr">महत्वाचे दुवे</h3>
+                    <ul style="list-style: none;">
+                        <li><a href="#home">Home / मुख्य</a></li>
+                        <li><a href="#about">About / माहिती</a></li>
+                        <li><a href="#details">Details / तपशील</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div style="text-align:center; border-top:1px solid rgba(255,255,255,0.1); padding-top:20px; margin-top: 40px; color:#94a3b8; font-size:0.85rem;">
+                <p>© 2024 Muktai Balgruha, Lavangi. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile Menu Toggle
+        function toggleMenu() {
+            const menu = document.getElementById('navMenu');
+            menu.classList.toggle('active');
+        }
+
+        // Close menu on click
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                document.getElementById('navMenu').classList.remove('active');
+            });
+        });
+
+        // Language Toggle
+        function toggleLang() {
+            document.body.classList.toggle('marathi');
+            localStorage.setItem('muktai-lang', document.body.classList.contains('marathi') ? 'mr' : 'en');
+        }
+
+        if (localStorage.getItem('muktai-lang') === 'mr') {
+            document.body.classList.add('marathi');
+        }
+
+        // Hero Slider
+        let currentSlide = 0;
+        const slides = document.querySelectorAll('.slide');
+        
+        function rotateSlides() {
+            slides[currentSlide].classList.remove('active');
+            currentSlide = (currentSlide + 1) % slides.length;
+            slides[currentSlide].classList.add('active');
+        }
+
+        setInterval(rotateSlides, 6000); 
+    </script>
+</body>
+</html>
