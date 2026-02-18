@@ -6,344 +6,32 @@
     <title>Institutional Profile | Muktai Balgruha</title>
     <meta name="description" content="Institutional profile and details of Muktai Balgruha - established 2004-05, Mangalwedha, Solapur.">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
-    <style>
-        :root {
-            /* Professional & Caring Palette */
-            --primary: #0e7490; /* Teal Blue */
-            --primary-dark: #155e75;
-            --secondary: #334155; /* Slate */
-            --accent: #f59e0b; /* Warm Amber */
-            --bg: #f8fafc;
-            --surface: #ffffff;
-            --text: #1e293b;
-            --text-light: #64748b;
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Inter', sans-serif;
-        }
-
-        html { scroll-behavior: smooth; }
-
-        body {
-            background-color: var(--bg);
-            color: var(--text);
-            line-height: 1.7;
-            overflow-x: hidden;
-        }
-
-        /* --- Animations --- */
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-
-        .animate-in {
-            animation: fadeIn 0.8s ease-out forwards;
-        }
-
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-
-        /* --- Header --- */
-        header {
-            background: var(--surface);
-            box-shadow: 0 4px 20px rgba(0,0,0,0.06);
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-        }
-
-        nav {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            height: 90px;
-        }
-
-        .logo-container {
-            display: flex;
-            align-items: center;
-            gap: 15px;
-        }
-
-        .logo-placeholder {
-            width: 50px;
-            height: 50px;
-            background: var(--primary);
-            color: white;
-            border-radius: 8px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-weight: bold;
-            font-size: 1.5rem;
-        }
-
-        .logo-text {
-            display: flex;
-            flex-direction: column;
-        }
-
-        .logo-title {
-            font-size: 1.1rem;
-            font-weight: 700;
-            color: var(--primary-dark);
-            line-height: 1.2;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-        }
-
-        .logo-subtitle {
-            font-size: 0.8rem;
-            color: var(--text-light);
-            font-weight: 500;
-        }
-
-        .nav-links {
-            display: flex;
-            gap: 25px;
-            align-items: center;
-        }
-
-        .nav-links a {
-            text-decoration: none;
-            color: var(--secondary);
-            font-weight: 500;
-            font-size: 0.95rem;
-            transition: all 0.3s;
-            position: relative;
-        }
-
-        .nav-links a:hover { color: var(--primary); }
-
-        .nav-links a::after {
-            content: '';
-            position: absolute;
-            width: 0;
-            height: 2px;
-            bottom: -5px;
-            left: 0;
-            background-color: var(--accent);
-            transition: width 0.3s;
-        }
-
-        .nav-links a:hover::after { width: 100%; }
-
-        .lang-toggle {
-            background: var(--secondary);
-            color: white;
-            border: none;
-            padding: 8px 18px;
-            border-radius: 50px;
-            cursor: pointer;
-            font-weight: 600;
-            font-size: 0.8rem;
-            transition: background 0.3s;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-        }
-
-        .lang-toggle:hover { background: var(--primary); }
-
-        /* --- Page Header --- */
-        .page-header {
-            background: linear-gradient(rgba(14, 116, 144, 0.8), rgba(15, 23, 42, 0.9));
-            color: white;
-            padding: 80px 0;
-            text-align: center;
-        }
-
-        .page-header h1 {
-            font-size: 2.5rem;
-            margin-bottom: 10px;
-        }
-
-        /* --- General Sections --- */
-        section { padding: 80px 0; }
-
-        .section-header {
-            text-align: center;
-            margin-bottom: 60px;
-        }
-
-        .section-title {
-            font-size: 2.2rem;
-            color: var(--secondary);
-            font-weight: 700;
-            position: relative;
-            display: inline-block;
-        }
-
-        .section-title::after {
-            content: '';
-            display: block;
-            width: 50%;
-            height: 4px;
-            background: var(--accent);
-            margin: 15px auto 0;
-            border-radius: 2px;
-        }
-
-        /* --- Profile Section --- */
-        .profile-section {
-            background: white;
-            border-radius: 16px;
-            overflow: hidden;
-            box-shadow: 0 4px 25px rgba(0,0,0,0.05);
-        }
-        
-        .profile-row {
-            display: flex;
-            border-bottom: 1px solid #f1f5f9;
-        }
-        
-        .profile-row:last-child { border-bottom: none; }
-        
-        .profile-label {
-            flex: 1;
-            padding: 20px;
-            background: #f8fafc;
-            font-weight: 600;
-            color: var(--secondary);
-            border-right: 1px solid #f1f5f9;
-            min-width: 180px;
-        }
-        
-        .profile-value {
-            flex: 2;
-            padding: 20px;
-            color: var(--text);
-        }
-
-        /* --- Statistics --- */
-        .stats-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 30px;
-            margin-top: 50px;
-        }
-
-        .stat-card {
-            background: white;
-            padding: 30px;
-            border-radius: 12px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
-            text-align: center;
-        }
-
-        .stat-number {
-            font-size: 2.5rem;
-            font-weight: 700;
-            color: var(--primary);
-            margin-bottom: 10px;
-        }
-
-        .stat-label {
-            font-weight: 600;
-            color: var(--secondary);
-        }
-
-        /* --- Footer --- */
-        footer {
-            background: var(--secondary);
-            color: #f1f5f9;
-            padding: 70px 0 30px;
-            font-size: 0.95rem;
-        }
-
-        .footer-content h3 { color: var(--accent); margin-bottom: 20px; }
-        .footer-content a { color: #cbd5e1; text-decoration: none; transition: 0.3s; }
-        .footer-content a:hover { color: white; }
-
-        .grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-        }
-
-        /* --- Mobile --- */
-        .menu-toggle {
-            display: none;
-            background: none;
-            border: none;
-            cursor: pointer;
-        }
-        .menu-toggle span {
-            display: block;
-            width: 25px;
-            height: 3px;
-            background: var(--secondary);
-            margin: 5px 0;
-        }
-
-        @media (max-width: 768px) {
-            nav { height: 70px; }
-            .menu-toggle { display: block; }
-            
-            .nav-links {
-                position: fixed;
-                top: 70px;
-                left: 0;
-                width: 100%;
-                background: white;
-                flex-direction: column;
-                padding: 30px;
-                box-shadow: 0 10px 20px rgba(0,0,0,0.1);
-                clip-path: circle(0% at 100% 0);
-                transition: clip-path 0.5s ease-in-out;
-            }
-
-            .nav-links.active {
-                clip-path: circle(150% at 100% 0);
-            }
-
-            .page-header h1 {
-                font-size: 1.8rem;
-            }
-
-            .profile-row { flex-direction: column; }
-            .profile-label { border-right: none; border-bottom: 1px solid #e2e8f0; padding: 10px 20px; }
-            .profile-value { padding: 10px 20px 20px; }
-        }
-
-        /* Lang Logic */
-        [lang="mr"] { display: none; }
-        body.marathi [lang="en"] { display: none; }
-        body.marathi [lang="mr"] { display: block; }
-    </style>
+    <link rel="stylesheet" href="css/styles.css">
 </head>
-<body>
+<body class="marathi">
 
     <header>
         <div class="container">
             <nav>
-                <div class="logo-container">    
+                <a href="index.html" class="logo-container">
                     <div class="logo-placeholder">M</div>
-                    
                     <div class="logo-text">
-                        <span class="logo-title" lang="en">Muktai Matimand Mulanche Balgruha, Lavangi</span>
-                        <span class="logo-title" lang="mr">मुक्ताई मतिमंद मुलांचे बालगृह, लवंगी</span>
-                        <span class="logo-subtitle">LAVANGI, SOLAPUR</span>
+                        <h1 lang="en">Muktai Balgruha</h1>
+                        <h1 lang="mr">मुक्ताई बालगृह</h1>
                     </div>
-                </div>
-
+                </a>
                 <button class="menu-toggle" onclick="toggleMenu()">
                     <span></span><span></span><span></span>
                 </button>
-
-                <div class="nav-links" id="navMenu">
-                    <a href="index.html"><span lang="en">Home</span><span lang="mr">मुख्य</span></a>
-                    <a href="about.html"><span lang="en">About Us</span><span lang="mr">माहिती</span></a>
-                    <a href="profile.html"><span lang="en">Profile</span><span lang="mr">तपशील</span></a>
-                    <a href="contact.html"><span lang="en">Contact</span><span lang="mr">संपर्क</span></a>
-                    <button class="lang-toggle" onclick="toggleLang()">मराठी / ENGLISH</button>
-                </div>
+                <ul class="nav-links" id="navMenu">
+                    <li><a href="index.html"><span lang="en">Home</span><span lang="mr">मुख्य</span></a></li>
+                    <li><a href="about.html"><span lang="en">About</span><span lang="mr">माहिती</span></a></li>
+                    <li><a href="team.html"><span lang="en">Team</span><span lang="mr">टीम</span></a></li>
+                    <li><a href="gallery.html"><span lang="en">Gallery</span><span lang="mr">गॅलरी</span></a></li>
+                    <li><a href="faq.html"><span lang="en">FAQ</span><span lang="mr">प्रश्न</span></a></li>
+                    <li><a href="contact.html"><span lang="en">Contact</span><span lang="mr">संपर्क</span></a></li>
+                    <li><button class="lang-toggle" onclick="toggleLang()">EN / मराठी</button></li>
+                </ul>
             </nav>
         </div>
     </header>
@@ -355,9 +43,8 @@
         </div>
     </div>
 
-    <section style="background-color: #f1f5f9;">
+    <section class="section-alt">
         <div class="container">
-            
             <div class="profile-section">
                 <div class="profile-row">
                     <div class="profile-label"><span lang="en">Institute Name</span><span lang="mr">संस्थेचे नाव</span></div>
@@ -367,32 +54,26 @@
                     </div>
                 </div>
                 <div class="profile-row">
-                    <div class="profile-label"><span lang="en">Registration Number</span><span lang="mr">नोंदणी क्रमांक</span></div>
-                    <div class="profile-value">As per Government of Maharashtra</div>
+                    <div class="profile-label"><span lang="en">Registration</span><span lang="mr">नोंदणी</span></div>
+                    <div class="profile-value">Registered under Govt. of Maharashtra</div>
                 </div>
                 <div class="profile-row">
                     <div class="profile-label"><span lang="en">Established</span><span lang="mr">स्थापना</span></div>
-                    <div class="profile-value">2004 - 05</div>
+                    <div class="profile-value">2004 - 2005</div>
                 </div>
                 <div class="profile-row">
-                    <div class="profile-label"><span lang="en">Tahsil / Taluka</span><span lang="mr">तालुका</span></div>
-                    <div class="profile-value">Mangalwedha (मंगळवेढा)</div>
+                    <div class="profile-label"><span lang="en">Address</span><span lang="mr">पत्ता</span></div>
+                    <div class="profile-value">
+                        <span lang="en">Lavangi, Tal. Mangalwedha, Dist. Solapur</span>
+                        <span lang="mr">लवंगी, ता. मंगळवेढा, जि. सोलापूर</span>
+                    </div>
                 </div>
                 <div class="profile-row">
-                    <div class="profile-label"><span lang="en">District</span><span lang="mr">जिल्हा</span></div>
-                    <div class="profile-value">Solapur (सोलापूर)</div>
-                </div>
-                <div class="profile-row">
-                    <div class="profile-label"><span lang="en">State</span><span lang="mr">राज्य</span></div>
-                    <div class="profile-value">Maharashtra (महाराष्ट्र), India</div>
-                </div>
-                <div class="profile-row">
-                    <div class="profile-label"><span lang="en">Type of Organization</span><span lang="mr">संस्थेचा प्रकार</span></div>
-                    <div class="profile-value"><span lang="en">Non-Profit, Charitable Organization</span><span lang="mr">गैर-लाभकारी, दातव्य संस्था</span></div>
-                </div>
-                <div class="profile-row">
-                    <div class="profile-label"><span lang="en">Primary Focus</span><span lang="mr">मुख्य उद्देश</span></div>
-                    <div class="profile-value"><span lang="en">Care, Education & Rehabilitation of Intellectually Disabled Children</span><span lang="mr">मतिमंद मुलांची काळजी, शिक्षा व पुनर्वसन</span></div>
+                    <div class="profile-label"><span lang="en">Organization Type</span><span lang="mr">संस्थेचा प्रकार</span></div>
+                    <div class="profile-value">
+                        <span lang="en">Non-Profit / Charitable Trust</span>
+                        <span lang="mr">ना-नफा / सेवाभावी संस्था</span>
+                    </div>
                 </div>
             </div>
         </div>
@@ -408,8 +89,7 @@
             </div>
             <div class="stats-grid">
                 <div class="stat-card">
-                    <div class="stat-number" lang="en">20+</div>
-                    <div class="stat-number" lang="mr">२०+</div>
+                    <div class="stat-number">20+</div>
                     <div class="stat-label">
                         <span lang="en">Years of Service</span>
                         <span lang="mr">सेवेचे वर्ष</span>
@@ -418,65 +98,16 @@
                 <div class="stat-card">
                     <div class="stat-number">50+</div>
                     <div class="stat-label">
-                        <span lang="en">Children Served</span>
-                        <span lang="mr">सेवा केलेली मुले</span>
+                        <span lang="en">Students</span>
+                        <span lang="mr">विद्यार्थी</span>
                     </div>
                 </div>
                 <div class="stat-card">
                     <div class="stat-number">15+</div>
                     <div class="stat-label">
-                        <span lang="en">Dedicated Staff</span>
-                        <span lang="mr">समर्पित कर्मचारी</span>
+                        <span lang="en">Staff Members</span>
+                        <span lang="mr">कर्मचारी</span>
                     </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section style="background-color: #f1f5f9;">
-        <div class="container">
-            <div class="section-header">
-                <h2 class="section-title">
-                    <span lang="en">Services & Facilities</span>
-                    <span lang="mr">सेवा आणि सुविधा</span>
-                </h2>
-            </div>
-            <div class="grid">
-                <div style="background: white; padding: 30px; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.05);">
-                    <h3 style="color: var(--primary); margin-bottom: 15px;" lang="en">Residential Facility</h3>
-                    <h3 style="color: var(--primary); margin-bottom: 15px;" lang="mr">रहीवास सुविधा</h3>
-                    <p lang="en">Safe and nurturing boarding facilities with trained caregivers, providing a home-like environment.</p>
-                    <p lang="mr">सुरक्षित आणि पोषक रहीवास सुविधा विशेषज्ञ करिता वर्कर्सच्या सहाय्याने प्रदान केली जाते।</p>
-                </div>
-                <div style="background: white; padding: 30px; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.05);">
-                    <h3 style="color: var(--primary); margin-bottom: 15px;" lang="en">Education</h3>
-                    <h3 style="color: var(--primary); margin-bottom: 15px;" lang="mr">शिक्षा</h3>
-                    <p lang="en">Customized learning programs focused on basic life skills, literacy, and numeracy adapted to individual abilities.</p>
-                    <p lang="mr">व्यक्तिगत क्षमतेनुसार तयार केलेले शिक्षण कार्यक्रम।</p>
-                </div>
-                <div style="background: white; padding: 30px; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.05);">
-                    <h3 style="color: var(--primary); margin-bottom: 15px;" lang="en">Vocational Training</h3>
-                    <h3 style="color: var(--primary); margin-bottom: 15px;" lang="mr">व्यावसायिक प्रशिक्षण</h3>
-                    <p lang="en">Practical skills training in various trades to prepare children for employment and economic participation.</p>
-                    <p lang="mr">विविध व्यवसायांमध्ये व्यावहारिक कौशल्य प्रशिक्षण।</p>
-                </div>
-                <div style="background: white; padding: 30px; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.05);">
-                    <h3 style="color: var(--primary); margin-bottom: 15px;" lang="en">Health & Nutrition</h3>
-                    <h3 style="color: var(--primary); margin-bottom: 15px;" lang="mr">स्वास्थ्य व पोषण</h3>
-                    <p lang="en">Regular health checkups, nutritious meals, and wellness programs ensuring overall physical health.</p>
-                    <p lang="mr">नियमित स्वास्थ्य तपासणी, पौष्टिक अन्न आणि कल्याण कार्यक्रम।</p>
-                </div>
-                <div style="background: white; padding: 30px; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.05);">
-                    <h3 style="color: var(--primary); margin-bottom: 15px;" lang="en">Recreational Activities</h3>
-                    <h3 style="color: var(--primary); margin-bottom: 15px;" lang="mr">मनोरंजन क्रियाकलाप</h3>
-                    <p lang="en">Games, sports, cultural programs, and creative activities to promote emotional and social development.</p>
-                    <p lang="mr">खेळ, क्रीडा, सांस्कृतिक कार्यक्रम आणि सृजनशील क्रियाकलाप।</p>
-                </div>
-                <div style="background: white; padding: 30px; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.05);">
-                    <h3 style="color: var(--primary); margin-bottom: 15px;" lang="en">Family Counseling</h3>
-                    <h3 style="color: var(--primary); margin-bottom: 15px;" lang="mr">कुटुंब परामर्श</h3>
-                    <p lang="en">Support services for families, guidance on child development, and emotional counseling.</p>
-                    <p lang="mr">कुटुंबांसाठी समर्थन सेवा आणि भावनिक परामर्श।</p>
                 </div>
             </div>
         </div>
@@ -484,51 +115,23 @@
 
     <footer>
         <div class="container">
-            <div class="grid footer-content">
-                <div>
-                    <h3 lang="en">Muktai Balgruha</h3>
-                    <h3 lang="mr">मुक्ताई बालगृह</h3>
-                    <p lang="en">Dedicated to the service of humanity through the care of special children.</p>
-                    <p lang="mr">दिव्यांग मुलांच्या सेवेतून माणुसकीची जपणूक।</p>
-                </div>
-                <div>
-                    <h3 lang="en">Quick Links</h3>
-                    <h3 lang="mr">महत्वाचे दुवे</h3>
-                    <ul style="list-style: none;">
-                        <li><a href="index.html">Home / मुख्य</a></li>
-                        <li><a href="about.html">About / माहिती</a></li>
-                        <li><a href="profile.html">Profile / तपशील</a></li>
-                        <li><a href="contact.html">Contact / संपर्क</a></li>
-                    </ul>
-                </div>
-            </div>
-            <div style="text-align:center; border-top:1px solid rgba(255,255,255,0.1); padding-top:20px; margin-top: 40px; color:#94a3b8; font-size:0.85rem;">
-                <p>© 2024 Muktai Balgruha, Lavangi. All Rights Reserved.</p>
+            <div class="footer-bottom">
+                <p>© 2024 Muktai Balgruha. All Rights Reserved.</p>
             </div>
         </div>
     </footer>
 
     <script>
-        // Mobile Menu Toggle
-        function toggleMenu() {
-            const menu = document.getElementById('navMenu');
-            menu.classList.toggle('active');
-        }
-
-        // Close menu on click
-        document.querySelectorAll('.nav-links a').forEach(link => {
-            link.addEventListener('click', () => {
-                document.getElementById('navMenu').classList.remove('active');
-            });
-        });
-
-        // Language Toggle
+        function toggleMenu() { document.getElementById('navMenu').classList.toggle('active'); }
+        
         function toggleLang() {
             document.body.classList.toggle('marathi');
             localStorage.setItem('muktai-lang', document.body.classList.contains('marathi') ? 'mr' : 'en');
         }
 
-        if (localStorage.getItem('muktai-lang') === 'mr') {
+        if (localStorage.getItem('muktai-lang') === 'en') {
+            document.body.classList.remove('marathi');
+        } else {
             document.body.classList.add('marathi');
         }
     </script>

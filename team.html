@@ -3,13 +3,115 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About Us | Muktai Balgruha</title>
-    <meta name="description" content="Learn about Muktai Matimand Mulanche Balgruha, its mission, values, and commitment to special children.">
+    <title>Our Team | Muktai Balgruha</title>
+    <meta name="description" content="Meet the dedicated team and staff members at Muktai Balgruha.">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/styles.css">
+    <style>
+        /* Embedded CSS for specific Team Card enhancements */
+        /* This overrides/extends the main CSS for this specific page layout */
+        
+        .team-card {
+            background: white;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border: 1px solid rgba(0,0,0,0.05);
+            position: relative;
+            padding: 0; /* Reset padding to allow banner to flush */
+        }
+
+        .team-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(14, 116, 144, 0.15);
+        }
+
+        /* Decorative Gradient Banner */
+        .card-banner {
+            height: 100px;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+            width: 100%;
+        }
+
+        /* Avatar overlapping the banner */
+        .team-avatar-container {
+            width: 120px;
+            height: 120px;
+            margin: -60px auto 15px auto; /* Negative margin pulls it up */
+            position: relative;
+            z-index: 2;
+        }
+
+        .team-avatar {
+            width: 100%;
+            height: 100%;
+            background: #f1f5f9;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3.5rem;
+            border: 5px solid white; /* Thick border to separate from banner */
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            color: #64748b;
+        }
+
+        .team-content-wrapper {
+            padding: 0 25px 30px 25px;
+            text-align: center;
+        }
+
+        .team-name {
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: var(--text);
+            margin-bottom: 4px;
+        }
+
+        .team-role {
+            color: var(--primary);
+            font-weight: 600;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 15px;
+            display: inline-block;
+            background: rgba(14, 116, 144, 0.1);
+            padding: 4px 12px;
+            border-radius: 50px;
+        }
+
+        .team-bio {
+            font-size: 0.95rem;
+            color: var(--text-light);
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+
+        .skills-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 8px;
+            margin-top: 15px;
+            border-top: 1px solid #f1f5f9;
+            padding-top: 15px;
+        }
+
+        .skill-tag {
+            font-size: 0.75rem;
+            color: var(--secondary);
+            background: #f8fafc;
+            border: 1px solid #e2e8f0;
+            padding: 4px 10px;
+            border-radius: 6px;
+            font-weight: 500;
+        }
+    </style>
 </head>
-<body class="marathi"> 
-    
+<body class="marathi">
+
     <header>
         <div class="container">
             <nav>
@@ -18,17 +120,11 @@
                     <div class="logo-text">
                         <h1 lang="en">Muktai Balgruha</h1>
                         <h1 lang="mr">मुक्ताई बालगृह</h1>
-                        <p lang="en">Care & Compassion</p>
-                        <p lang="mr">प्रेम आणि सेवा</p>
                     </div>
                 </a>
-
-                <button class="menu-toggle" onclick="toggleMenu()" aria-label="Toggle navigation">
-                    <span></span>
-                    <span></span>
-                    <span></span>
+                <button class="menu-toggle" onclick="toggleMenu()">
+                    <span></span><span></span><span></span>
                 </button>
-
                 <ul class="nav-links" id="navMenu">
                     <li><a href="index.html"><span lang="en">Home</span><span lang="mr">मुख्य</span></a></li>
                     <li><a href="about.html"><span lang="en">About</span><span lang="mr">माहिती</span></a></li>
@@ -42,44 +138,98 @@
         </div>
     </header>
 
-    <div class="hero">
-        <div class="hero-overlay"></div>
-        <div class="hero-content animate-in">
-            <h1 lang="en">About Us</h1>
-            <h1 lang="mr">आमच्याबद्दल</h1>
-            <p lang="en">A sanctuary of hope and care for special children.</p>
-            <p lang="mr">दिव्यांग मुलांसाठी आशा आणि प्रेमाचे आश्रयस्थान.</p>
+    <div class="page-header">
+        <div class="container">
+            <h1 lang="en">Our Dedicated Team</h1>
+            <h1 lang="mr">आमची टीम</h1>
         </div>
     </div>
 
     <section>
         <div class="container">
-            <div class="section-header">
-                <h2 class="section-title" lang="en">Our Mission</h2>
-                <h2 class="section-title" lang="mr">आमचे ध्येय</h2>
-            </div>
-
-            <div class="grid">
-                <div class="card">
-                    <h3 lang="en">Our Vision</h3>
-                    <h3 lang="mr">आमची दृष्टी</h3>
-                    <p lang="en">To create a world where every special child is valued, respected, and given the opportunity to thrive with dignity.</p>
-                    <p lang="mr">असे जग निर्माण करणे जिथे प्रत्येक विशेष मुलाचा आदर केला जातो आणि त्यांना सन्मानाने जगण्याची संधी मिळते.</p>
+            <div class="team-grid">
+                
+                <div class="team-card">
+                    <div class="card-banner"></div>
+                    <div class="team-avatar-container">
+                        <div class="team-avatar">👨‍💼</div>
+                    </div>
+                    
+                    <div class="team-content-wrapper">
+                        <div class="team-name">
+                            <span lang="en">Mr. Ramesh Patil</span>
+                            <span lang="mr">श्री. रमेश पाटील</span>
+                        </div>
+                        <div class="team-role">
+                            <span lang="en">Administrator</span>
+                            <span lang="mr">व्यवस्थापक</span>
+                        </div>
+                        <p class="team-bio">
+                            <span lang="en">Overseeing daily operations and ensuring the best care facilities for all children with 15+ years of experience.</span>
+                            <span lang="mr">दैनंदिन कामकाजावर लक्ष ठेवणे आणि १५ वर्षांच्या अनुभवासह मुलांसाठी सर्वोत्तम सुविधा सुनिश्चित करणे.</span>
+                        </p>
+                        <div class="skills-container">
+                            <span class="skill-tag">Management</span>
+                            <span class="skill-tag">Operations</span>
+                            <span class="skill-tag">Safety</span>
+                        </div>
+                    </div>
                 </div>
 
-                <div class="card">
-                    <h3 lang="en">Our History</h3>
-                    <h3 lang="mr">आमचा इतिहास</h3>
-                    <p lang="en">Founded with a spirit of service, Muktai Balgruha has been dedicated to the rehabilitation and care of intellectually disabled children in Lavangi.</p>
-                    <p lang="mr">सेवाभावी वृत्तीने स्थापित, मुक्ताई बालगृह लवंगी येथील मतिमंद मुलांच्या पुनर्वसन आणि सेवेसाठी समर्पित आहे.</p>
+                <div class="team-card">
+                    <div class="card-banner"></div>
+                    <div class="team-avatar-container">
+                        <div class="team-avatar">👩‍⚕️</div>
+                    </div>
+                    
+                    <div class="team-content-wrapper">
+                        <div class="team-name">
+                            <span lang="en">Mrs. Savita Deshmukh</span>
+                            <span lang="mr">सौ. सविता देशमुख</span>
+                        </div>
+                        <div class="team-role">
+                            <span lang="en">Head Care Taker</span>
+                            <span lang="mr">मुख्य केअर टेकर</span>
+                        </div>
+                        <p class="team-bio">
+                            <span lang="en">Providing motherly love, hygiene management, and round-the-clock support to the children in the facility.</span>
+                            <span lang="mr">निवासी सुविधेतील मुलांना आईचे प्रेम, स्वच्छता व्यवस्थापन आणि चोवीस तास आधार देणे.</span>
+                        </p>
+                        <div class="skills-container">
+                            <span class="skill-tag">Nursing</span>
+                            <span class="skill-tag">Hygiene</span>
+                            <span class="skill-tag">Care</span>
+                        </div>
+                    </div>
                 </div>
 
-                <div class="card">
-                    <h3 lang="en">Our Values</h3>
-                    <h3 lang="mr">आमची मूल्ये</h3>
-                    <p lang="en">Compassion, Integrity, and selfless Service are the pillars of our institution.</p>
-                    <p lang="mr">करुणा, सचोटी आणि निस्वार्थ सेवा हे आमच्या संस्थेचे आधारस्तंभ आहेत.</p>
+                <div class="team-card">
+                    <div class="card-banner"></div>
+                    <div class="team-avatar-container">
+                        <div class="team-avatar">👨‍🏫</div>
+                    </div>
+                    
+                    <div class="team-content-wrapper">
+                        <div class="team-name">
+                            <span lang="en">Mr. Suresh Kulkarni</span>
+                            <span lang="mr">श्री. सुरेश कुलकर्णी</span>
+                        </div>
+                        <div class="team-role">
+                            <span lang="en">Special Educator</span>
+                            <span lang="mr">विशेष शिक्षक</span>
+                        </div>
+                        <p class="team-bio">
+                            <span lang="en">Specialized in teaching life skills and basic literacy tailored to the unique learning pace of every child.</span>
+                            <span lang="mr">प्रत्येक मुलाच्या शिकण्याच्या गतीनुसार जीवन कौशल्ये आणि मूलभूत साक्षरता शिकवण्यात विशेष.</span>
+                        </p>
+                        <div class="skills-container">
+                            <span class="skill-tag">Special Ed</span>
+                            <span class="skill-tag">Therapy</span>
+                            <span class="skill-tag">Teaching</span>
+                        </div>
+                    </div>
                 </div>
+
             </div>
         </div>
     </section>
@@ -184,46 +334,18 @@
     </div>
 </footer>
 
-    <button class="back-to-top" onclick="scrollToTop()" aria-label="Back to top">↑</button>
-
     <script>
-        // Toggle Mobile Menu
-        function toggleMenu() {
-            document.getElementById('navMenu').classList.toggle('active');
-        }
-
-        // Close menu when clicking a link
-        document.querySelectorAll('.nav-links a').forEach(a => {
-            a.addEventListener('click', () => {
-                const nav = document.getElementById('navMenu');
-                if (nav) nav.classList.remove('active');
-            });
-        });
-
-        // Language Toggle Logic
+        function toggleMenu() { document.getElementById('navMenu').classList.toggle('active'); }
+        
         function toggleLang() {
             document.body.classList.toggle('marathi');
             localStorage.setItem('muktai-lang', document.body.classList.contains('marathi') ? 'mr' : 'en');
         }
 
-        // Initialize Language Preference
-        if (localStorage.getItem('muktai-lang') === null) {
-            document.body.classList.add('marathi'); // Default to Marathi
-            localStorage.setItem('muktai-lang', 'mr');
-        } else if (localStorage.getItem('muktai-lang') === 'mr') {
-            document.body.classList.add('marathi');
-        } else {
+        if (localStorage.getItem('muktai-lang') === 'en') {
             document.body.classList.remove('marathi');
-        }
-
-        // Back to Top Button Logic
-        window.addEventListener('scroll', () => {
-            const btn = document.querySelector('.back-to-top');
-            if (btn) btn.classList.toggle('show', window.scrollY > 300);
-        });
-
-        function scrollToTop() {
-            window.scrollTo({ top: 0, behavior: 'smooth' });
+        } else {
+            document.body.classList.add('marathi');
         }
     </script>
 </body>

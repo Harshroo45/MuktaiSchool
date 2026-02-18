@@ -1,0 +1,1039 @@
+/* styles.css */
+
+/* --- 1. Variables & Reset --- */
+:root {
+    /* Brand Palette */
+    --primary: #0e7490;      /* Teal Blue */
+    --primary-dark: #155e75;
+    --secondary: #334155;    /* Slate */
+    --accent: #f59e0b;       /* Warm Amber */
+    
+    /* Surface & Backgrounds */
+    --bg: #f8fafc;
+    --surface: #ffffff;
+    --surface-transparent: rgba(255, 255, 255, 0.85);
+    
+    /* Typography & UI */
+    --text: #1e293b;
+    --text-light: #64748b;
+    --border-light: rgba(148, 163, 184, 0.2);
+    
+    /* Shadows (Modern & Diffused) */
+    --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.05);
+    --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+    --shadow-hover: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+}
+
+*, *::before, *::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+}
+
+html { 
+    scroll-behavior: smooth; 
+    font-size: 16px;
+}
+
+body {
+    background-color: var(--bg);
+    color: var(--text);
+    line-height: 1.7;
+    overflow-x: hidden;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    -webkit-font-smoothing: antialiased; /* Crisper text on Mac */
+}
+
+/* Prevent image overflow globally */
+img, picture, video, canvas, svg {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+    width: 10px;
+}
+::-webkit-scrollbar-track {
+    background: var(--bg);
+}
+::-webkit-scrollbar-thumb {
+    background: #cbd5e1;
+    border-radius: 5px;
+}
+::-webkit-scrollbar-thumb:hover {
+    background: var(--secondary);
+}
+
+/* Brand Selection Color */
+::selection {
+    background: var(--primary);
+    color: white;
+}
+
+/* --- 2. Animations --- */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-in {
+    animation: fadeIn 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards; /* Smoother easing */
+}
+
+/* --- 3. Layout Utilities --- */
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Fluid Typography */
+h1 { font-size: clamp(2rem, 5vw, 3rem); line-height: 1.2; }
+h2 { font-size: clamp(1.75rem, 4vw, 2.5rem); line-height: 1.3; }
+h3 { font-size: clamp(1.25rem, 3vw, 1.5rem); line-height: 1.4; }
+
+/* --- 4. Header & Navigation --- */
+header {
+    background: var(--surface-transparent);
+    backdrop-filter: blur(12px); /* Glassmorphism effect */
+    -webkit-backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--border-light);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    transition: all 0.3s ease;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 70px;
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    text-decoration: none;
+    color: var(--primary-dark);
+}
+
+.logo-placeholder {
+    width: 45px;
+    height: 45px;
+    background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+    color: white;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 1.3rem;
+    box-shadow: 0 4px 12px rgba(14, 116, 144, 0.25);
+}
+
+.logo-text {
+    display: flex;
+    flex-direction: column;
+}
+
+.logo-text h1 { font-size: 0.95rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.5px; margin: 0; color: var(--secondary); }
+.logo-text p { font-size: 0.7rem; color: var(--text-light); font-weight: 600; margin: 0; }
+
+/* Desktop Navigation */
+.nav-links {
+    display: flex;
+    gap: 30px;
+    align-items: center;
+    list-style: none;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: var(--secondary);
+    font-weight: 500;
+    font-size: 0.95rem;
+    transition: color 0.3s;
+    position: relative;
+    padding: 8px 0;
+}
+
+.nav-links a:hover { color: var(--primary); }
+
+.nav-links a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -2px;
+    left: 0;
+    background-color: var(--accent);
+    transition: width 0.3s ease;
+}
+
+.nav-links a:hover::after { width: 100%; }
+
+/* Language Toggle */
+.lang-toggle {
+    background: var(--secondary);
+    color: white;
+    border: none;
+    padding: 8px 18px;
+    border-radius: 50px;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 0.85rem;
+    transition: all 0.3s;
+    box-shadow: var(--shadow-sm);
+}
+
+.lang-toggle:hover { 
+    background: var(--primary); 
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
+}
+
+/* Mobile Menu Button */
+.menu-toggle {
+    display: none;
+    flex-direction: column;
+    background: none;
+    border: none;
+    cursor: pointer;
+    gap: 6px;
+    padding: 10px; /* Larger touch target */
+    z-index: 1001;
+}
+
+.menu-toggle span {
+    display: block;
+    width: 28px;
+    height: 3px;
+    background: var(--secondary);
+    border-radius: 4px;
+    transition: all 0.3s;
+}
+
+/* --- 5. Hero Section --- */
+.hero {
+    position: relative;
+    height: 50vh;
+    min-height: 400px;
+    background: #0f172a;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.hero.home { height: 85vh; min-height: 550px; }
+
+.slide {
+    position: absolute;
+    inset: 0;
+    opacity: 0;
+    transition: opacity 1.5s ease-in-out;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    z-index: 1;
+}
+.slide.active { opacity: 1; }
+
+.hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, rgba(15, 23, 42, 0.4) 0%, rgba(15, 23, 42, 0.8) 100%);
+    z-index: 5;
+    backdrop-filter: blur(2px);
+}
+
+.hero-content {
+    position: relative;
+    z-index: 10;
+    text-align: center;
+    color: white;
+    padding: 20px;
+    max-width: 900px;
+}
+
+.hero h1 {
+    font-weight: 900;
+    margin-bottom: 20px;
+    text-shadow: 0 4px 20px rgba(0,0,0,0.5);
+}
+
+.hero p {
+    font-size: clamp(1rem, 2.5vw, 1.25rem);
+    font-weight: 400;
+    color: #e2e8f0;
+    margin-bottom: 30px;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* --- 6. Buttons & CTA (FIXED HERE) --- */
+.btn-primary {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--primary);
+    color: white;
+    padding: 12px 28px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 14px rgba(14, 116, 144, 0.4);
+    border: 2px solid transparent;
+}
+
+.btn-primary:hover {
+    background: var(--primary-dark);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(14, 116, 144, 0.6);
+}
+
+.btn-primary:active { transform: translateY(0); }
+
+#cta-sections {
+    background: linear-gradient(135deg, #0e7490 0%, #0f172a 100%);
+    padding: 80px 0;
+}
+
+/* Added Grid styles for CTA */
+.cta-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+}
+
+/* Added Card styles for CTA */
+.cta-card {
+    display: block;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px); /* Safari support */
+    padding: 40px;
+    border-radius: 16px;
+    text-decoration: none;
+    color: white;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background 0.3s;
+}
+
+.cta-card:hover {
+    transform: translateY(-5px);
+    background: rgba(255, 255, 255, 0.15);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+    border-color: rgba(255, 255, 255, 0.3);
+}
+
+.cta-card h3 {
+    margin-bottom: 15px;
+    color: var(--accent);
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+.cta-card p {
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 1rem;
+    line-height: 1.6;
+}
+
+/* --- 7. General Sections --- */
+section { padding: 80px 0; }
+
+.section-header { text-align: center; margin-bottom: 60px; }
+
+.section-title {
+    color: var(--secondary);
+    font-weight: 800;
+    position: relative;
+    display: inline-block;
+}
+
+.section-title::after {
+    content: '';
+    display: block;
+    width: 60%;
+    height: 4px;
+    background: var(--accent);
+    margin: 12px auto 0;
+    border-radius: 10px;
+}
+
+/* --- 8. Cards & Grid System --- */
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+}
+
+.card {
+    background: var(--surface);
+    padding: 40px 30px;
+    border-radius: 20px;
+    box-shadow: var(--shadow-md);
+    border: 1px solid var(--border-light);
+    transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    position: relative;
+    overflow: hidden;
+}
+
+/* Top accent border for cards */
+.card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: var(--primary);
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.4s ease;
+}
+
+.card:hover {
+    transform: translateY(-8px);
+    box-shadow: var(--shadow-hover);
+    border-color: rgba(14, 116, 144, 0.2);
+}
+
+.card:hover::before { transform: scaleX(1); }
+
+.card h3 { color: var(--primary); margin-bottom: 15px; font-weight: 700; }
+
+/* --- 9. Footer --- */
+footer {
+    background: var(--secondary);
+    color: #f1f5f9;
+    padding: 80px 0 30px;
+    font-size: 0.95rem;
+    margin-top: auto;
+}
+
+.footer-content h3 { color: var(--accent); margin-bottom: 25px; font-size: 1.2rem; }
+.footer-content a { 
+    color: #cbd5e1; 
+    text-decoration: none; 
+    transition: 0.3s; 
+    display: block; 
+    margin-bottom: 10px; 
+}
+.footer-content a:hover { color: white; padding-left: 5px; }
+.footer-content ul { list-style: none; }
+
+.footer-bottom {
+    text-align: center;
+    border-top: 1px solid rgba(255,255,255,0.1);
+    padding-top: 25px;
+    margin-top: 40px;
+    color: #94a3b8;
+    font-size: 0.85rem;
+}
+
+/* --- 10. Mobile Responsiveness --- */
+@media (max-width: 768px) {
+    nav { height: 64px; }
+    .menu-toggle { display: flex; }
+    
+    /* Mobile Drawer Menu */
+    .nav-links {
+        position: fixed;
+        top: 64px;
+        left: 0;
+        width: 100%;
+        background: rgba(255, 255, 255, 0.98);
+        backdrop-filter: blur(10px);
+        flex-direction: column;
+        padding: 0;
+        gap: 0;
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+        border-bottom: 1px solid var(--border-light);
+    }
+
+    .nav-links.active {
+        max-height: 500px; /* Reveal menu */
+    }
+
+    .nav-links li {
+        width: 100%;
+        border-bottom: 1px solid rgba(0,0,0,0.05);
+    }
+
+    .nav-links a {
+        display: block;
+        padding: 15px 20px;
+        color: var(--secondary);
+        font-size: 1rem;
+    }
+    
+    .nav-links a:hover {
+        background: #f1f5f9;
+        color: var(--primary);
+    }
+
+    /* Adjust padding for sections */
+    section { padding: 50px 0; }
+    .container { padding: 0 16px; }
+    
+    /* Hero adjustments */
+    .hero.home { height: auto; min-height: 500px; padding: 60px 0; }
+    .hero-content { padding: 10px; }
+    
+    /* Stats grid */
+    .stats-grid { grid-template-columns: 1fr 1fr; }
+    
+    /* Profile Table to Stacked Cards on Mobile */
+    .profile-row { flex-direction: column; }
+    .profile-label { 
+        border-right: none; 
+        border-bottom: 1px solid #e2e8f0; 
+        padding: 12px 20px; 
+        color: var(--primary); 
+    }
+    .profile-value { padding: 12px 20px 24px; }
+}
+
+@media (max-width: 480px) {
+    /* Very small screens */
+    .hero h1 { font-size: 1.75rem; }
+    .btn-primary { width: 100%; text-align: center; }
+    .stats-grid { grid-template-columns: 1fr; }
+    .logo-text { display: none; } /* Hide text, keep logo icon on tiny screens */
+}
+
+/* --- 11. Page Specifics --- */
+
+/* Language Toggle Logic */
+[lang="mr"] { display: none; }
+body.marathi [lang="en"] { display: none; }
+body.marathi [lang="mr"] { display: block; }
+
+/* Back to Top */
+.back-to-top {
+    position: fixed;
+    bottom: 25px;
+    right: 25px;
+    background: var(--primary);
+    color: white;
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    box-shadow: 0 4px 15px rgba(14, 116, 144, 0.4);
+    z-index: 999;
+    border: none;
+    pointer-events: none;
+}
+.back-to-top.show {
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
+}
+
+/* Team Page */
+.team-card {
+    background: white;
+    padding: 0; /* Reset padding for image area */
+}
+.team-content-wrapper { padding: 25px; } /* Inner wrapper for text */
+
+/* Gallery */
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); /* Wider images */
+    gap: 20px;
+}
+.gallery-item {
+    aspect-ratio: 1 / 1; /* Perfect squares */
+    height: auto;
+    border-radius: 16px;
+    background-size: cover;
+    background-position: center;
+}
+
+/* Contact Page */
+.grid-2 {
+    display: grid;
+    grid-template-columns: 1fr 1.2fr; /* Map slightly larger */
+    gap: 40px;
+}
+@media (max-width: 900px) {
+    .grid-2 { grid-template-columns: 1fr; }
+    .map-wrapper { height: 350px; }
+}
+.contact-card {
+    border-left: 5px solid var(--accent); /* Nice accent detail */
+}
+
+/* FAQ */
+.faq-item {
+    border: none;
+    box-shadow: var(--shadow-sm);
+}
+.faq-question {
+    border-radius: 10px;
+    background: white;
+    border: 1px solid transparent;
+}
+.faq-item.active .faq-question {
+    background: #f0f9ff;
+    color: var(--primary-dark);
+    border-color: rgba(14, 116, 144, 0.2);
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+}
+.faq-answer {
+    background: white;
+    border: 1px solid rgba(0,0,0,0.05);
+    border-top: none;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+/* --- Team Page Styles --- */
+.team-grid {
+    display: grid;
+    /* Increased min-width to prevent cards from getting too squashed */
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
+    gap: 40px; /* Increased gap for a cleaner look */
+    margin-top: 40px;
+}
+
+/* Remove the old .team-card styles from styles.css if they conflict, 
+   or let the HTML internal styles override them as I set up above. 
+   The HTML uses classes that rely on the variables defined in :root 
+   so keep the :root variables in styles.css intact. */
+
+   /* --- Professional Footer Styles --- */
+
+.site-footer {
+    background-color: #0f172a; /* Deep Slate Blue */
+    color: #cbd5e1; /* Light Grey Text */
+    padding: 80px 0 30px;
+    font-size: 0.95rem;
+    margin-top: auto;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Top Border Gradient */
+.site-footer::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: linear-gradient(90deg, var(--primary) 0%, var(--accent) 50%, var(--primary) 100%);
+}
+
+.footer-grid {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr 1fr 1fr;
+    gap: 40px;
+    margin-bottom: 60px;
+}
+
+/* Brand Section */
+.footer-brand .logo-text h2 {
+    color: white;
+    font-size: 1.4rem;
+    font-weight: 700;
+    margin: 0;
+    line-height: 1.2;
+}
+
+.footer-logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 20px;
+}
+
+.footer-desc {
+    line-height: 1.6;
+    margin-bottom: 25px;
+    max-width: 300px;
+    color: #94a3b8;
+}
+
+/* --- Social Icons Styling --- */
+.social-links {
+    display: flex;
+    gap: 12px;
+    margin-top: 20px;
+}
+
+.social-icon {
+    width: 40px;
+    height: 40px;
+    background: rgba(255, 255, 255, 0.08);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    color: white;
+    text-decoration: none;
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.social-icon svg {
+    width: 20px;
+    height: 20px;
+    fill: white;
+    transition: fill 0.3s;
+}
+
+/* Brand Specific Hover Effects */
+.social-icon:hover {
+    transform: translateY(-5px);
+    border-color: transparent;
+}
+
+/* Facebook Blue */
+.social-icon.facebook:hover {
+    background: #1877F2;
+    box-shadow: 0 5px 15px rgba(24, 119, 242, 0.4);
+}
+
+/* Instagram Gradient */
+.social-icon.instagram:hover {
+    background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
+    box-shadow: 0 5px 15px rgba(214, 36, 159, 0.4);
+}
+
+/* LinkedIn Blue */
+.social-icon.linkedin:hover {
+    background: #0A66C2;
+    box-shadow: 0 5px 15px rgba(10, 102, 194, 0.4);
+}
+
+/* YouTube Red */
+.social-icon.youtube:hover {
+    background: #FF0000;
+    box-shadow: 0 5px 15px rgba(255, 0, 0, 0.4);
+}
+
+/* Headers */
+.site-footer h3 {
+    color: white;
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-bottom: 25px;
+    position: relative;
+    padding-bottom: 10px;
+}
+
+.site-footer h3::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 40px;
+    height: 2px;
+    background: var(--accent);
+    border-radius: 2px;
+}
+
+/* Link Lists */
+.footer-links ul { list-style: none; padding: 0; margin: 0; }
+.footer-links li { margin-bottom: 12px; }
+.footer-links a { color: #cbd5e1; text-decoration: none; transition: 0.3s; display: inline-block; }
+.footer-links a:hover { color: var(--primary); transform: translateX(5px); }
+
+/* Contact Items */
+.contact-item { display: flex; gap: 15px; margin-bottom: 15px; align-items: flex-start; }
+.contact-item .icon { color: var(--accent); font-size: 1.1rem; margin-top: 2px; }
+.contact-item a { color: #cbd5e1; text-decoration: none; transition: 0.3s; }
+.contact-item a:hover { color: white; text-decoration: underline; }
+
+/* Footer Button */
+.btn-footer {
+    display: inline-block;
+    padding: 10px 20px;
+    background: rgba(255,255,255,0.1);
+    color: white;
+    border: 1px solid rgba(255,255,255,0.2);
+    border-radius: 6px;
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: all 0.3s;
+}
+.btn-footer:hover { background: var(--primary); border-color: var(--primary); color: white; }
+
+/* Bottom Bar */
+.footer-bottom {
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    padding-top: 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    font-size: 0.85rem;
+    color: #64748b;
+}
+
+.legal-links { display: flex; gap: 20px; }
+.legal-links a { color: #64748b; text-decoration: none; transition: 0.3s; }
+.legal-links a:hover { color: white; }
+
+/* Responsive */
+@media (max-width: 992px) {
+    .footer-grid { grid-template-columns: 1fr 1fr; }
+}
+@media (max-width: 600px) {
+    .footer-grid { grid-template-columns: 1fr; gap: 40px; }
+    .footer-bottom { flex-direction: column; text-align: center; }
+}
+
+/* --- Professional Responsive Footer Styles --- */
+
+.site-footer {
+    background-color: #0f172a; /* Deep Slate Blue */
+    color: #cbd5e1; /* Light Grey Text */
+    padding: 80px 0 30px;
+    font-size: 0.95rem;
+    margin-top: auto;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Gradient Top Border */
+.site-footer::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    background: linear-gradient(90deg, var(--primary) 0%, var(--accent) 50%, var(--primary) 100%);
+}
+
+.footer-grid {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr 1fr 1fr;
+    gap: 40px;
+    margin-bottom: 60px;
+}
+
+/* --- Brand Section --- */
+.footer-brand .logo-text h2 {
+    color: white;
+    font-size: 1.4rem;
+    font-weight: 700;
+    margin: 0;
+    line-height: 1.2;
+}
+
+.footer-logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 20px;
+}
+
+.footer-desc {
+    line-height: 1.6;
+    margin-bottom: 25px;
+    max-width: 300px;
+    color: #94a3b8;
+}
+
+/* --- Social Icons --- */
+.social-links {
+    display: flex;
+    gap: 12px;
+    margin-top: 20px;
+}
+
+.social-icon {
+    width: 40px;
+    height: 40px;
+    background: rgba(255, 255, 255, 0.08);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    color: white;
+    text-decoration: none;
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.social-icon svg {
+    width: 20px;
+    height: 20px;
+    fill: white;
+    transition: fill 0.3s;
+}
+
+.social-icon:hover {
+    transform: translateY(-5px);
+    border-color: transparent;
+}
+
+/* Brand Colors on Hover */
+.social-icon.facebook:hover { background: #1877F2; box-shadow: 0 5px 15px rgba(24, 119, 242, 0.4); }
+.social-icon.instagram:hover { background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%); box-shadow: 0 5px 15px rgba(214, 36, 159, 0.4); }
+.social-icon.linkedin:hover { background: #0A66C2; box-shadow: 0 5px 15px rgba(10, 102, 194, 0.4); }
+.social-icon.youtube:hover { background: #FF0000; box-shadow: 0 5px 15px rgba(255, 0, 0, 0.4); }
+
+/* --- Headings --- */
+.site-footer h3 {
+    color: white;
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-bottom: 25px;
+    position: relative;
+    padding-bottom: 10px;
+}
+
+.site-footer h3::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 40px;
+    height: 2px;
+    background: var(--accent);
+    border-radius: 2px;
+}
+
+/* --- Links --- */
+.footer-links ul { list-style: none; padding: 0; margin: 0; }
+.footer-links li { margin-bottom: 12px; }
+.footer-links a { color: #cbd5e1; text-decoration: none; transition: 0.3s; display: inline-block; }
+.footer-links a:hover { color: var(--primary); transform: translateX(5px); }
+
+/* --- Contact Items --- */
+.contact-item { display: flex; gap: 15px; margin-bottom: 15px; align-items: flex-start; }
+.contact-item .icon { color: var(--accent); font-size: 1.1rem; margin-top: 2px; flex-shrink: 0; }
+.contact-item a { color: #cbd5e1; text-decoration: none; transition: 0.3s; }
+.contact-item a:hover { color: white; text-decoration: underline; }
+
+/* --- Footer Button --- */
+.btn-footer {
+    display: inline-block;
+    padding: 10px 20px;
+    background: rgba(255,255,255,0.1);
+    color: white;
+    border: 1px solid rgba(255,255,255,0.2);
+    border-radius: 6px;
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: all 0.3s;
+}
+.btn-footer:hover { background: var(--primary); border-color: var(--primary); color: white; }
+
+/* --- Bottom Bar --- */
+.footer-bottom {
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    padding-top: 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    font-size: 0.85rem;
+    color: #64748b;
+}
+
+.legal-links { display: flex; gap: 20px; }
+.legal-links a { color: #64748b; text-decoration: none; transition: 0.3s; }
+.legal-links a:hover { color: white; }
+
+/* --- RESPONSIVE MEDIA QUERIES --- */
+
+/* Tablet (Landscape & Portrait) */
+@media (max-width: 992px) {
+    .footer-grid {
+        grid-template-columns: 1fr 1fr; /* Switch to 2 columns */
+        gap: 50px;
+    }
+}
+
+/* Mobile (Phones) */
+@media (max-width: 600px) {
+    .site-footer {
+        padding: 50px 0 30px;
+    }
+
+    .footer-grid {
+        grid-template-columns: 1fr; /* Switch to 1 column */
+        gap: 40px;
+    }
+
+    .footer-brand {
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .footer-logo {
+        justify-content: center;
+    }
+
+    .footer-desc {
+        text-align: center;
+        margin-inline: auto; /* Centers text block */
+    }
+
+    .social-links {
+        justify-content: center;
+    }
+
+    /* Center headings on mobile for better balance */
+    .site-footer h3 {
+        text-align: center;
+    }
+    
+    .site-footer h3::after {
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    .footer-links ul {
+        text-align: center;
+    }
+
+    /* Center align contact items on mobile */
+    .contact-item {
+        justify-content: center;
+        text-align: center;
+    }
+
+    .footer-cta {
+        text-align: center;
+    }
+
+    .footer-bottom {
+        flex-direction: column;
+        text-align: center;
+        gap: 15px;
+    }
+}

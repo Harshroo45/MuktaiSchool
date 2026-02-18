@@ -6,434 +6,60 @@
     <title>Muktai Balgruha | Lavangi, Mangalwedha</title>
     <meta name="description" content="Muktai Matimand Mulanche Balgruha, Lavangi. Established 2004-05.">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
-    <style>
-        :root {
-            /* Professional & Caring Palette */
-            --primary: #0e7490; /* Teal Blue */
-            --primary-dark: #155e75;
-            --secondary: #334155; /* Slate */
-            --accent: #f59e0b; /* Warm Amber */
-            --bg: #f8fafc;
-            --surface: #ffffff;
-            --text: #1e293b;
-            --text-light: #64748b;
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Inter', sans-serif;
-        }
-
-        html { scroll-behavior: smooth; }
-
-        body {
-            background-color: var(--bg);
-            color: var(--text);
-            line-height: 1.7;
-            overflow-x: hidden;
-        }
-
-        /* --- Animations --- */
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-
-        .animate-in {
-            animation: fadeIn 0.8s ease-out forwards;
-        }
-
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-
-        /* --- Header --- */
-        header {
-            background: var(--surface);
-            box-shadow: 0 4px 20px rgba(0,0,0,0.06);
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-        }
-
-        nav {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            height: 90px;
-        }
-
-        .logo-container {
-            display: flex;
-            align-items: center;
-            gap: 15px;
-        }
-
-        .logo-placeholder {
-            width: 50px;
-            height: 50px;
-            background: var(--primary);
-            color: white;
-            border-radius: 8px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-weight: bold;
-            font-size: 1.5rem;
-        }
-
-        .logo-text {
-            display: flex;
-            flex-direction: column;
-        }
-
-        .logo-title {
-            font-size: 1.1rem;
-            font-weight: 700;
-            color: var(--primary-dark);
-            line-height: 1.2;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-        }
-
-        .logo-subtitle {
-            font-size: 0.8rem;
-            color: var(--text-light);
-            font-weight: 500;
-        }
-
-        .nav-links {
-            display: flex;
-            gap: 25px;
-            align-items: center;
-        }
-
-        .nav-links a {
-            text-decoration: none;
-            color: var(--secondary);
-            font-weight: 500;
-            font-size: 0.95rem;
-            transition: all 0.3s;
-            position: relative;
-        }
-
-        .nav-links a:hover { color: var(--primary); }
-
-        .nav-links a::after {
-            content: '';
-            position: absolute;
-            width: 0;
-            height: 2px;
-            bottom: -5px;
-            left: 0;
-            background-color: var(--accent);
-            transition: width 0.3s;
-        }
-
-        .nav-links a:hover::after { width: 100%; }
-
-        .lang-toggle {
-            background: var(--secondary);
-            color: white;
-            border: none;
-            padding: 8px 18px;
-            border-radius: 50px;
-            cursor: pointer;
-            font-weight: 600;
-            font-size: 0.8rem;
-            transition: background 0.3s;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-        }
-
-        .lang-toggle:hover { background: var(--primary); }
-
-        /* --- Hero Section --- */
-        .hero {
-            position: relative;
-            height: 75vh;
-            min-height: 500px;
-            background: #0f172a;
-            overflow: hidden;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .hero-overlay {
-            position: absolute;
-            inset: 0;
-            background: linear-gradient(rgba(14, 116, 144, 0.8), rgba(15, 23, 42, 0.9));
-            z-index: 5;
-        }
-
-        .slide {
-            position: absolute;
-            inset: 0;
-            opacity: 0;
-            transition: opacity 2s ease-in-out;
-            background-size: cover;
-            background-position: center;
-            background-repeat: no-repeat;
-        }
-
-        .slide.active { opacity: 1; }
-
-        .hero-content {
-            position: relative;
-            z-index: 10;
-            text-align: center;
-            color: white;
-            padding: 20px;
-            max-width: 900px;
-        }
-
-        .hero h1 {
-            font-size: clamp(1.8rem, 5vw, 3rem);
-            font-weight: 800;
-            margin-bottom: 20px;
-            line-height: 1.3;
-            text-shadow: 0 2px 10px rgba(0,0,0,0.3);
-        }
-
-        .hero p {
-            font-size: clamp(1rem, 2.5vw, 1.3rem);
-            font-weight: 300;
-            color: #e2e8f0;
-            margin-bottom: 30px;
-        }
-
-        /* --- General Sections --- */
-        section { padding: 80px 0; }
-
-        .section-header {
-            text-align: center;
-            margin-bottom: 60px;
-        }
-
-        .section-title {
-            font-size: 2.2rem;
-            color: var(--secondary);
-            font-weight: 700;
-            position: relative;
-            display: inline-block;
-        }
-
-        .section-title::after {
-            content: '';
-            display: block;
-            width: 50%;
-            height: 4px;
-            background: var(--accent);
-            margin: 15px auto 0;
-            border-radius: 2px;
-        }
-
-        /* --- Info Cards --- */
-        .grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-        }
-
-        .card {
-            background: var(--surface);
-            padding: 35px;
-            border-radius: 16px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.04);
-            border: 1px solid rgba(0,0,0,0.03);
-            transition: transform 0.3s, box-shadow 0.3s;
-        }
-
-        .card:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 20px 40px rgba(0,0,0,0.08);
-            border-color: var(--primary);
-        }
-
-        .card h3 {
-            color: var(--primary);
-            margin-bottom: 15px;
-            font-size: 1.4rem;
-        }
-
-        /* --- Institutional Profile (Details) --- */
-        .profile-section {
-            background: white;
-            border-radius: 16px;
-            overflow: hidden;
-            box-shadow: 0 4px 25px rgba(0,0,0,0.05);
-        }
-        
-        .profile-row {
-            display: flex;
-            border-bottom: 1px solid #f1f5f9;
-        }
-        
-        .profile-row:last-child { border-bottom: none; }
-        
-        .profile-label {
-            flex: 1;
-            padding: 20px;
-            background: #f8fafc;
-            font-weight: 600;
-            color: var(--secondary);
-            border-right: 1px solid #f1f5f9;
-            min-width: 180px;
-        }
-        
-        .profile-value {
-            flex: 2;
-            padding: 20px;
-            color: var(--text);
-        }
-
-        /* --- Map Section --- */
-        .map-wrapper {
-            border-radius: 16px;
-            overflow: hidden;
-            height: 400px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-            position: relative;
-            margin-bottom: 20px;
-        }
-
-        .map-btn {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            width: 100%;
-            padding: 15px;
-            background: var(--surface);
-            color: var(--primary);
-            border: 2px solid var(--primary);
-            border-radius: 8px;
-            text-decoration: none;
-            font-weight: 600;
-            transition: all 0.3s;
-        }
-
-        .map-btn:hover {
-            background: var(--primary);
-            color: white;
-        }
-
-        .contact-info p {
-            margin-bottom: 15px;
-            display: flex;
-            align-items: flex-start;
-            gap: 10px;
-        }
-
-        .icon { color: var(--primary); }
-
-        /* --- Footer --- */
-        footer {
-            background: var(--secondary);
-            color: #f1f5f9;
-            padding: 70px 0 30px;
-            font-size: 0.95rem;
-        }
-
-        .footer-content h3 { color: var(--accent); margin-bottom: 20px; }
-        .footer-content a { color: #cbd5e1; text-decoration: none; transition: 0.3s; }
-        .footer-content a:hover { color: white; }
-
-        /* --- Mobile --- */
-        .menu-toggle {
-            display: none;
-            background: none;
-            border: none;
-            cursor: pointer;
-        }
-        .menu-toggle span {
-            display: block;
-            width: 25px;
-            height: 3px;
-            background: var(--secondary);
-            margin: 5px 0;
-        }
-
-        @media (max-width: 768px) {
-            nav { height: 70px; }
-            .menu-toggle { display: block; }
-            
-            .nav-links {
-                position: fixed;
-                top: 70px;
-                left: 0;
-                width: 100%;
-                background: white;
-                flex-direction: column;
-                padding: 30px;
-                box-shadow: 0 10px 20px rgba(0,0,0,0.1);
-                clip-path: circle(0% at 100% 0);
-                transition: clip-path 0.5s ease-in-out;
-            }
-
-            .nav-links.active {
-                clip-path: circle(150% at 100% 0);
-            }
-            
-            .profile-row { flex-direction: column; }
-            .profile-label { border-right: none; border-bottom: 1px solid #e2e8f0; padding: 10px 20px; }
-            .profile-value { padding: 10px 20px 20px; }
-        }
-
-        /* Lang Logic */
-        [lang="mr"] { display: none; }
-        body.marathi [lang="en"] { display: none; }
-        body.marathi [lang="mr"] { display: block; }
-    </style>
+    <link rel="stylesheet" href="css/styles.css">
 </head>
-<body>
+<body class="marathi">
 
     <header>
         <div class="container">
             <nav>
-                <div class="logo-container">    
+                <a href="index.html" class="logo-container">
                     <div class="logo-placeholder">M</div>
-                    
                     <div class="logo-text">
-                        <span class="logo-title" lang="en">Muktai Matimand Mulanche Balgruha, Lavangi</span>
-                        <span class="logo-title" lang="mr">मुक्ताई मतिमंद मुलांचे बालगृह, लवंगी</span>
-                        <span class="logo-subtitle">LAVANGI, SOLAPUR</span>
+                        <h1 lang="en">Muktai Balgruha</h1>
+                        <h1 lang="mr">मुक्ताई बालगृह</h1>
+                        <p lang="en">Lavangi, Solapur</p>
+                        <p lang="mr">लवंगी, सोलापूर</p>
                     </div>
-                </div>
+                </a>
 
-                <button class="menu-toggle" onclick="toggleMenu()">
+                <button class="menu-toggle" onclick="toggleMenu()" aria-label="Menu">
                     <span></span><span></span><span></span>
                 </button>
 
-                <div class="nav-links" id="navMenu">
-                    <a href="index.html"><span lang="en">Home</span><span lang="mr">मुख्य</span></a>
-                    <a href="about.html"><span lang="en">About Us</span><span lang="mr">माहिती</span></a>
-                    <a href="profile.html"><span lang="en">Profile</span><span lang="mr">तपशील</span></a>
-                    <a href="contact.html"><span lang="en">Contact</span><span lang="mr">संपर्क</span></a>
-                    <button class="lang-toggle" onclick="toggleLang()">मराठी / ENGLISH</button>
-                </div>
+                <ul class="nav-links" id="navMenu">
+                    <li><a href="index.html"><span lang="en">Home</span><span lang="mr">मुख्य</span></a></li>
+                    <li><a href="about.html"><span lang="en">About</span><span lang="mr">माहिती</span></a></li>
+                    <li><a href="team.html"><span lang="en">Team</span><span lang="mr">टीम</span></a></li>
+                    <li><a href="gallery.html"><span lang="en">Gallery</span><span lang="mr">गॅलरी</span></a></li>
+                    <li><a href="faq.html"><span lang="en">FAQ</span><span lang="mr">प्रश्न</span></a></li>
+                    <li><a href="contact.html"><span lang="en">Contact</span><span lang="mr">संपर्क</span></a></li>
+                    <li><button class="lang-toggle" onclick="toggleLang()">EN / मराठी</button></li>
+                </ul>
             </nav>
         </div>
     </header>
 
-    <div id="home" class="hero">
-    <div class="hero-overlay"></div>
-    
-    <div class="slide active" style="background-image: url('/images/one.jpg')"></div>
-    
-    <div class="slide" style="background-image: url('/images/two.jpg')"></div>
-    
-    <div class="hero-content animate-in">
-        <h1 lang="en">Muktai Matimand Mulanche Balgruha, Lavangi</h1>
-        <h1 lang="mr">मुक्ताई मतिमंद मुलांचे बालगृह, लवंगी</h1>
+    <div id="home" class="hero home">
+        <div class="hero-overlay"></div>
         
-        <p lang="en">Est. 2004-05 | Tahsil Mangalwedha, Dist. Solapur</p>
-        <p lang="mr">स्थापना २००४-०५ | ता. मंगळवेढा, जि. सोलापूर</p>
+        <div class="slide active" style="background-image: url('images/one.jpg'); background-color: #334155;"></div>
+        <div class="slide" style="background-image: url('images/two.jpg'); background-color: #0e7490;"></div>
+        
+        <div class="hero-content animate-in">
+            <h1 lang="en">Muktai Matimand Mulanche Balgruha, Lavangi</h1>
+            <h1 lang="mr">मुक्ताई मतिमंद मुलांचे बालगृह, लवंगी</h1>
+            
+            <p lang="en" class="hero-subtitle">Est. 2004-05 | Tahsil Mangalwedha, Dist. Solapur</p>
+            <p lang="mr" class="hero-subtitle">स्थापना २००४-०५ | ता. मंगळवेढा, जि. सोलापूर</p>
+
+            <div class="mt-30">
+                <a href="about.html" class="btn-primary btn-ghost">
+                    <span lang="en">Learn More</span><span lang="mr">अधिक जाणून घ्या</span>
+                </a>
+            </div>
+        </div>
     </div>
-</div>
 
     <section id="about">
         <div class="container">
@@ -463,79 +89,140 @@
                     <p lang="mr">मंगळवेढा आणि सोलापूरच्या ग्रामीण भागातील दिव्यांग मुलांच्या कुटुंबांना आधार देण्याचे कार्य.</p>
                 </div>
             </div>
-            <div style="text-align: center; margin-top: 40px;">
-                <a href="about.html" style="display: inline-block; padding: 12px 30px; background: var(--primary); color: white; text-decoration: none; border-radius: 8px; font-weight: 600; transition: 0.3s;" onmouseover="this.style.background='var(--primary-dark)'" onmouseout="this.style.background='var(--primary)'" lang="en">Learn More About Us</a>
-                <a href="about.html" style="display: inline-block; padding: 12px 30px; background: var(--primary); color: white; text-decoration: none; border-radius: 8px; font-weight: 600; transition: 0.3s;" onmouseover="this.style.background='var(--primary-dark)'" onmouseout="this.style.background='var(--primary)'" lang="mr">आमच्याबद्दल अधिक जाणून घ्या</a>
-            </div>
         </div>
     </section>
 
-    <section id="cta-sections" style="background: linear-gradient(135deg, #0e7490 0%, #155e75 100%); color: white;">
-        <div class="container">
-            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px;">
-                <a href="profile.html" style="background: rgba(255,255,255,0.1); backdrop-filter: blur(10px); padding: 40px; border-radius: 12px; text-decoration: none; color: white; transition: 0.3s; border: 1px solid rgba(255,255,255,0.2);" onmouseover="this.style.background='rgba(255,255,255,0.2)'" onmouseout="this.style.background='rgba(255,255,255,0.1)'">
-                    <h3 style="margin-bottom: 10px;" lang="en">📋 Institutional Profile</h3>
-                    <h3 style="margin-bottom: 10px;" lang="mr">📋 संस्थेचा तपशील</h3>
-                    <p lang="en">Explore our detailed institutional information, statistics, and facilities.</p>
-                    <p lang="mr">आमच्या संस्थेचा तपशील, आकडे आणि सुविधा जाणून घ्या।</p>
-                </a>
-                <a href="contact.html" style="background: rgba(255,255,255,0.1); backdrop-filter: blur(10px); padding: 40px; border-radius: 12px; text-decoration: none; color: white; transition: 0.3s; border: 1px solid rgba(255,255,255,0.2);" onmouseover="this.style.background='rgba(255,255,255,0.2)'" onmouseout="this.style.background='rgba(255,255,255,0.1)'">
-                    <h3 style="margin-bottom: 10px;" lang="en">📍 Get in Touch</h3>
-                    <h3 style="margin-bottom: 10px;" lang="mr">📍 आमच्याशी संपर्क साधा</h3>
-                    <p lang="en">Find our location, contact information, and directions to visit us.</p>
-                    <p lang="mr">आमचा पत्ता, संपर्क माहिती आणि आमच्याकडे येण्याचे दिशानिर्देश।</p>
-                </a>
-            </div>
+    <section id="cta-sections">
+    <div class="container">
+        <div class="cta-grid">
+            <a href="profile.html" class="cta-card">
+                <h3 lang="en">📋 Institutional Profile</h3>
+                <h3 lang="mr">📋 संस्थेचा तपशील</h3>
+                <p lang="en">Explore our detailed institutional information, statistics, and facilities.</p>
+                <p lang="mr">आमच्या संस्थेचा तपशील, आकडे आणि सुविधा जाणून घ्या।</p>
+            </a>
+            <a href="contact.html" class="cta-card">
+                <h3 lang="en">📍 Get in Touch</h3>
+                <h3 lang="mr">📍 आमच्याशी संपर्क साधा</h3>
+                <p lang="en">Find our location, contact information, and directions to visit us.</p>
+                <p lang="mr">आमचा पत्ता, संपर्क माहिती आणि आमच्याकडे येण्याचे दिशानिर्देश।</p>
+            </a>
         </div>
-    </section>
+    </div>
+</section>
 
-    <footer>
-        <div class="container">
-            <div class="grid footer-content">
-                <div>
-                    <h3 lang="en">Muktai Balgruha</h3>
-                    <h3 lang="mr">मुक्ताई बालगृह</h3>
-                    <p lang="en">Dedicated to the service of humanity through the care of special children.</p>
-                    <p lang="mr">दिव्यांग मुलांच्या सेवेतून माणुसकीची जपणूक.</p>
+   <footer class="site-footer">
+    <div class="container">
+        <div class="footer-grid">
+            
+            <div class="footer-brand">
+                <div class="footer-logo">
+                    <div class="logo-placeholder">M</div>
+                    <div class="logo-text">
+                        <h2 lang="en">Muktai Balgruha</h2>
+                        <h2 lang="mr">मुक्ताई बालगृह</h2>
+                    </div>
                 </div>
-                <div>
-                    <h3 lang="en">Quick Links</h3>
-                    <h3 lang="mr">महत्वाचे दुवे</h3>
-                    <ul style="list-style: none;">
-                        <li><a href="index.html">Home / मुख्य</a></li>
-                        <li><a href="about.html">About / माहिती</a></li>
-                        <li><a href="profile.html">Profile / तपशील</a></li>
-                        <li><a href="contact.html">Contact / संपर्क</a></li>
-                    </ul>
+                <p class="footer-desc" lang="en">
+                    A sanctuary of hope, providing care, education, and rehabilitation for special children since 2004.
+                </p>
+                <p class="footer-desc" lang="mr">
+                    २००४ पासून विशेष मुलांसाठी काळजी, शिक्षण आणि पुनर्वसन प्रदान करणारे आशेचे आश्रयस्थान.
+                </p>
+                
+                <div class="social-links">
+                    <a href="#" aria-label="Facebook" class="social-icon facebook">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2.04C6.5 2.04 2 6.53 2 12.06C2 17.06 5.66 21.21 10.44 21.96V14.96H7.9V12.06H10.44V9.85C10.44 7.34 11.93 5.96 14.15 5.96C15.21 5.96 16.12 6.04 16.12 6.04V8.51H15.01C13.77 8.51 13.38 9.28 13.38 10.07V12.06H16.16L15.72 14.96H13.38V21.96C18.16 21.21 21.82 17.06 21.82 12.06C21.82 6.53 17.32 2.04 12 2.04Z"/></svg>
+                    </a>
+                    <a href="#" aria-label="Instagram" class="social-icon instagram">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M7.8,2H16.2C19.4,2 22,4.6 22,7.8V16.2A5.8,5.8 0 0,1 16.2,22H7.8C4.6,22 2,19.4 2,16.2V7.8A5.8,5.8 0 0,1 7.8,2M7.6,4A3.6,3.6 0 0,0 4,7.6V16.4C4,18.39 5.61,20 7.6,20H16.4A3.6,3.6 0 0,0 20,16.4V7.6C20,5.61 18.39,4 16.4,4H7.6M17.25,5.5A1.25,1.25 0 0,1 18.5,6.75A1.25,1.25 0 0,1 17.25,8A1.25,1.25 0 0,1 16,6.75A1.25,1.25 0 0,1 17.25,5.5M12,7A5,5 0 0,1 17,12A5,5 0 0,1 12,17A5,5 0 0,1 7,12A5,5 0 0,1 12,7M12,9A3,3 0 0,0 9,12A3,3 0 0,0 12,15A3,3 0 0,0 15,12A3,3 0 0,0 12,9Z"/></svg>
+                    </a>
+                    <a href="#" aria-label="LinkedIn" class="social-icon linkedin">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 3A2 2 0 0 1 21 5V19A2 2 0 0 1 19 21H5A2 2 0 0 1 3 19V5A2 2 0 0 1 5 3H19M8.5 19V8H5.5V19H8.5M7 6.5C6.17 6.5 5.5 5.83 5.5 5C5.5 4.17 6.17 3.5 7 3.5C7.83 3.5 8.5 4.17 8.5 5C8.5 5.83 7.83 6.5 7 6.5M19 19V13.5C19 11.28 17.5 10.5 16.5 10.5C15.46 10.5 14.92 11.11 14.5 11.5V8.5H11.5V19H14.5V14.5C14.5 13.67 15.17 13 16 13C16.83 13 17.5 13.67 17.5 14.5V19H19Z"/></svg>
+                    </a>
+                    <a href="#" aria-label="YouTube" class="social-icon youtube">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19.615 3.184c-3.604-.246-11.631-.245-15.23 0-3.897.266-4.356 2.62-4.385 8.816.029 6.185.484 8.549 4.385 8.816 3.6.245 11.626.246 15.23 0 3.897-.266 4.356-2.62 4.385-8.816-.029-6.185-.484-8.549-4.385-8.816zm-10.615 12.816v-8l8 3.993-8 4.007z"/></svg>
+                    </a>
                 </div>
             </div>
-            <div style="text-align:center; border-top:1px solid rgba(255,255,255,0.1); padding-top:20px; margin-top: 40px; color:#94a3b8; font-size:0.85rem;">
-                <p>© 2024 Muktai Balgruha, Lavangi. All Rights Reserved.</p>
+
+            <div class="footer-links">
+                <h3 lang="en">Quick Links</h3>
+                <h3 lang="mr">महत्वाचे दुवे</h3>
+                <ul>
+                    <li><a href="index.html"><span lang="en">Home</span><span lang="mr">मुख्य</span></a></li>
+                    <li><a href="about.html"><span lang="en">About Us</span><span lang="mr">आमच्याबद्दल</span></a></li>
+                    <li><a href="team.html"><span lang="en">Our Team</span><span lang="mr">टीम</span></a></li>
+                    <li><a href="gallery.html"><span lang="en">Gallery</span><span lang="mr">गॅलरी</span></a></li>
+                    <li><a href="faq.html"><span lang="en">FAQ</span><span lang="mr">प्रश्न</span></a></li>
+                </ul>
+            </div>
+
+            <div class="footer-contact">
+                <h3 lang="en">Contact Us</h3>
+                <h3 lang="mr">संपर्क साधा</h3>
+                
+                <div class="contact-item">
+                    <span class="icon">📍</span>
+                    <div>
+                        <span lang="en">A/P Lavangi, Tal. Mangalwedha,<br>Dist. Solapur - 413305</span>
+                        <span lang="mr">मु.पो. लवंगी, ता. मंगळवेढा,<br>जि. सोलापूर - ४१३३०५</span>
+                    </div>
+                </div>
+                
+                <div class="contact-item">
+                    <span class="icon">📞</span>
+                    <div>
+                        <a href="tel:+919876543210">+91 98765 43210</a>
+                    </div>
+                </div>
+
+                <div class="contact-item">
+                    <span class="icon">✉️</span>
+                    <div>
+                        <a href="mailto:info@muktaibalgruha.org">info@muktaibalgruha.org</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-cta">
+                <h3 lang="en">Visit Us</h3>
+                <h3 lang="mr">आम्हाला भेट द्या</h3>
+                <p lang="en" style="font-size: 0.9rem; margin-bottom: 15px; color: #94a3b8;">We welcome visitors to see our work firsthand.</p>
+                <p lang="mr" style="font-size: 0.9rem; margin-bottom: 15px; color: #94a3b8;">आमचे कार्य प्रत्यक्ष पाहण्यासाठी आम्ही अभ्यागतांचे स्वागत करतो.</p>
+                <a href="contact.html" class="btn-footer">
+                    <span lang="en">Get Directions →</span>
+                    <span lang="mr">दिशानिर्देश मिळवा →</span>
+                </a>
+            </div>
+
+        </div>
+
+        <div class="footer-bottom">
+            <div class="copyright">
+                <p lang="en">© 2024 Muktai Balgruha. All Rights Reserved.</p>
+                <p lang="mr">© 2024 मुक्ताई बालगृह. सर्वाधिकार राखीव.</p>
+            </div>
+            <div class="legal-links">
+                <a href="#"><span lang="en">Privacy Policy</span><span lang="mr">गोपनीयता धोरण</span></a>
+                <a href="#"><span lang="en">Terms of Use</span><span lang="mr">वापराच्या अटी</span></a>
             </div>
         </div>
-    </footer>
+    </div>
+</footer>
+    <button class="back-to-top" onclick="scrollToTop()" aria-label="Back to top">↑</button>
 
     <script>
-        // Mobile Menu Toggle
-        function toggleMenu() {
-            const menu = document.getElementById('navMenu');
-            menu.classList.toggle('active');
-        }
-
-        // Close menu on click
-        document.querySelectorAll('.nav-links a').forEach(link => {
-            link.addEventListener('click', () => {
-                document.getElementById('navMenu').classList.remove('active');
-            });
-        });
-
-        // Language Toggle
+        function toggleMenu() { document.getElementById('navMenu').classList.toggle('active'); }
+        
         function toggleLang() {
             document.body.classList.toggle('marathi');
             localStorage.setItem('muktai-lang', document.body.classList.contains('marathi') ? 'mr' : 'en');
         }
 
-        if (localStorage.getItem('muktai-lang') === 'mr') {
+        if (localStorage.getItem('muktai-lang') === 'en') {
+            document.body.classList.remove('marathi');
+        } else {
             document.body.classList.add('marathi');
         }
 
@@ -544,12 +231,21 @@
         const slides = document.querySelectorAll('.slide');
         
         function rotateSlides() {
-            slides[currentSlide].classList.remove('active');
-            currentSlide = (currentSlide + 1) % slides.length;
-            slides[currentSlide].classList.add('active');
+            if(slides.length > 0) {
+                slides[currentSlide].classList.remove('active');
+                currentSlide = (currentSlide + 1) % slides.length;
+                slides[currentSlide].classList.add('active');
+            }
         }
+        setInterval(rotateSlides, 6000);
 
-        setInterval(rotateSlides, 6000); 
+        // Scroll Top
+        window.addEventListener('scroll', () => {
+            const btn = document.querySelector('.back-to-top');
+            if(btn) btn.classList.toggle('show', window.scrollY > 300);
+        });
+
+        function scrollToTop() { window.scrollTo({ top: 0, behavior: 'smooth' }); }
     </script>
 </body>
 </html>

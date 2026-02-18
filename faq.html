@@ -3,120 +3,88 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact Us | Muktai Balgruha</title>
-    <meta name="description" content="Contact information and location of Muktai Balgruha, Lavangi, Mangalwedha, Solapur.">
+    <title>FAQ | Muktai Balgruha</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/styles.css">
     <style>
-        /* --- Contact Page Specific Styles --- */
-        
-        .contact-section {
+        /* FAQ Page Specific Styles */
+        .faq-section {
             background-color: #f8fafc;
             padding: 60px 0;
         }
 
-        .contact-grid-layout {
-            display: grid;
-            grid-template-columns: 1fr 1.5fr; /* Info takes less space, Map takes more */
-            gap: 40px;
+        .faq-container {
+            max-width: 800px; /* Narrower width for better reading experience */
+            margin: 0 auto;
         }
 
-        /* Info Cards Styling */
-        .info-card {
+        .faq-item {
             background: white;
-            padding: 25px;
-            border-radius: 16px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
-            border: 1px solid #e2e8f0;
-            display: flex;
-            align-items: flex-start;
-            gap: 20px;
-            margin-bottom: 20px;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-
-        .info-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 25px rgba(14, 116, 144, 0.1);
-            border-color: rgba(14, 116, 144, 0.2);
-        }
-
-        .info-icon-box {
-            background: rgba(14, 116, 144, 0.1);
-            color: var(--primary);
-            width: 50px;
-            height: 50px;
             border-radius: 12px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.5rem;
-            flex-shrink: 0;
-        }
-
-        .info-content h3 {
-            font-size: 1.1rem;
-            font-weight: 700;
-            color: var(--secondary);
-            margin-bottom: 8px;
-        }
-
-        .info-content p, .info-content a {
-            color: #64748b;
-            font-size: 0.95rem;
-            text-decoration: none;
-            line-height: 1.6;
-            margin: 0;
-            display: block;
-        }
-
-        .info-content a:hover {
-            color: var(--primary);
-        }
-
-        /* Map Styling */
-        .map-container {
-            border-radius: 20px;
+            margin-bottom: 16px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+            border: 1px solid #e2e8f0;
             overflow: hidden;
-            box-shadow: 0 10px 40px rgba(0,0,0,0.1);
-            height: 100%;
-            min-height: 500px;
-            position: relative;
-            border: 4px solid white;
+            transition: all 0.3s ease;
         }
 
-        .map-container iframe {
-            width: 100%;
-            height: 100%;
-            border: none;
-            filter: contrast(1.1) saturate(1.1); /* Slight enhancement for satellite view */
+        .faq-item:hover {
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+            border-color: #cbd5e1;
         }
 
-        /* Hours Table */
-        .hours-box {
-            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
-            color: white;
-            padding: 30px;
-            border-radius: 16px;
-            margin-top: 10px;
+        .faq-item.active {
+            border-color: var(--primary);
+            box-shadow: 0 4px 15px rgba(14, 116, 144, 0.1);
         }
 
-        .hours-row {
+        .faq-question {
+            padding: 20px 24px;
+            font-weight: 600;
+            color: #1e293b;
+            cursor: pointer;
             display: flex;
             justify-content: space-between;
-            padding: 8px 0;
-            border-bottom: 1px solid rgba(255,255,255,0.2);
+            align-items: center;
+            background: white;
+            transition: background 0.3s;
+            font-size: 1.05rem;
         }
-        .hours-row:last-child { border-bottom: none; }
 
-        @media (max-width: 900px) {
-            .contact-grid-layout {
-                grid-template-columns: 1fr; /* Stack on mobile */
-            }
-            .map-container {
-                min-height: 350px;
-                order: -1; /* Map on top for mobile */
-            }
+        .faq-item.active .faq-question {
+            background: #f0f9ff; /* Light blue background when active */
+            color: var(--primary-dark);
+        }
+
+        .faq-icon {
+            font-size: 0.8rem;
+            color: #64748b;
+            transition: transform 0.3s ease;
+        }
+
+        .faq-item.active .faq-icon {
+            transform: rotate(180deg);
+            color: var(--primary);
+        }
+
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.4s ease-out;
+            background: white;
+        }
+
+        .faq-answer-content {
+            padding: 0 24px 24px 24px;
+            color: #475569;
+            line-height: 1.7;
+            font-size: 0.95rem;
+            border-top: 1px solid transparent;
+        }
+
+        .faq-item.active .faq-answer-content {
+            border-top-color: rgba(14, 116, 144, 0.1);
+            padding-top: 20px; /* Add padding when open */
         }
     </style>
 </head>
@@ -152,72 +120,85 @@
 
     <div class="page-header">
         <div class="container">
-            <h1 lang="en">Get in Touch</h1>
-            <h1 lang="mr">संपर्क साधा</h1>
-            <p lang="en" style="color: #000000; margin-top: 10px;">We are here to answer your questions and welcome your visit.</p>
-            <p lang="mr" style="color: #000000; margin-top: 10px;">आम्ही तुमच्या प्रश्नांची उत्तरे देण्यासाठी आणि तुमच्या भेटीचे स्वागत करण्यासाठी येथे आहोत.</p>
+            <h1 lang="en">Frequently Asked Questions</h1>
+            <h1 lang="mr">वारंवार विचारले जाणारे प्रश्न</h1>
+            <p lang="en" style="color: #000000; margin-top: 10px;">Find answers to common questions about admissions, facilities, and care.</p>
+            <p lang="mr" style="color: #000000; margin-top: 10px;">प्रवेश, सुविधा आणि काळजी याबद्दलच्या सामान्य प्रश्नांची उत्तरे शोधा.</p>
         </div>
     </div>
 
-    <section class="contact-section">
+    <section class="faq-section">
         <div class="container">
-            <div class="contact-grid-layout">
+            <div class="faq-container">
                 
-                <div class="contact-details">
-                    
-                    <div class="info-card">
-                        <div class="info-icon-box">📍</div>
-                        <div class="info-content">
-                            <h3 lang="en">Our Location</h3>
-                            <h3 lang="mr">आमचा पत्ता</h3>
-                            <p lang="en">Muktai Matimand Mulanche Balgruha,<br>A/P Lavangi, Tal. Mangalwedha,<br>Dist. Solapur - 413305</p>
-                            <p lang="mr">मुक्ताई मतिमंद मुलांचे बालगृह,<br>मु.पो. लवंगी, ता. मंगळवेढा,<br>जि. सोलापूर - ४१३३०५</p>
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFaq(this)">
+                        <span lang="en">Who is eligible for admission?</span>
+                        <span lang="mr">प्रवेशासाठी कोण पात्र आहे?</span>
+                        <div class="faq-icon">▼</div>
+                    </div>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            <p lang="en">Children with intellectual disabilities aged 6-18 years are eligible. We conduct a basic assessment to understand the child's needs before admission.</p>
+                            <p lang="mr">६-१८ वयोगटातील मतिमंद मुले पात्र आहेत. प्रवेशापूर्वी मुलाच्या गरजा समजून घेण्यासाठी आम्ही प्राथमिक तपासणी करतो.</p>
                         </div>
                     </div>
-
-                    <div class="info-card">
-                        <div class="info-icon-box">📞</div>
-                        <div class="info-content">
-                            <h3 lang="en">Call Us</h3>
-                            <h3 lang="mr">आम्हाला कॉल करा</h3>
-                            <a href="tel:+919876543210">+91 98765 43210 (Main)</a>
-                            <a href="tel:+919123456789">+91 91234 56789 (Office)</a>
-                        </div>
-                    </div>
-
-                    <div class="info-card">
-                        <div class="info-icon-box">✉️</div>
-                        <div class="info-content">
-                            <h3 lang="en">Email Us</h3>
-                            <h3 lang="mr">ईमेल करा</h3>
-                            <a href="mailto:info@muktaibalgruha.org">info@muktaibalgruha.org</a>
-                            <a href="mailto:admin@muktaibalgruha.org">admin@muktaibalgruha.org</a>
-                        </div>
-                    </div>
-
-                    <div class="hours-box">
-                        <h3 style="margin-bottom: 15px; font-size: 1.2rem;" lang="en">🕒 Visiting Hours</h3>
-                        <h3 style="margin-bottom: 15px; font-size: 1.2rem;" lang="mr">🕒 भेटीची वेळ</h3>
-                        <div class="hours-row">
-                            <span lang="en">Monday - Saturday</span><span lang="mr">सोमवार - शनिवार</span>
-                            <span>10:00 AM - 05:00 PM</span>
-                        </div>
-                        <div class="hours-row">
-                            <span lang="en">Sunday</span><span lang="mr">रविवार</span>
-                            <span lang="en">Prior Appointment</span><span lang="mr">पूर्व भेटीने</span>
-                        </div>
-                    </div>
-
                 </div>
 
-                <div class="map-container">
-                    <iframe 
-                        src="https://maps.google.com/maps?q=Lavangi,+Mangalwedha,+Solapur&t=k&z=15&ie=UTF8&iwloc=&output=embed" 
-                        allowfullscreen="" 
-                        loading="lazy" 
-                        referrerpolicy="no-referrer-when-downgrade"
-                        title="Muktai Balgruha Satellite Map">
-                    </iframe>
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFaq(this)">
+                        <span lang="en">What documents are required for admission?</span>
+                        <span lang="mr">प्रवेशासाठी कोणती कागदपत्रे आवश्यक आहेत?</span>
+                        <div class="faq-icon">▼</div>
+                    </div>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            <p lang="en">You need the Birth Certificate, Disability Certificate (UDID), Aadhar Card of the child and parents, and recent passport-size photographs.</p>
+                            <p lang="mr">तुम्हाला जन्म प्रमाणपत्र, अपंगत्व प्रमाणपत्र (UDID), मुलाचे आणि पालकांचे आधार कार्ड आणि पासपोर्ट आकाराचे फोटो आवश्यक आहेत.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFaq(this)">
+                        <span lang="en">Is there a residential facility available?</span>
+                        <span lang="mr">निवासाची सोय उपलब्ध आहे का?</span>
+                        <div class="faq-icon">▼</div>
+                    </div>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            <p lang="en">Yes, we provide full residential care with nutritious food, comfortable accommodation, and 24/7 supervision by trained caretakers.</p>
+                            <p lang="mr">होय, आम्ही पौष्टिक अन्न, आरामदायक निवास आणि प्रशिक्षित केअरटेकर्सद्वारे २४/७ देखरेखीसह पूर्ण निवासी सुविधा प्रदान करतो.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFaq(this)">
+                        <span lang="en">What kind of activities are conducted?</span>
+                        <span lang="mr">कोणते उपक्रम राबवले जातात?</span>
+                        <div class="faq-icon">▼</div>
+                    </div>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            <p lang="en">We focus on holistic development through special education, vocational training, art & craft, sports, gardening, and cultural events.</p>
+                            <p lang="mr">आम्ही विशेष शिक्षण, व्यावसायिक प्रशिक्षण, कला आणि हस्तकला, ​​क्रीडा, बागकाम आणि सांस्कृतिक कार्यक्रमांद्वारे सर्वांगीण विकासावर लक्ष केंद्रित करतो.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFaq(this)">
+                        <span lang="en">Can parents visit their children?</span>
+                        <span lang="mr">पालक आपल्या मुलांना भेटू शकतात का?</span>
+                        <div class="faq-icon">▼</div>
+                    </div>
+                    <div class="faq-answer">
+                        <div class="faq-answer-content">
+                            <p lang="en">Yes, parents are encouraged to visit on designated visiting days. We believe active parental involvement is crucial for the child's progress.</p>
+                            <p lang="mr">होय, पालकांनी ठरलेल्या भेटीच्या दिवशी भेट द्यावी. आमचा असा विश्वास आहे की मुलाच्या प्रगतीसाठी पालकांचा सक्रिय सहभाग महत्त्वाचा आहे.</p>
+                        </div>
+                    </div>
                 </div>
 
             </div>
@@ -327,20 +308,48 @@
     <button class="back-to-top" onclick="scrollToTop()" aria-label="Back to top">↑</button>
 
     <script>
+        // Toggle FAQ Accordion
+        function toggleFaq(element) {
+            const item = element.parentElement;
+            const answer = item.querySelector('.faq-answer');
+            
+            // Toggle active class
+            item.classList.toggle('active');
+
+            // Handle slide animation
+            if (item.classList.contains('active')) {
+                answer.style.maxHeight = answer.scrollHeight + "px";
+            } else {
+                answer.style.maxHeight = "0";
+            }
+
+            // Close other items (Optional - keeping multiple open is usually more user friendly)
+            /* document.querySelectorAll('.faq-item').forEach(otherItem => {
+                if (otherItem !== item && otherItem.classList.contains('active')) {
+                    otherItem.classList.remove('active');
+                    otherItem.querySelector('.faq-answer').style.maxHeight = "0";
+                }
+            }); 
+            */
+        }
+
+        // Toggle Menu
         function toggleMenu() { document.getElementById('navMenu').classList.toggle('active'); }
         
+        // Language Toggle
         function toggleLang() {
             document.body.classList.toggle('marathi');
             localStorage.setItem('muktai-lang', document.body.classList.contains('marathi') ? 'mr' : 'en');
         }
 
-        // Init Lang
+        // Initialize Language
         if (localStorage.getItem('muktai-lang') === 'en') {
             document.body.classList.remove('marathi');
         } else {
             document.body.classList.add('marathi');
         }
 
+        // Scroll to Top
         window.addEventListener('scroll', () => {
             const btn = document.querySelector('.back-to-top');
             if(btn) btn.classList.toggle('show', window.scrollY > 300);
