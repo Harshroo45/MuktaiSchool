@@ -1037,3 +1037,21 @@ body.marathi [lang="mr"] { display: block; }
         gap: 15px;
     }
 }
+
+/* --- Page Header Styles --- */
+.page-header {
+    background: linear-gradient(rgba(14, 116, 144, 0.9), rgba(15, 23, 42, 0.9));
+    color: white;
+    padding: 60px 0;
+    text-align: center;
+    
+    /* ADD THIS LINE for the distance: */
+    margin-top: 20px; 
+}
+
+/* Optional: Adjust for mobile if needed */
+@media (max-width: 768px) {
+    .page-header {
+        margin-top: 10px; /* Smaller gap on mobile */
+    }
+}
