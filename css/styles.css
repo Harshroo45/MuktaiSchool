@@ -1670,3 +1670,172 @@ body.marathi [lang="mr"] { display: revert !important; }
         transform: scale(0.98);
     }
 }
+
+/* CTA Section Professional Styling */
+.cta-wrapper {
+    background-color: #f1f5f9; /* Soft Slate background to distinguish from main sections */
+    padding: 100px 0;
+}
+
+.cta-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 30px;
+}
+
+.cta-card {
+    display: flex;
+    align-items: flex-start;
+    gap: 25px;
+    background: #ffffff;
+    padding: 40px;
+    border-radius: 20px;
+    text-decoration: none;
+    border: 1px solid rgba(148, 163, 184, 0.1);
+    transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+}
+
+.cta-icon-box {
+    flex-shrink: 0;
+    width: 56px;
+    height: 56px;
+    background: var(--primary); /* Uses your teal/blue color */
+    color: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 14px;
+    transition: transform 0.4s ease;
+}
+
+.cta-content h3 {
+    margin: 0 0 10px 0;
+    color: var(--secondary); /* Dark slate */
+    font-size: 1.25rem;
+    font-weight: 700;
+}
+
+.cta-content p {
+    color: #64748b;
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.cta-link-text {
+    font-size: 0.9rem;
+    font-weight: 700;
+    color: var(--primary);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+/* Hover Effects */
+.cta-card:hover {
+    transform: translateY(-8px);
+    background: #ffffff;
+    border-color: var(--primary);
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+}
+
+.cta-card:hover .cta-icon-box {
+    transform: rotate(-5deg) scale(1.1);
+}
+
+/* Responsive adjustments */
+@media (max-width: 640px) {
+    .cta-card {
+        flex-direction: column;
+        padding: 30px;
+        gap: 15px;
+    }
+    
+    .cta-wrapper {
+        padding: 60px 0;
+    }
+}
+
+/* Institutional Profile Table Styling */
+.profile-container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: #ffffff;
+    border-radius: 20px;
+    box-shadow: var(--shadow-lg);
+    overflow: hidden;
+    border: 1px solid var(--border-light);
+}
+
+.profile-card-header {
+    background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+    padding: 30px 40px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    color: white;
+}
+
+.profile-icon-large {
+    font-size: 2.5rem;
+    background: rgba(255, 255, 255, 0.2);
+    width: 70px;
+    height: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 15px;
+}
+
+.profile-title-group h2 {
+    font-size: 1.5rem;
+    margin: 0;
+    color: white;
+}
+
+.profile-table {
+    padding: 20px 40px 40px;
+}
+
+.profile-row {
+    display: flex;
+    padding: 20px 0;
+    border-bottom: 1px solid #f1f5f9;
+}
+
+.profile-row:last-child {
+    border-bottom: none;
+}
+
+.profile-label {
+    flex: 0 0 250px;
+    font-weight: 700;
+    color: var(--secondary);
+    font-size: 0.95rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.profile-value {
+    flex: 1;
+    color: var(--text);
+    font-size: 1.1rem;
+}
+
+/* Mobile Adjustments for Profile Table */
+@media (max-width: 768px) {
+    .profile-row {
+        flex-direction: column;
+        gap: 8px;
+    }
+    .profile-label {
+        flex: none;
+        font-size: 0.8rem;
+    }
+    .profile-card-header {
+        padding: 25px;
+    }
+    .profile-table {
+        padding: 20px;
+    }
+}

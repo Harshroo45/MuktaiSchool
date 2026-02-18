@@ -1,16 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gallery | Muktai Balgruha</title>
-    <meta name="description" content="Photo gallery showcasing activities, programs, and achievements at Muktai Balgruha.">
+    <meta name="description"
+        content="Photo gallery showcasing activities, programs, and achievements at Muktai Balgruha.">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/styles.css">
     <script src="js/components.js" defer></script>
     <style>
         /* --- Gallery Specific Styles --- */
-        
+
         .gallery-section {
             padding: 60px 0;
             background-color: #f8fafc;
@@ -25,10 +27,12 @@
 
         .gallery-item {
             position: relative;
-            height: 300px; /* Fixed height for uniformity */
+            height: 300px;
+            /* Fixed height for uniformity */
             border-radius: 16px;
             overflow: hidden;
-            background: #e2e8f0; /* Placeholder color */
+            background: #e2e8f0;
+            /* Placeholder color */
             cursor: pointer;
             box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
             transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
@@ -47,7 +51,8 @@
         }
 
         .gallery-item:hover img {
-            transform: scale(1.1); /* Smooth zoom effect */
+            transform: scale(1.1);
+            /* Smooth zoom effect */
         }
 
         /* Professional Overlay Gradient */
@@ -70,11 +75,12 @@
         }
 
         .gallery-title {
-            color: #f59e0b; /* Accent color */
+            color: #f59e0b;
+            /* Accent color */
             font-size: 1.25rem;
             font-weight: 700;
             margin-bottom: 6px;
-            text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
         }
 
         .gallery-desc {
@@ -86,14 +92,20 @@
 
         /* Mobile Optimization */
         @media (max-width: 768px) {
-            .gallery-grid { gap: 16px; }
-            .gallery-item { height: 260px; }
+            .gallery-grid {
+                gap: 16px;
+            }
+
+            .gallery-item {
+                height: 260px;
+            }
+
             /* On mobile, show overlay slightly so users know text is there */
-            .gallery-overlay { 
-                opacity: 1; 
-                transform: translateY(0); 
+            .gallery-overlay {
+                opacity: 1;
+                transform: translateY(0);
                 background: linear-gradient(to top, rgba(15, 23, 42, 0.85) 0%, transparent 100%);
-            } 
+            }
         }
 
         /* --- Lightbox (Full Screen) Styles --- */
@@ -141,9 +153,13 @@
             z-index: 2001;
             transition: color 0.3s;
         }
-        .close-lightbox:hover { color: #f59e0b; }
+
+        .close-lightbox:hover {
+            color: #f59e0b;
+        }
     </style>
 </head>
+
 <body class="marathi">
 
     <div id="header-placeholder"></div>
@@ -164,9 +180,10 @@
     <section class="gallery-section">
         <div class="container">
             <div class="gallery-grid">
-                
+
                 <div class="gallery-item" onclick="openLightbox(this)">
-                    <img src="images/art-craft.jpg" alt="Art & Craft" onerror="this.src='https://placehold.co/600x400/e2e8f0/475569?text=Art+Activity'">
+                    <img src="images/13.jpeg" alt="Art & Craft"
+                        onerror="this.src='https://placehold.co/600x400/e2e8f0/475569?text=Art+Activity'">
                     <div class="gallery-overlay">
                         <div class="gallery-title" lang="en">Art & Craft</div>
                         <div class="gallery-title" lang="mr">कला व हस्तकला</div>
@@ -176,7 +193,8 @@
                 </div>
 
                 <div class="gallery-item" onclick="openLightbox(this)">
-                    <img src="images/sports.jpg" alt="Sports" onerror="this.src='https://placehold.co/600x400/e2e8f0/475569?text=Sports+Activity'">
+                    <img src="images/seven.jpeg" alt="Sports"
+                        onerror="this.src='https://placehold.co/600x400/e2e8f0/475569?text=Sports+Activity'">
                     <div class="gallery-overlay">
                         <div class="gallery-title" lang="en">Sports</div>
                         <div class="gallery-title" lang="mr">क्रीडा</div>
@@ -186,7 +204,8 @@
                 </div>
 
                 <div class="gallery-item" onclick="openLightbox(this)">
-                    <img src="images/classroom.jpg" alt="Education" onerror="this.src='https://placehold.co/600x400/e2e8f0/475569?text=Classroom'">
+                    <img src="images/four.jpeg" alt="Education"
+                        onerror="this.src='https://placehold.co/600x400/e2e8f0/475569?text=Classroom'">
                     <div class="gallery-overlay">
                         <div class="gallery-title" lang="en">Education</div>
                         <div class="gallery-title" lang="mr">शिक्षण</div>
@@ -196,7 +215,8 @@
                 </div>
 
                 <div class="gallery-item" onclick="openLightbox(this)">
-                    <img src="images/event.jpg" alt="Celebration" onerror="this.src='https://placehold.co/600x400/e2e8f0/475569?text=Celebration'">
+                    <img src="images/eleven.jpeg" alt="Celebration"
+                        onerror="this.src='https://placehold.co/600x400/e2e8f0/475569?text=Celebration'">
                     <div class="gallery-overlay">
                         <div class="gallery-title" lang="en">Celebrations</div>
                         <div class="gallery-title" lang="mr">उत्सव</div>
@@ -205,23 +225,84 @@
                     </div>
                 </div>
 
-                <div class="gallery-item" onclick="openLightbox(this)">
-                    <img src="images/food.jpg" alt="Nutrition" onerror="this.src='https://placehold.co/600x400/e2e8f0/475569?text=Nutrition'">
-                    <div class="gallery-overlay">
-                        <div class="gallery-title" lang="en">Nutrition</div>
-                        <div class="gallery-title" lang="mr">पोषण</div>
-                        <div class="gallery-desc" lang="en">Healthy and hygienic meals.</div>
-                        <div class="gallery-desc" lang="mr">निरोगी आणि आरोग्यदायी जेवण.</div>
-                    </div>
-                </div>
+
 
                 <div class="gallery-item" onclick="openLightbox(this)">
-                    <img src="images/garden.jpg" alt="Nature" onerror="this.src='https://placehold.co/600x400/e2e8f0/475569?text=Gardening'">
+                    <img src="images/nine.jpeg" alt="Nature"
+                        onerror="this.src='https://placehold.co/600x400/e2e8f0/475569?text=Gardening'">
                     <div class="gallery-overlay">
                         <div class="gallery-title" lang="en">Nature</div>
                         <div class="gallery-title" lang="mr">निसर्ग</div>
                         <div class="gallery-desc" lang="en">Connecting with nature through gardening.</div>
                         <div class="gallery-desc" lang="mr">बागकामाद्वारे निसर्गाशी मैत्री.</div>
+                    </div>
+                </div>
+
+
+
+                <div class="gallery-item" onclick="openLightbox(this)">
+                    <img src="images/eight.jpeg" alt="Animal Care"
+                        onerror="this.src='https://placehold.co/600x400/e2e8f0/475569?text=Animal+Care'">
+                    <div class="gallery-overlay">
+                        <div class="gallery-title" lang="en">Animal Husbandry</div>
+                        <div class="gallery-title" lang="mr">पशुपालन</div>
+                        <div class="gallery-desc" lang="en">Learning responsibility through caring for cattle.</div>
+                        <div class="gallery-desc" lang="mr">जनावरांची काळजी घेण्यातून जबाबदारीची जाणीव.</div>
+                    </div>
+                </div>
+
+                <div class="gallery-item" onclick="openLightbox(this)">
+                    <img src="images/15.jpeg" alt="Art and Design"
+                        onerror="this.src='https://placehold.co/600x400/e2e8f0/475569?text=Art+Design'">
+                    <div class="gallery-overlay">
+                        <div class="gallery-title" lang="en">Art & Creativity</div>
+                        <div class="gallery-title" lang="mr">कला आणि सर्जनशीलता</div>
+                        <div class="gallery-desc" lang="en">Expressing emotions through colors and craft.</div>
+                        <div class="gallery-desc" lang="mr">रंग आणि कलेद्वारे भावना व्यक्त करणे.</div>
+                    </div>
+                </div>
+
+                <div class="gallery-item" onclick="openLightbox(this)">
+                    <img src="images/ten.jpeg" alt="Farming"
+                        onerror="this.src='https://placehold.co/600x400/e2e8f0/475569?text=Farming'">
+                    <div class="gallery-overlay">
+                        <div class="gallery-title" lang="en">Agriculture</div>
+                        <div class="gallery-title" lang="mr">शेतीकाम</div>
+                        <div class="gallery-desc" lang="en">Hands-on training in sustainable farming practices.</div>
+                        <div class="gallery-desc" lang="mr">शाश्वत शेती पद्धतींचे प्रत्यक्ष प्रशिक्षण.</div>
+                    </div>
+                </div>
+
+                <div class="gallery-item" onclick="openLightbox(this)">
+                    <img src="images/five.jpeg" alt="School Architecture"
+                        onerror="this.src='https://placehold.co/600x400/e2e8f0/475569?text=Campus'">
+                    <div class="gallery-overlay">
+                        <div class="gallery-title" lang="en">Our Campus</div>
+                        <div class="gallery-title" lang="mr">शाळा परिसर</div>
+                        <div class="gallery-desc" lang="en">A safe and inspiring environment for learning.</div>
+                        <div class="gallery-desc" lang="mr">शिक्षणासाठी सुरक्षित आणि प्रेरणादायी वातावरण.</div>
+                    </div>
+                </div>
+
+                <div class="gallery-item" onclick="openLightbox(this)">
+                    <img src="images/one.jpeg" alt="Vocational Skills"
+                        onerror="this.src='https://placehold.co/600x400/e2e8f0/475569?text=Skills'">
+                    <div class="gallery-overlay">
+                        <div class="gallery-title" lang="en">Skill Development</div>
+                        <div class="gallery-title" lang="mr">कौशल्य विकास</div>
+                        <div class="gallery-desc" lang="en">Creating paper plates and files for self-reliance.</div>
+                        <div class="gallery-desc" lang="mr">स्वावलंबनासाठी विविध वस्तू बनवण्याचे प्रशिक्षण.</div>
+                    </div>
+                </div>
+
+                <div class="gallery-item" onclick="openLightbox(this)">
+                    <img src="images/karyashala.jpeg" alt="Skill Development"
+                        onerror="this.src='https://placehold.co/600x400/e2e8f0/475569?text=Skill+Training'">
+                    <div class="gallery-overlay">
+                        <div class="gallery-title" lang="en">Karyashala Activities</div>
+                        <div class="gallery-title" lang="mr">कार्यशाळा उपक्रम</div>
+                        <div class="gallery-desc" lang="en">Developing discipline and responsibility through work.</div>
+                        <div class="gallery-desc" lang="mr">कामातून शिस्त आणि जबाबदारीची जाणीव विकसित करणे.</div>
                     </div>
                 </div>
 
@@ -235,114 +316,129 @@
     </div>
 
     <footer class="site-footer">
-    <div class="container">
-        <div class="footer-grid">
-            
-            <div class="footer-brand">
-                <a href="index.html" class="footer-logo">
-                    <img src="images/logo.png" alt="Muktai Balgruha" class="logo-img footer-logo-img">
-                    <div class="logo-text">
-                        <h2 lang="en">Muktai Balgruha</h2>
-                        <h2 lang="mr">मुक्ताई बालगृह</h2>
-                    </div>
-                </a>
-                <p class="footer-desc" lang="en">
-                    A sanctuary of hope, providing care, education, and rehabilitation for special children since 2004.
-                </p>
-                <p class="footer-desc" lang="mr">
-                    २००४ पासून विशेष मुलांसाठी काळजी, शिक्षण आणि पुनर्वसन प्रदान करणारे आशेचे आश्रयस्थान.
-                </p>
-                
-                <div class="social-links">
-                    <a href="#" aria-label="Facebook" class="social-icon facebook">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2.04C6.5 2.04 2 6.53 2 12.06C2 17.06 5.66 21.21 10.44 21.96V14.96H7.9V12.06H10.44V9.85C10.44 7.34 11.93 5.96 14.15 5.96C15.21 5.96 16.12 6.04 16.12 6.04V8.51H15.01C13.77 8.51 13.38 9.28 13.38 10.07V12.06H16.16L15.72 14.96H13.38V21.96C18.16 21.21 21.82 17.06 21.82 12.06C21.82 6.53 17.32 2.04 12 2.04Z"/></svg>
-                    </a>
-                    <a href="#" aria-label="Instagram" class="social-icon instagram">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M7.8,2H16.2C19.4,2 22,4.6 22,7.8V16.2A5.8,5.8 0 0,1 16.2,22H7.8C4.6,22 2,19.4 2,16.2V7.8A5.8,5.8 0 0,1 7.8,2M7.6,4A3.6,3.6 0 0,0 4,7.6V16.4C4,18.39 5.61,20 7.6,20H16.4A3.6,3.6 0 0,0 20,16.4V7.6C20,5.61 18.39,4 16.4,4H7.6M17.25,5.5A1.25,1.25 0 0,1 18.5,6.75A1.25,1.25 0 0,1 17.25,8A1.25,1.25 0 0,1 16,6.75A1.25,1.25 0 0,1 17.25,5.5M12,7A5,5 0 0,1 17,12A5,5 0 0,1 12,17A5,5 0 0,1 7,12A5,5 0 0,1 12,7M12,9A3,3 0 0,0 9,12A3,3 0 0,0 12,15A3,3 0 0,0 15,12A3,3 0 0,0 12,9Z"/></svg>
-                    </a>
-                    <a href="#" aria-label="LinkedIn" class="social-icon linkedin">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 3A2 2 0 0 1 21 5V19A2 2 0 0 1 19 21H5A2 2 0 0 1 3 19V5A2 2 0 0 1 5 3H19M8.5 19V8H5.5V19H8.5M7 6.5C6.17 6.5 5.5 5.83 5.5 5C5.5 4.17 6.17 3.5 7 3.5C7.83 3.5 8.5 4.17 8.5 5C8.5 5.83 7.83 6.5 7 6.5M19 19V13.5C19 11.28 17.5 10.5 16.5 10.5C15.46 10.5 14.92 11.11 14.5 11.5V8.5H11.5V19H14.5V14.5C14.5 13.67 15.17 13 16 13C16.83 13 17.5 13.67 17.5 14.5V19H19Z"/></svg>
-                    </a>
-                    <a href="#" aria-label="YouTube" class="social-icon youtube">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19.615 3.184c-3.604-.246-11.631-.245-15.23 0-3.897.266-4.356 2.62-4.385 8.816.029 6.185.484 8.549 4.385 8.816 3.6.245 11.626.246 15.23 0 3.897-.266 4.356-2.62 4.385-8.816-.029-6.185-.484-8.549-4.385-8.816zm-10.615 12.816v-8l8 3.993-8 4.007z"/></svg>
-                    </a>
-                </div>
-            </div>
+        <div class="container">
+            <div class="footer-grid">
 
-            <div class="footer-links">
-                <h3 lang="en">Quick Links</h3>
-                <h3 lang="mr">महत्वाचे दुवे</h3>
-                <ul>
-                    <li><a href="index.html"><span lang="en">Home</span><span lang="mr">मुख्य</span></a></li>
-                    <li><a href="about.html"><span lang="en">About Us</span><span lang="mr">आमच्याबद्दल</span></a></li>
-                    <li><a href="services.html"><span lang="en">Services</span><span lang="mr">सुविधा</span></a></li>
-                    <li><a href="team.html"><span lang="en">Our Team</span><span lang="mr">टीम</span></a></li>
-                    <li><a href="gallery.html"><span lang="en">Gallery</span><span lang="mr">गॅलरी</span></a></li>
-                    <li><a href="faq.html"><span lang="en">FAQ</span><span lang="mr">प्रश्न</span></a></li>
-                </ul>
-            </div>
+                <div class="footer-brand">
+                    <a href="index.html" class="footer-logo">
+                        <img src="images/logo.png" alt="Muktai Balgruha" class="logo-img footer-logo-img">
+                        <div class="logo-text">
+                            <h2 lang="en">Muktai Balgruha</h2>
+                            <h2 lang="mr">मुक्ताई बालगृह</h2>
+                        </div>
+                    </a>
+                    <p class="footer-desc" lang="en">
+                        A sanctuary of hope, providing care, education, and rehabilitation for special children since
+                        2004.
+                    </p>
+                    <p class="footer-desc" lang="mr">
+                        २००४ पासून विशेष मुलांसाठी काळजी, शिक्षण आणि पुनर्वसन प्रदान करणारे आशेचे आश्रयस्थान.
+                    </p>
 
-            <div class="footer-contact">
-                <h3 lang="en">Contact Us</h3>
-                <h3 lang="mr">संपर्क साधा</h3>
-                
-                <div class="contact-item">
-                    <span class="icon">📍</span>
-                    <div>
-                        <span lang="en">Lavangi, Tal. Mangalwedha,<br>Dist. Solapur - 413305</span>
-                        <span lang="mr">लवंगी, ता. मंगळवेढा,<br>जि. सोलापूर - ४१३३०५</span>
-                    </div>
-                </div>
-                
-                <div class="contact-item">
-                    <span class="icon">📞</span>
-                    <div>
-                        <a href="tel:+919876543210">+91 98765 43210</a>
+                    <div class="social-links">
+                        <a href="#" aria-label="Facebook" class="social-icon facebook">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                                <path
+                                    d="M12 2.04C6.5 2.04 2 6.53 2 12.06C2 17.06 5.66 21.21 10.44 21.96V14.96H7.9V12.06H10.44V9.85C10.44 7.34 11.93 5.96 14.15 5.96C15.21 5.96 16.12 6.04 16.12 6.04V8.51H15.01C13.77 8.51 13.38 9.28 13.38 10.07V12.06H16.16L15.72 14.96H13.38V21.96C18.16 21.21 21.82 17.06 21.82 12.06C21.82 6.53 17.32 2.04 12 2.04Z" />
+                            </svg>
+                        </a>
+                        <a href="#" aria-label="Instagram" class="social-icon instagram">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                                <path
+                                    d="M7.8,2H16.2C19.4,2 22,4.6 22,7.8V16.2A5.8,5.8 0 0,1 16.2,22H7.8C4.6,22 2,19.4 2,16.2V7.8A5.8,5.8 0 0,1 7.8,2M7.6,4A3.6,3.6 0 0,0 4,7.6V16.4C4,18.39 5.61,20 7.6,20H16.4A3.6,3.6 0 0,0 20,16.4V7.6C20,5.61 18.39,4 16.4,4H7.6M17.25,5.5A1.25,1.25 0 0,1 18.5,6.75A1.25,1.25 0 0,1 17.25,8A1.25,1.25 0 0,1 16,6.75A1.25,1.25 0 0,1 17.25,5.5M12,7A5,5 0 0,1 17,12A5,5 0 0,1 12,17A5,5 0 0,1 7,12A5,5 0 0,1 12,7M12,9A3,3 0 0,0 9,12A3,3 0 0,0 12,15A3,3 0 0,0 15,12A3,3 0 0,0 12,9Z" />
+                            </svg>
+                        </a>
+                        <a href="#" aria-label="LinkedIn" class="social-icon linkedin">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                                <path
+                                    d="M19 3A2 2 0 0 1 21 5V19A2 2 0 0 1 19 21H5A2 2 0 0 1 3 19V5A2 2 0 0 1 5 3H19M8.5 19V8H5.5V19H8.5M7 6.5C6.17 6.5 5.5 5.83 5.5 5C5.5 4.17 6.17 3.5 7 3.5C7.83 3.5 8.5 4.17 8.5 5C8.5 5.83 7.83 6.5 7 6.5M19 19V13.5C19 11.28 17.5 10.5 16.5 10.5C15.46 10.5 14.92 11.11 14.5 11.5V8.5H11.5V19H14.5V14.5C14.5 13.67 15.17 13 16 13C16.83 13 17.5 13.67 17.5 14.5V19H19Z" />
+                            </svg>
+                        </a>
+                        <a href="#" aria-label="YouTube" class="social-icon youtube">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                                <path
+                                    d="M19.615 3.184c-3.604-.246-11.631-.245-15.23 0-3.897.266-4.356 2.62-4.385 8.816.029 6.185.484 8.549 4.385 8.816 3.6.245 11.626.246 15.23 0 3.897-.266 4.356-2.62 4.385-8.816-.029-6.185-.484-8.549-4.385-8.816zm-10.615 12.816v-8l8 3.993-8 4.007z" />
+                            </svg>
+                        </a>
                     </div>
                 </div>
 
-                <div class="contact-item">
-                    <span class="icon">✉️</span>
-                    <div>
-                        <a href="mailto:info@muktaibalgruha.org">info@muktaibalgruha.org</a>
+                <div class="footer-links">
+                    <h3 lang="en">Quick Links</h3>
+                    <h3 lang="mr">महत्वाचे दुवे</h3>
+                    <ul>
+                        <li><a href="index.html"><span lang="en">Home</span><span lang="mr">मुख्य</span></a></li>
+                        <li><a href="about.html"><span lang="en">About Us</span><span lang="mr">आमच्याबद्दल</span></a>
+                        </li>
+                        <li><a href="services.html"><span lang="en">Services</span><span lang="mr">सुविधा</span></a>
+                        </li>
+                        <li><a href="team.html"><span lang="en">Our Team</span><span lang="mr">टीम</span></a></li>
+                        <li><a href="gallery.html"><span lang="en">Gallery</span><span lang="mr">गॅलरी</span></a></li>
+                        <li><a href="faq.html"><span lang="en">FAQ</span><span lang="mr">प्रश्न</span></a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-contact">
+                    <h3 lang="en">Contact Us</h3>
+                    <h3 lang="mr">संपर्क साधा</h3>
+
+                    <div class="contact-item">
+                        <span class="icon">📍</span>
+                        <div>
+                            <span lang="en">Lavangi, Tal. Mangalwedha,<br>Dist. Solapur - 413305</span>
+                            <span lang="mr">लवंगी, ता. मंगळवेढा,<br>जि. सोलापूर - ४१३३०५</span>
+                        </div>
+                    </div>
+
+                    <div class="contact-item">
+                        <span class="icon">📞</span>
+                        <div>
+                            <a href="tel:+919876543210">+91 98765 43210</a>
+                        </div>
+                    </div>
+
+                    <div class="contact-item">
+                        <span class="icon">✉️</span>
+                        <div>
+                            <a href="mailto:info@muktaibalgruha.org">info@muktaibalgruha.org</a>
+                        </div>
                     </div>
                 </div>
+
+                <div class="footer-cta">
+                    <h3 lang="en">Visit Us</h3>
+                    <h3 lang="mr">आम्हाला भेट द्या</h3>
+                    <p style="font-size: 0.9rem; margin-bottom: 20px; color: #94a3b8; line-height: 1.6;">
+                        <span lang="en">We welcome visitors to see our work firsthand.</span>
+                        <span lang="mr">आमचे कार्य प्रत्यक्ष पाहण्यासाठी आम्ही अभ्यागतांचे स्वागत करतो.</span>
+                    </p>
+                    <a href="contact.html" class="btn-footer">
+                        <span lang="en">Get Directions →</span>
+                        <span lang="mr">दिशानिर्देश मिळवा →</span>
+                    </a>
+                </div>
+
             </div>
 
-            <div class="footer-cta">
-                <h3 lang="en">Visit Us</h3>
-                <h3 lang="mr">आम्हाला भेट द्या</h3>
-                <p style="font-size: 0.9rem; margin-bottom: 20px; color: #94a3b8; line-height: 1.6;">
-                    <span lang="en">We welcome visitors to see our work firsthand.</span>
-                    <span lang="mr">आमचे कार्य प्रत्यक्ष पाहण्यासाठी आम्ही अभ्यागतांचे स्वागत करतो.</span>
-                </p>
-                <a href="contact.html" class="btn-footer">
-                    <span lang="en">Get Directions →</span>
-                    <span lang="mr">दिशानिर्देश मिळवा →</span>
-                </a>
+            <div class="footer-bottom">
+                <div class="copyright">
+                    <p lang="en">© 2026 Muktai Balgruha. All Rights Reserved.</p>
+                    <p lang="mr">© 2026 मुक्ताई बालगृह. सर्वाधिकार राखीव.</p>
+                </div>
+                <div class="legal-links">
+                    <a href="#"><span lang="en">Privacy Policy</span><span lang="mr">गोपनीयता धोरण</span></a>
+                    <a href="#"><span lang="en">Terms of Use</span><span lang="mr">वापराच्या अटी</span></a>
+                </div>
             </div>
-
         </div>
-
-        <div class="footer-bottom">
-            <div class="copyright">
-                <p lang="en">© 2026 Muktai Balgruha. All Rights Reserved.</p>
-                <p lang="mr">© 2026 मुक्ताई बालगृह. सर्वाधिकार राखीव.</p>
-            </div>
-            <div class="legal-links">
-                <a href="#"><span lang="en">Privacy Policy</span><span lang="mr">गोपनीयता धोरण</span></a>
-                <a href="#"><span lang="en">Terms of Use</span><span lang="mr">वापराच्या अटी</span></a>
-            </div>
-        </div>
-    </div>
-</footer>
+    </footer>
 
     <button class="back-to-top" onclick="scrollToTop()" aria-label="Back to top">↑</button>
 
     <script>
         // Menu Toggle
         function toggleMenu() { document.getElementById('navMenu').classList.toggle('active'); }
-        
+
         // Language Toggle
         function toggleLang() {
             document.body.classList.toggle('marathi');
@@ -361,7 +457,7 @@
             const lightbox = document.getElementById('lightbox');
             const lightboxImg = document.getElementById('lightbox-img');
             const img = element.querySelector('img');
-            
+
             lightboxImg.src = img.src;
             lightbox.classList.add('active');
             document.body.style.overflow = 'hidden'; // Prevent scrolling
@@ -377,10 +473,11 @@
         // Scroll to Top
         window.addEventListener('scroll', () => {
             const btn = document.querySelector('.back-to-top');
-            if(btn) btn.classList.toggle('show', window.scrollY > 300);
+            if (btn) btn.classList.toggle('show', window.scrollY > 300);
         });
 
         function scrollToTop() { window.scrollTo({ top: 0, behavior: 'smooth' }); }
     </script>
 </body>
+
 </html>
