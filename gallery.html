@@ -7,6 +7,7 @@
     <meta name="description" content="Photo gallery showcasing activities, programs, and achievements at Muktai Balgruha.">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/styles.css">
+    <script src="js/components.js" defer></script>
     <style>
         /* --- Gallery Specific Styles --- */
         
@@ -145,33 +146,7 @@
 </head>
 <body class="marathi">
 
-    <header>
-        <div class="container">
-            <nav>
-                <a href="index.html" class="logo-container">
-                    <div class="logo-placeholder">M</div>
-                    <div class="logo-text">
-                        <h1 lang="en">Muktai Balgruha</h1>
-                        <h1 lang="mr">मुक्ताई बालगृह</h1>
-                        <p lang="en">Lavangi, Solapur</p>
-                        <p lang="mr">लवंगी, सोलापूर</p>
-                    </div>
-                </a>
-                <button class="menu-toggle" onclick="toggleMenu()">
-                    <span></span><span></span><span></span>
-                </button>
-                <ul class="nav-links" id="navMenu">
-                    <li><a href="index.html"><span lang="en">Home</span><span lang="mr">मुख्य</span></a></li>
-                    <li><a href="about.html"><span lang="en">About</span><span lang="mr">माहिती</span></a></li>
-                    <li><a href="team.html"><span lang="en">Team</span><span lang="mr">टीम</span></a></li>
-                    <li><a href="gallery.html"><span lang="en">Gallery</span><span lang="mr">गॅलरी</span></a></li>
-                    <li><a href="faq.html"><span lang="en">FAQ</span><span lang="mr">प्रश्न</span></a></li>
-                    <li><a href="contact.html"><span lang="en">Contact</span><span lang="mr">संपर्क</span></a></li>
-                    <li><button class="lang-toggle" onclick="toggleLang()">EN / मराठी</button></li>
-                </ul>
-            </nav>
-        </div>
-    </header>
+    <div id="header-placeholder"></div>
 
     <div class="page-header">
         <div class="container">
@@ -264,13 +239,13 @@
         <div class="footer-grid">
             
             <div class="footer-brand">
-                <div class="footer-logo">
-                    <div class="logo-placeholder">M</div>
+                <a href="index.html" class="footer-logo">
+                    <img src="images/logo.png" alt="Muktai Balgruha" class="logo-img footer-logo-img">
                     <div class="logo-text">
                         <h2 lang="en">Muktai Balgruha</h2>
                         <h2 lang="mr">मुक्ताई बालगृह</h2>
                     </div>
-                </div>
+                </a>
                 <p class="footer-desc" lang="en">
                     A sanctuary of hope, providing care, education, and rehabilitation for special children since 2004.
                 </p>
@@ -300,6 +275,7 @@
                 <ul>
                     <li><a href="index.html"><span lang="en">Home</span><span lang="mr">मुख्य</span></a></li>
                     <li><a href="about.html"><span lang="en">About Us</span><span lang="mr">आमच्याबद्दल</span></a></li>
+                    <li><a href="services.html"><span lang="en">Services</span><span lang="mr">सुविधा</span></a></li>
                     <li><a href="team.html"><span lang="en">Our Team</span><span lang="mr">टीम</span></a></li>
                     <li><a href="gallery.html"><span lang="en">Gallery</span><span lang="mr">गॅलरी</span></a></li>
                     <li><a href="faq.html"><span lang="en">FAQ</span><span lang="mr">प्रश्न</span></a></li>
@@ -313,8 +289,8 @@
                 <div class="contact-item">
                     <span class="icon">📍</span>
                     <div>
-                        <span lang="en">A/P Lavangi, Tal. Mangalwedha,<br>Dist. Solapur - 413305</span>
-                        <span lang="mr">मु.पो. लवंगी, ता. मंगळवेढा,<br>जि. सोलापूर - ४१३३०५</span>
+                        <span lang="en">Lavangi, Tal. Mangalwedha,<br>Dist. Solapur - 413305</span>
+                        <span lang="mr">लवंगी, ता. मंगळवेढा,<br>जि. सोलापूर - ४१३३०५</span>
                     </div>
                 </div>
                 
@@ -336,8 +312,10 @@
             <div class="footer-cta">
                 <h3 lang="en">Visit Us</h3>
                 <h3 lang="mr">आम्हाला भेट द्या</h3>
-                <p lang="en" style="font-size: 0.9rem; margin-bottom: 15px; color: #94a3b8;">We welcome visitors to see our work firsthand.</p>
-                <p lang="mr" style="font-size: 0.9rem; margin-bottom: 15px; color: #94a3b8;">आमचे कार्य प्रत्यक्ष पाहण्यासाठी आम्ही अभ्यागतांचे स्वागत करतो.</p>
+                <p style="font-size: 0.9rem; margin-bottom: 20px; color: #94a3b8; line-height: 1.6;">
+                    <span lang="en">We welcome visitors to see our work firsthand.</span>
+                    <span lang="mr">आमचे कार्य प्रत्यक्ष पाहण्यासाठी आम्ही अभ्यागतांचे स्वागत करतो.</span>
+                </p>
                 <a href="contact.html" class="btn-footer">
                     <span lang="en">Get Directions →</span>
                     <span lang="mr">दिशानिर्देश मिळवा →</span>

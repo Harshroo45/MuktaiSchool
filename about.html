@@ -5,42 +5,42 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About Us | Muktai Balgruha</title>
     <meta name="description" content="Learn about Muktai Matimand Mulanche Balgruha, its mission, values, and commitment to special children.">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/styles.css">
-</head>
-<body class="marathi"> 
     
-    <header>
-        <div class="container">
-            <nav>
-                <a href="index.html" class="logo-container">
-                    <div class="logo-placeholder">M</div>
-                    <div class="logo-text">
-                        <h1 lang="en">Muktai Balgruha</h1>
-                        <h1 lang="mr">मुक्ताई बालगृह</h1>
-                        <p lang="en">Care & Compassion</p>
-                        <p lang="mr">प्रेम आणि सेवा</p>
-                    </div>
-                </a>
-
-                <button class="menu-toggle" onclick="toggleMenu()" aria-label="Toggle navigation">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </button>
-
-                <ul class="nav-links" id="navMenu">
-                    <li><a href="index.html"><span lang="en">Home</span><span lang="mr">मुख्य</span></a></li>
-                    <li><a href="about.html"><span lang="en">About</span><span lang="mr">माहिती</span></a></li>
-                    <li><a href="team.html"><span lang="en">Team</span><span lang="mr">टीम</span></a></li>
-                    <li><a href="gallery.html"><span lang="en">Gallery</span><span lang="mr">गॅलरी</span></a></li>
-                    <li><a href="faq.html"><span lang="en">FAQ</span><span lang="mr">प्रश्न</span></a></li>
-                    <li><a href="contact.html"><span lang="en">Contact</span><span lang="mr">संपर्क</span></a></li>
-                    <li><button class="lang-toggle" onclick="toggleLang()">EN / मराठी</button></li>
-                </ul>
-            </nav>
-        </div>
-    </header>
+    <script src="js/components.js" defer></script>
+    
+    <style>
+        /* Extra styles specific to About Page */
+        .intro-section {
+            background-color: #f8fafc;
+            padding: 60px 0;
+            text-align: center;
+        }
+        .intro-text {
+            max-width: 800px;
+            margin: 0 auto;
+            font-size: 1.1rem;
+            color: var(--secondary);
+            line-height: 1.8;
+        }
+        .card-icon {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+            display: inline-block;
+            background: rgba(14, 116, 144, 0.1);
+            width: 60px;
+            height: 60px;
+            line-height: 60px;
+            border-radius: 50%;
+            color: var(--primary);
+            text-align: center;
+        }
+    </style>
+</head>
+<body class="marathi">
+    
+    <div id="header-placeholder"></div>
 
     <div class="hero">
         <div class="hero-overlay"></div>
@@ -52,15 +52,31 @@
         </div>
     </div>
 
+    <section class="intro-section">
+        <div class="container">
+            <div class="intro-text animate-in">
+                <p lang="en">
+                    <strong>Muktai Balgruha</strong> is dedicated to the holistic rehabilitation of mentally challenged children. Located in the serene village of Lavangi, we provide a safe haven where special children are nurtured with love, vocational training, and essential life skills to help them live with dignity.
+                </p>
+                <p lang="mr">
+                    <strong>मुक्ताई बालगृह</strong> हे मतिमंद मुलांच्या सर्वांगीण पुनर्वसनासाठी समर्पित आहे. लवंगीच्या शांत परिसरात स्थित, आम्ही एक सुरक्षित आश्रयस्थान प्रदान करतो जिथे विशेष मुलांना प्रेमाने वाढवले ​​जाते, त्यांना व्यावसायिक प्रशिक्षण आणि सन्मानाने जगण्यासाठी आवश्यक जीवन कौशल्ये शिकवली जातात.
+                </p>
+            </div>
+        </div>
+    </section>
+
     <section>
         <div class="container">
             <div class="section-header">
-                <h2 class="section-title" lang="en">Our Mission</h2>
-                <h2 class="section-title" lang="mr">आमचे ध्येय</h2>
+                <h2 class="section-title">
+                    <span lang="en">Our Mission & Values</span>
+                    <span lang="mr">आमचे ध्येय आणि मूल्ये</span>
+                </h2>
             </div>
 
             <div class="grid">
                 <div class="card">
+                    <div class="card-icon">👁️</div>
                     <h3 lang="en">Our Vision</h3>
                     <h3 lang="mr">आमची दृष्टी</h3>
                     <p lang="en">To create a world where every special child is valued, respected, and given the opportunity to thrive with dignity.</p>
@@ -68,13 +84,15 @@
                 </div>
 
                 <div class="card">
+                    <div class="card-icon">📜</div>
                     <h3 lang="en">Our History</h3>
                     <h3 lang="mr">आमचा इतिहास</h3>
-                    <p lang="en">Founded with a spirit of service, Muktai Balgruha has been dedicated to the rehabilitation and care of intellectually disabled children in Lavangi.</p>
-                    <p lang="mr">सेवाभावी वृत्तीने स्थापित, मुक्ताई बालगृह लवंगी येथील मतिमंद मुलांच्या पुनर्वसन आणि सेवेसाठी समर्पित आहे.</p>
+                    <p lang="en">Founded with a spirit of service, Muktai Balgruha has been dedicated to the rehabilitation and care of intellectually disabled children in Lavangi since 2004.</p>
+                    <p lang="mr">सेवाभावी वृत्तीने स्थापित, मुक्ताई बालगृह २००४ पासून लवंगी येथील मतिमंद मुलांच्या पुनर्वसन आणि सेवेसाठी समर्पित आहे.</p>
                 </div>
 
                 <div class="card">
+                    <div class="card-icon">❤️</div>
                     <h3 lang="en">Our Values</h3>
                     <h3 lang="mr">आमची मूल्ये</h3>
                     <p lang="en">Compassion, Integrity, and selfless Service are the pillars of our institution.</p>
@@ -89,13 +107,13 @@
         <div class="footer-grid">
             
             <div class="footer-brand">
-                <div class="footer-logo">
-                    <div class="logo-placeholder">M</div>
+                <a href="index.html" class="footer-logo">
+                    <img src="images/logo.png" alt="Muktai Balgruha" class="logo-img footer-logo-img">
                     <div class="logo-text">
                         <h2 lang="en">Muktai Balgruha</h2>
                         <h2 lang="mr">मुक्ताई बालगृह</h2>
                     </div>
-                </div>
+                </a>
                 <p class="footer-desc" lang="en">
                     A sanctuary of hope, providing care, education, and rehabilitation for special children since 2004.
                 </p>
@@ -125,6 +143,7 @@
                 <ul>
                     <li><a href="index.html"><span lang="en">Home</span><span lang="mr">मुख्य</span></a></li>
                     <li><a href="about.html"><span lang="en">About Us</span><span lang="mr">आमच्याबद्दल</span></a></li>
+                    <li><a href="services.html"><span lang="en">Services</span><span lang="mr">सुविधा</span></a></li>
                     <li><a href="team.html"><span lang="en">Our Team</span><span lang="mr">टीम</span></a></li>
                     <li><a href="gallery.html"><span lang="en">Gallery</span><span lang="mr">गॅलरी</span></a></li>
                     <li><a href="faq.html"><span lang="en">FAQ</span><span lang="mr">प्रश्न</span></a></li>
@@ -138,8 +157,8 @@
                 <div class="contact-item">
                     <span class="icon">📍</span>
                     <div>
-                        <span lang="en">A/P Lavangi, Tal. Mangalwedha,<br>Dist. Solapur - 413305</span>
-                        <span lang="mr">मु.पो. लवंगी, ता. मंगळवेढा,<br>जि. सोलापूर - ४१३३०५</span>
+                        <span lang="en">Lavangi, Tal. Mangalwedha,<br>Dist. Solapur - 413305</span>
+                        <span lang="mr">लवंगी, ता. मंगळवेढा,<br>जि. सोलापूर - ४१३३०५</span>
                     </div>
                 </div>
                 
@@ -161,8 +180,10 @@
             <div class="footer-cta">
                 <h3 lang="en">Visit Us</h3>
                 <h3 lang="mr">आम्हाला भेट द्या</h3>
-                <p lang="en" style="font-size: 0.9rem; margin-bottom: 15px; color: #94a3b8;">We welcome visitors to see our work firsthand.</p>
-                <p lang="mr" style="font-size: 0.9rem; margin-bottom: 15px; color: #94a3b8;">आमचे कार्य प्रत्यक्ष पाहण्यासाठी आम्ही अभ्यागतांचे स्वागत करतो.</p>
+                <p style="font-size: 0.9rem; margin-bottom: 20px; color: #94a3b8; line-height: 1.6;">
+                    <span lang="en">We welcome visitors to see our work firsthand.</span>
+                    <span lang="mr">आमचे कार्य प्रत्यक्ष पाहण्यासाठी आम्ही अभ्यागतांचे स्वागत करतो.</span>
+                </p>
                 <a href="contact.html" class="btn-footer">
                     <span lang="en">Get Directions →</span>
                     <span lang="mr">दिशानिर्देश मिळवा →</span>
@@ -187,39 +208,13 @@
     <button class="back-to-top" onclick="scrollToTop()" aria-label="Back to top">↑</button>
 
     <script>
-        // Toggle Mobile Menu
-        function toggleMenu() {
-            document.getElementById('navMenu').classList.toggle('active');
-        }
-
-        // Close menu when clicking a link
-        document.querySelectorAll('.nav-links a').forEach(a => {
-            a.addEventListener('click', () => {
-                const nav = document.getElementById('navMenu');
-                if (nav) nav.classList.remove('active');
-            });
-        });
-
-        // Language Toggle Logic
-        function toggleLang() {
-            document.body.classList.toggle('marathi');
-            localStorage.setItem('muktai-lang', document.body.classList.contains('marathi') ? 'mr' : 'en');
-        }
-
-        // Initialize Language Preference
-        if (localStorage.getItem('muktai-lang') === null) {
-            document.body.classList.add('marathi'); // Default to Marathi
-            localStorage.setItem('muktai-lang', 'mr');
-        } else if (localStorage.getItem('muktai-lang') === 'mr') {
-            document.body.classList.add('marathi');
-        } else {
-            document.body.classList.remove('marathi');
-        }
-
         // Back to Top Button Logic
         window.addEventListener('scroll', () => {
             const btn = document.querySelector('.back-to-top');
-            if (btn) btn.classList.toggle('show', window.scrollY > 300);
+            if (btn) {
+                if (window.scrollY > 300) btn.classList.add('show');
+                else btn.classList.remove('show');
+            }
         });
 
         function scrollToTop() {
