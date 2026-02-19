@@ -9,9 +9,6 @@
     <link rel="stylesheet" href="css/styles.css">
     <script src="js/components.js" defer></script>
     <style>
-        /* Embedded CSS for specific Team Card enhancements */
-        /* This overrides/extends the main CSS for this specific page layout */
-        
         .team-card {
             background: white;
             border-radius: 20px;
@@ -20,7 +17,7 @@
             transition: transform 0.3s ease, box-shadow 0.3s ease;
             border: 1px solid rgba(0,0,0,0.05);
             position: relative;
-            padding: 0; /* Reset padding to allow banner to flush */
+            padding: 0;
         }
 
         .team-card:hover {
@@ -28,18 +25,16 @@
             box-shadow: 0 20px 40px rgba(14, 116, 144, 0.15);
         }
 
-        /* Decorative Gradient Banner */
         .card-banner {
             height: 100px;
             background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
             width: 100%;
         }
 
-        /* Avatar overlapping the banner */
         .team-avatar-container {
             width: 120px;
             height: 120px;
-            margin: -60px auto 15px auto; /* Negative margin pulls it up */
+            margin: -60px auto 15px auto;
             position: relative;
             z-index: 2;
         }
@@ -53,7 +48,7 @@
             align-items: center;
             justify-content: center;
             font-size: 3.5rem;
-            border: 5px solid white; /* Thick border to separate from banner */
+            border: 5px solid white;
             box-shadow: 0 4px 10px rgba(0,0,0,0.1);
             color: #64748b;
         }
@@ -109,6 +104,45 @@
             border-radius: 6px;
             font-weight: 500;
         }
+
+        .page-header {
+            text-align: center;
+        }
+
+        .org-subtitles {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 12px;
+            margin-top: 20px;
+        }
+        
+        @media (min-width: 768px) {
+            .org-subtitles {
+                flex-direction: row;
+                justify-content: center;
+            }
+        }
+
+        .org-badge {
+            background: white;
+            color: var(--primary, #0e7490);
+            padding: 8px 20px;
+            border-radius: 50px;
+            font-size: 1.05rem;
+            font-weight: 700;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+            border: 1px solid rgba(14, 116, 144, 0.15);
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .org-badge:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(14, 116, 144, 0.15);
+        }
     </style>
 </head>
 <body class="marathi">
@@ -117,100 +151,26 @@
 
     <div class="page-header">
         <div class="container">
-            <h1 lang="en">Our Dedicated Team</h1>
-            <h1 lang="mr">आमची टीम</h1>
+            <h1 lang="en">Activities</h1>
+            <h1 lang="mr">उपक्रम</h1>
+            
+            <div class="org-subtitles">
+                <div class="org-badge">
+                    <span></span>
+                    <span lang="en">Muktai Home for Intellectually Disabled Children</span>
+                    <span lang="mr">मुक्ताई मतिमंद मुलांचे बालगृह</span>
+                </div>
+                <div class="org-badge">
+                    <span></span>
+                    <span lang="en">Muktai Attached Workshop</span>
+                    <span lang="mr">आणि मुक्ताई मतिमंद मुलांचे बालगृह संलग्न कार्यशाळा</span>
+                </div>
+            </div>
+            
         </div>
     </div>
 
-    <section>
-        <div class="container">
-            <div class="team-grid">
-                
-                <div class="team-card">
-                    <div class="card-banner"></div>
-                    <div class="team-avatar-container">
-                        <div class="team-avatar">👨‍💼</div>
-                    </div>
-                    
-                    <div class="team-content-wrapper">
-                        <div class="team-name">
-                            <span lang="en">Mr. Ramesh Patil</span>
-                            <span lang="mr">श्री. रमेश पाटील</span>
-                        </div>
-                        <div class="team-role">
-                            <span lang="en">Administrator</span>
-                            <span lang="mr">व्यवस्थापक</span>
-                        </div>
-                        <p class="team-bio">
-                            <span lang="en">Overseeing daily operations and ensuring the best care facilities for all children with 15+ years of experience.</span>
-                            <span lang="mr">दैनंदिन कामकाजावर लक्ष ठेवणे आणि १५ वर्षांच्या अनुभवासह मुलांसाठी सर्वोत्तम सुविधा सुनिश्चित करणे.</span>
-                        </p>
-                        <div class="skills-container">
-                            <span class="skill-tag">Management</span>
-                            <span class="skill-tag">Operations</span>
-                            <span class="skill-tag">Safety</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="team-card">
-                    <div class="card-banner"></div>
-                    <div class="team-avatar-container">
-                        <div class="team-avatar">👩‍⚕️</div>
-                    </div>
-                    
-                    <div class="team-content-wrapper">
-                        <div class="team-name">
-                            <span lang="en">Mrs. Savita Deshmukh</span>
-                            <span lang="mr">सौ. सविता देशमुख</span>
-                        </div>
-                        <div class="team-role">
-                            <span lang="en">Head Care Taker</span>
-                            <span lang="mr">मुख्य केअर टेकर</span>
-                        </div>
-                        <p class="team-bio">
-                            <span lang="en">Providing motherly love, hygiene management, and round-the-clock support to the children in the facility.</span>
-                            <span lang="mr">निवासी सुविधेतील मुलांना आईचे प्रेम, स्वच्छता व्यवस्थापन आणि चोवीस तास आधार देणे.</span>
-                        </p>
-                        <div class="skills-container">
-                            <span class="skill-tag">Nursing</span>
-                            <span class="skill-tag">Hygiene</span>
-                            <span class="skill-tag">Care</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="team-card">
-                    <div class="card-banner"></div>
-                    <div class="team-avatar-container">
-                        <div class="team-avatar">👨‍🏫</div>
-                    </div>
-                    
-                    <div class="team-content-wrapper">
-                        <div class="team-name">
-                            <span lang="en">Mr. Suresh Kulkarni</span>
-                            <span lang="mr">श्री. सुरेश कुलकर्णी</span>
-                        </div>
-                        <div class="team-role">
-                            <span lang="en">Special Educator</span>
-                            <span lang="mr">विशेष शिक्षक</span>
-                        </div>
-                        <p class="team-bio">
-                            <span lang="en">Specialized in teaching life skills and basic literacy tailored to the unique learning pace of every child.</span>
-                            <span lang="mr">प्रत्येक मुलाच्या शिकण्याच्या गतीनुसार जीवन कौशल्ये आणि मूलभूत साक्षरता शिकवण्यात विशेष.</span>
-                        </p>
-                        <div class="skills-container">
-                            <span class="skill-tag">Special Ed</span>
-                            <span class="skill-tag">Therapy</span>
-                            <span class="skill-tag">Teaching</span>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-        </div>
-    </section>
-
+    
     <footer class="site-footer">
     <div class="container">
         <div class="footer-grid">
@@ -241,7 +201,7 @@
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 3A2 2 0 0 1 21 5V19A2 2 0 0 1 19 21H5A2 2 0 0 1 3 19V5A2 2 0 0 1 5 3H19M8.5 19V8H5.5V19H8.5M7 6.5C6.17 6.5 5.5 5.83 5.5 5C5.5 4.17 6.17 3.5 7 3.5C7.83 3.5 8.5 4.17 8.5 5C8.5 5.83 7.83 6.5 7 6.5M19 19V13.5C19 11.28 17.5 10.5 16.5 10.5C15.46 10.5 14.92 11.11 14.5 11.5V8.5H11.5V19H14.5V14.5C14.5 13.67 15.17 13 16 13C16.83 13 17.5 13.67 17.5 14.5V19H19Z"/></svg>
                     </a>
                     <a href="#" aria-label="YouTube" class="social-icon youtube">
-                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19.615 3.184c-3.604-.246-11.631-.245-15.23 0-3.897.266-4.356 2.62-4.385 8.816.029 6.185.484 8.549 4.385 8.816 3.6.245 11.626.246 15.23 0 3.897-.266 4.356-2.62 4.385-8.816-.029-6.185-.484-8.549-4.385-8.816zm-10.615 12.816v-8l8 3.993-8 4.007z"/></svg>
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19.615 3.184c-3.604-.246-11.631-.245-15.23 0-3.897.266-4.356 2.62-4.385 8.816.029 6.185.484 8.549-4.385-8.816 3.6.245 11.626.246 15.23 0 3.897-.266 4.356-2.62 4.385-8.816-.029-6.185-.484-8.549-4.385-8.816zm-10.615 12.816v-8l8 3.993-8 4.007z"/></svg>
                     </a>
                 </div>
             </div>
@@ -274,14 +234,14 @@
                 <div class="contact-item">
                     <span class="icon">📞</span>
                     <div>
-                        <a href="tel:+919876543210">+91 98765 43210</a>
+                        <a href="tel:+919823119909">+91 98231 19909</a>
                     </div>
                 </div>
 
                 <div class="contact-item">
                     <span class="icon">✉️</span>
                     <div>
-                        <a href="mailto:info@muktaibalgruha.org">info@muktaibalgruha.org</a>
+                        <a href="mailto:swmuktaiksbsanstha@gmail.com"> swmuktaiksbsanstha@gmail.com</a>
                     </div>
                 </div>
             </div>
