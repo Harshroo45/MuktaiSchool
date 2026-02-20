@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About Us | Muktai Balgruha</title>
+    <link rel="icon" type="image/png" href="images/favicon.ico">
     <meta name="description" content="Learn about Muktai Matimand Mulanche Balgruha, its mission, values, and commitment to special children.">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/styles.css">
@@ -40,7 +41,53 @@
 </head>
 <body class="marathi">
     
-    <div id="header-placeholder"></div>
+    <header class="site-header">
+    <div class="container">
+        <nav class="navbar">
+            
+            <a href="index.html" class="logo-container">
+                <img src="images/logo.jpeg" alt="Muktai Balgruha Logo" class="logo-img">
+                
+                <div class="logo-text">
+                    <h1 class="brand-name">
+                        <span lang="en">Muktai Balgruha</span>
+                        <span lang="mr">मुक्ताई बालगृह</span>
+                    </h1>
+                    <p class="brand-tagline">
+                        <span lang="en">Lavangi, Solapur</span>
+                        <span lang="mr">लवंगी, सोलापूर</span>
+                    </p>
+                </div>
+            </a>
+
+            <button class="menu-toggle" onclick="toggleMenu()" aria-label="Menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </button>
+
+            <ul class="nav-links" id="navMenu">
+                <li><a href="index.html" class="nav-item"><span lang="en">Home</span><span lang="mr">मुख्य</span></a></li>
+                <li><a href="about.html" class="nav-item"><span lang="en">About</span><span lang="mr">माहिती</span></a></li>
+                <li><a href="services.html" class="nav-item"><span lang="en">Services</span><span lang="mr">सुविधा</span></a></li>
+                <li><a href="team.html" class="nav-item"><span lang="en">Activities</span><span lang="mr">उपक्रम</span></a></li>
+                <li><a href="gallery.html" class="nav-item"><span lang="en">Gallery</span><span lang="mr">गॅलरी</span></a></li>
+                <li><a href="faq.html" class="nav-item"><span lang="en">FAQ</span><span lang="mr">प्रश्न</span></a></li>
+                <li><a href="contact.html" class="nav-item"><span lang="en">Contact</span><span lang="mr">संपर्क</span></a></li>
+                
+                <li>
+                    <button class="lang-btn" onclick="toggleLang()">
+                        
+                        <span lang="en">मराठी</span> 
+                        <span lang="mr">English</span>
+                    </button>
+                </li>
+            </ul>
+
+        </nav>
+    </div>
+</header>
+
 
     <div class="hero">
         <div class="hero-overlay"></div>
@@ -108,7 +155,7 @@
             
             <div class="footer-brand">
                 <a href="index.html" class="footer-logo">
-                    <img src="images/logo.png" alt="Muktai Balgruha" class="logo-img footer-logo-img">
+                    <img src="images/logo.jpeg" alt="Muktai Balgruha" class="logo-img footer-logo-img">
                     <div class="logo-text">
                         <h2 lang="en">Muktai Balgruha</h2>
                         <h2 lang="mr">मुक्ताई बालगृह</h2>
