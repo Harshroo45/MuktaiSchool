@@ -4,146 +4,117 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Our Team | Muktai Balgruha</title>
+    <title>About Us | Muktai Balgruha</title>
     <link rel="icon" type="image/png" href="images/favicon.ico">
-    <meta name="description" content="Meet the dedicated team and staff members at Muktai Balgruha.">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <meta name="description" content="Muktai organization working in education, sports, and social services">
+    <meta name="keywords"
+        content="Muktai, NGO, education, Maharashtra, muktai balgruha, lavangi, mangalwedha, solapur, special children, rehabilitation, vocational training, muktai school, muktai sports, muktai activities, muktai gallery, muktai contact">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/styles.css">
+
     <script src="js/components.js" defer></script>
+
     <style>
-        .team-card {
-            background: white;
-            border-radius: 20px;
-            overflow: hidden;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            border: 1px solid rgba(0, 0, 0, 0.05);
-            position: relative;
-            padding: 0;
-        }
-
-        .team-card:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 20px 40px rgba(14, 116, 144, 0.15);
-        }
-
-        .card-banner {
-            height: 100px;
-            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
-            width: 100%;
-        }
-
-        .team-avatar-container {
-            width: 120px;
-            height: 120px;
-            margin: -60px auto 15px auto;
-            position: relative;
-            z-index: 2;
-        }
-
-        .team-avatar {
-            width: 100%;
-            height: 100%;
-            background: #f1f5f9;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 3.5rem;
-            border: 5px solid white;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-            color: #64748b;
-        }
-
-        .team-content-wrapper {
-            padding: 0 25px 30px 25px;
+        /* Extra styles specific to About Page */
+        .intro-section {
+            background-color: #f8fafc;
+            padding: 60px 0;
             text-align: center;
         }
 
-        .team-name {
-            font-size: 1.4rem;
-            font-weight: 700;
-            color: var(--text);
-            margin-bottom: 4px;
+        .intro-text {
+            max-width: 800px;
+            margin: 0 auto;
+            font-size: 1.1rem;
+            color: var(--secondary);
+            line-height: 1.8;
         }
 
-        .team-role {
-            color: var(--primary);
-            font-weight: 600;
-            font-size: 0.9rem;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
+        .card-icon {
+            font-size: 2.5rem;
             margin-bottom: 15px;
             display: inline-block;
             background: rgba(14, 116, 144, 0.1);
-            padding: 4px 12px;
-            border-radius: 50px;
-        }
-
-        .team-bio {
-            font-size: 0.95rem;
-            color: var(--text-light);
-            line-height: 1.6;
-            margin-bottom: 20px;
-        }
-
-        .skills-container {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 8px;
-            margin-top: 15px;
-            border-top: 1px solid #f1f5f9;
-            padding-top: 15px;
-        }
-
-        .skill-tag {
-            font-size: 0.75rem;
-            color: var(--secondary);
-            background: #f8fafc;
-            border: 1px solid #e2e8f0;
-            padding: 4px 10px;
-            border-radius: 6px;
-            font-weight: 500;
-        }
-
-        .page-header {
+            width: 60px;
+            height: 60px;
+            line-height: 60px;
+            border-radius: 50%;
+            color: var(--primary);
             text-align: center;
         }
 
-        .org-subtitles {
+        /* Accordion Styles for the new sections */
+        .facilities-section {
+            padding: 60px 0;
+            background-color: #ffffff;
+        }
+        
+        .accordion-container {
+            max-width: 800px;
+            margin: 0 auto;
             display: flex;
             flex-direction: column;
+            gap: 15px;
+        }
+
+        .accordion-item {
+            border: 1px solid #e2e8f0;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+            background: #f8fafc;
+        }
+
+        .accordion-header {
+            width: 100%;
+            text-align: left;
+            padding: 20px;
+            background: #ffffff;
+            border: none;
+            cursor: pointer;
+            font-size: 1.15rem;
+            font-weight: 600;
+            color: #0f172a; /* Match your primary text color */
+            display: flex;
+            justify-content: space-between;
             align-items: center;
-            gap: 12px;
-            margin-top: 20px;
+            transition: background 0.3s ease;
+            font-family: inherit;
         }
 
-        @media (min-width: 768px) {
-            .org-subtitles {
-                flex-direction: row;
-                justify-content: center;
-            }
+        .accordion-header:hover {
+            background: #f1f5f9;
         }
 
-        .org-badge {
-            background: white;
-            color: var(--primary, #0e7490);
-            padding: 8px 20px;
-            border-radius: 50px;
+        .accordion-header .icon {
+            font-size: 1.5rem;
+            color: #0ea5e9; /* theme color */
+            transition: transform 0.3s ease;
+            font-weight: 300;
+        }
+
+        .accordion-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.4s ease-out, padding 0.4s ease;
+            background: #f8fafc;
+        }
+
+        .accordion-content p {
+            margin: 0;
+            color: #475569;
+            line-height: 1.7;
             font-size: 1.05rem;
-            font-weight: 700;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
-            border: 1px solid rgba(14, 116, 144, 0.15);
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
 
-        .org-badge:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 6px 20px rgba(14, 116, 144, 0.15);
+        /* Active State */
+        .accordion-item.active .accordion-content {
+            max-height: 1000px; /* arbitrary large value to fit content */
+            padding: 20px;
+        }
+
+        .accordion-item.active .accordion-header .icon {
+            transform: rotate(45deg);
         }
     </style>
 </head>
@@ -153,13 +124,11 @@
     <header class="site-header">
         <div class="container">
             <nav class="navbar">
-
                 <a href="index.html" class="logo-container">
                     <img src="images/logo.jpeg" alt="Muktai Balgruha Logo" class="logo-img">
-
                     <div class="logo-text">
                         <h1 class="brand-name">
-                            <span lang="en">Muktai </span>
+                            <span lang="en">Muktai</span>
                             <span lang="mr">मुक्ताई </span>
                         </h1>
                         <p class="brand-tagline">
@@ -176,250 +145,207 @@
                 </button>
 
                 <ul class="nav-links" id="navMenu">
-                    <li><a href="index.html" class="nav-item"><span lang="en">Home</span><span
-                                lang="mr">मुख्य</span></a></li>
-                    <li><a href="about.html" class="nav-item"><span lang="en">About</span><span
-                                lang="mr">माहिती</span></a></li>
-                    <li><a href="services.html" class="nav-item"><span lang="en">Services</span><span
-                                lang="mr">सुविधा</span></a></li>
-                    <li><a href="team.html" class="nav-item"><span lang="en">Activities</span><span
-                                lang="mr">उपक्रम</span></a></li>
-                    <li><a href="gallery.html" class="nav-item"><span lang="en">Gallery</span><span
-                                lang="mr">गॅलरी</span></a></li>
-                    <li><a href="faq.html" class="nav-item"><span lang="en">FAQ</span><span lang="mr">प्रश्न</span></a>
-                    </li>
-                    <li><a href="contact.html" class="nav-item"><span lang="en">Contact</span><span
-                                lang="mr">संपर्क</span></a></li>
-
+                    <li><a href="index.html" class="nav-item"><span lang="en">Home</span><span lang="mr">मुख्य</span></a></li>
+                    <li><a href="about.html" class="nav-item"><span lang="en">About</span><span lang="mr">माहिती</span></a></li>
+                    <li><a href="services.html" class="nav-item"><span lang="en">Services</span><span lang="mr">सुविधा</span></a></li>
+                    <li><a href="team.html" class="nav-item"><span lang="en">Activities</span><span lang="mr">उपक्रम</span></a></li>
+                    <li><a href="gallery.html" class="nav-item"><span lang="en">Gallery</span><span lang="mr">गॅलरी</span></a></li>
+                    <li><a href="faq.html" class="nav-item"><span lang="en">FAQ</span><span lang="mr">प्रश्न</span></a></li>
+                    <li><a href="contact.html" class="nav-item"><span lang="en">Contact</span><span lang="mr">संपर्क</span></a></li>
                     <li>
                         <button class="lang-btn" onclick="toggleLang()">
-
                             <span lang="en">मराठी</span>
                             <span lang="mr">English</span>
                         </button>
                     </li>
                 </ul>
-
             </nav>
         </div>
     </header>
 
+    
 
-    <div class="page-header">
+    <section class="facilities-section">
         <div class="container">
-            <h1 lang="en">Activities</h1>
-            <h1 lang="mr">उपक्रम</h1>
-
-            <div class="org-subtitles">
-                <div class="org-badge">
-                    <span></span>
-                    <span lang="en">Muktai Home for Intellectually Disabled Children</span>
-                    <span lang="mr">मुक्ताई मतिमंद मुलांचे बालगृह</span>
-                </div>
-                <div class="org-badge">
-                    <span></span>
-                    <span lang="en">Muktai Attached Workshop</span>
-                    <span lang="mr">मुक्ताई मतिमंद मुलांचे बालगृह संलग्न कार्यशाळा</span>
-                </div>
+            
+            <div class="section-header" style="text-align: center; margin-bottom: 40px;">
+                <h2 class="section-title">
+                    <span lang="en">Our Core Facilities</span>
+                    <span lang="mr">आमचे प्रमुख विभाग</span>
+                </h2>
             </div>
 
-        </div>
-    </div>
+            <div class="accordion-container">
+                <div class="accordion-item">
+                    <button class="accordion-header">
+                        <span>
+                            <span lang="en">Muktai Mentally Retarded Children's Home, Lavangi</span>
+                            <span lang="mr">मुक्ताई मतिमंद मुलांचे बालगृह, लवंगी </span>
+                        </span>
+                        <span class="icon">+</span>
+                    </button>
+                    <div class="accordion-content">
+                        <p lang="en">Muktai Home for Mentally Challenged Children, Lavangi is a center that provides a safe, sensitive, and development-oriented environment for children with special needs (intellectual disabilities). Here, structured care is provided to support the physical, mental, and social development of the children. The home offers accommodation, nutrition, health check-ups, daily life skills training, and emotional support. The primary objective of this branch is to enhance self-reliance, confidence, and social participation among the children. Under the guidance of trained staff and caregivers, continuous efforts are made to ensure the overall development of every child.</p>
+                        
+                        <p lang="mr">मुक्ताई मतिमंद मुलांचे बालगृह, लवंगी मुक्ताई मतिमंद मुलांचे बालगृह, लवंगी हे विशेष गरज असलेल्या (मतिमंद) मुलांसाठी सुरक्षित, संवेदनशील आणि विकासाभिमुख वातावरण उपलब्ध करून देणारे केंद्र आहे. येथे मुलांच्या शारीरिक, मानसिक व सामाजिक विकासासाठी नियोजनबद्ध काळजी घेतली जाते. बालगृहात निवास, पोषण, आरोग्य तपासणी, दैनंदिन जीवन कौशल्य प्रशिक्षण आणि भावनिक आधार दिला जातो. प्रत्येक मुलामध्ये स्वावलंबन, आत्मविश्वास आणि सामाजिक सहभाग वाढवणे हा या शाखेचा मुख्य उद्देश आहे. प्रशिक्षित कर्मचारी व काळजीवाहू यांच्या मार्गदर्शनाखाली मुलांच्या सर्वांगीण विकासासाठी सातत्याने प्रयत्न केले जातात.</p>
+                    </div>
+                </div>
 
-    <section class="intro-section">
-        <div class="container">
-            <div class="intro-text animate-in">
-                <p lang="en">
-                    <strong> Muktai Home for Mentally Challenged Children, Lavangi </strong> is a center that provides a
-                    safe, sensitive, and development-oriented environment for children with special needs (intellectual
-                    disabilities). Here, structured care is provided to support the physical, mental, and social
-                    development of the children.
-
-                    The home offers accommodation, nutrition, health check-ups, daily life skills training, and
-                    emotional support. The primary objective of this branch is to enhance self-reliance, confidence, and
-                    social participation among the children. Under the guidance of trained staff and caregivers,
-                    continuous efforts are made to ensure the overall development of every child.
-                </p>
-                <p lang="mr">
-                    <strong> मुक्ताई मतिमंद मुलांचे बालगृह, लवंगी </strong>
-                    मुक्ताई मतिमंद मुलांचे बालगृह, लवंगी हे विशेष गरज असलेल्या (मतिमंद) मुलांसाठी सुरक्षित, संवेदनशील
-                    आणि विकासाभिमुख वातावरण उपलब्ध करून देणारे केंद्र आहे. येथे मुलांच्या शारीरिक, मानसिक व सामाजिक
-                    विकासासाठी नियोजनबद्ध काळजी घेतली जाते.
-                    बालगृहात निवास, पोषण, आरोग्य तपासणी, दैनंदिन जीवन कौशल्य प्रशिक्षण आणि भावनिक आधार दिला जातो.
-                    प्रत्येक मुलामध्ये स्वावलंबन, आत्मविश्वास आणि सामाजिक सहभाग वाढवणे हा या शाखेचा मुख्य उद्देश आहे.
-                    प्रशिक्षित कर्मचारी व काळजीवाहू यांच्या मार्गदर्शनाखाली मुलांच्या सर्वांगीण विकासासाठी सातत्याने
-                    प्रयत्न केले जातात.
-                </p>
-            </div>
-        </div>
-        <br><br>
-
-        <div class="container">
-            <div class="intro-text animate-in">
-                <p lang="en">
-                    <strong>
-                        Muktai Workshop for Mentally Challenged Adults (Affiliated Unit), Lavangi </strong> is
-                    established to provide practical skill training to special individuals above the age of 18. In this
-                    workshop, participants are trained according to their abilities in areas such as handicrafts, simple
-                    production work, self-reliance skills, and useful daily life skills.
-
-                    This training helps build confidence, strengthens social participation, and prepares them for an
-                    independent life in the future. The workshop acts as an important link in rehabilitation and skill
-                    development.
-
-                    Currently, 25 trainees are enrolled in the workshop, and the organization is committed to
-                    integrating them into the mainstream of society. A certain amount is deposited monthly into their
-                    bank accounts as a stipend.
-                </p>
-                <p lang="mr">
-                    <strong>
-                        मुक्ताई मतिमंद मुलांचे बालगृह संलग्न कार्यशाळा, लवंगी</strong>
-                    ही संलग्न कार्यशाळा १८ वर्षांवरील प्रौढ विशेष मुलांना व्यावहारिक कौशल्य प्रशिक्षण देण्यासाठी स्थापन
-                    करण्यात आली आहे. कार्यशाळेत मुलांना त्यांच्या क्षमतेनुसार हातगुण, साधे उत्पादन कार्य, स्वावलंबन
-                    कौशल्य आणि दैनंदिन जीवनातील उपयुक्त कौशल्य शिकवले जाते.
-                    या प्रशिक्षणामुळे मुलांमध्ये आत्मविश्वास वाढतो, सामाजिक सहभाग मजबूत होतो आणि भविष्यात स्वावलंबी जीवन
-                    जगण्याची तयारी होते. कार्यशाळा ही मुलांचे पुनर्वसन आणि कौशल्य विकासाचा महत्त्वाचा दुवा म्हणून कार्य
-                    करते.
-                    शेती कार्यशाळेत 25 मुले प्रशिक्षणार्थी आहेत त्यांना समाजाच्या मुख्य प्रवाहात आणण्यासाठी संस्था
-                    कटिबद्ध आहे. मुलांना विद्यावेतन म्हणून दरमहा काही रक्कम त्यांच्या बँक खात्यात जमा केली जाते
-                </p>
+                <div class="accordion-item">
+                    <button class="accordion-header">
+                        <span>
+                            <span lang="en">Muktai Mentally Retarded Children's Home Attached Workshop, Lavangi</span>
+                            <span lang="mr">मुक्ताई मतिमंद मुलांचे बालगृह संलग्न कार्यशाळा, लवंगी</span>
+                        </span>
+                        <span class="icon">+</span>
+                    </button>
+                    <div class="accordion-content">
+                        <p lang="en">Muktai Workshop for Mentally Challenged Adults (Affiliated Unit), Lavangi is established to provide practical skill training to special individuals above the age of 18. In this workshop, participants are trained according to their abilities in areas such as handicrafts, simple production work, self-reliance skills, and useful daily life skills. This training helps build confidence, strengthens social participation, and prepares them for an independent life in the future. The workshop acts as an important link in rehabilitation and skill development. Currently, 25 trainees are enrolled in the workshop, and the organization is committed to integrating them into the mainstream of society. A certain amount is deposited monthly into their bank accounts as a stipend.</p>
+                        
+                        <p lang="mr">मुक्ताई मतिमंद मुलांचे बालगृह संलग्न कार्यशाळा, लवंगी ही संलग्न कार्यशाळा १८ वर्षांवरील प्रौढ विशेष मुलांना व्यावहारिक कौशल्य प्रशिक्षण देण्यासाठी स्थापन करण्यात आली आहे. कार्यशाळेत मुलांना त्यांच्या क्षमतेनुसार हातगुण, साधे उत्पादन कार्य, स्वावलंबन कौशल्य आणि दैनंदिन जीवनातील उपयुक्त कौशल्य शिकवले जाते. या प्रशिक्षणामुळे मुलांमध्ये आत्मविश्वास वाढतो, सामाजिक सहभाग मजबूत होतो आणि भविष्यात स्वावलंबी जीवन जगण्याची तयारी होते. कार्यशाळा ही मुलांचे पुनर्वसन आणि कौशल्य विकासाचा महत्त्वाचा दुवा म्हणून कार्य करते. शेती कार्यशाळेत 25 मुले प्रशिक्षणार्थी आहेत त्यांना समाजाच्या मुख्य प्रवाहात आणण्यासाठी संस्था कटिबद्ध आहे. मुलांना विद्यावेतन म्हणून दरमहा काही रक्कम त्यांच्या बँक खात्यात जमा केली जाते</p>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
 
-
-
+    
     <footer class="site-footer">
-        <div class="container">
-            <div class="footer-grid">
-
-                <div class="footer-brand">
-                    <a href="index.html" class="footer-logo">
-                        <img src="images/logo.jpeg" alt="Muktai Balgruha" class="logo-img footer-logo-img">
-                        <div class="logo-text">
-                            <h2 lang="en">Muktai </h2>
-                            <h2 lang="mr">मुक्ताई </h2>
-                        </div>
+    <div class="container">
+        <div class="footer-grid">
+            
+            <div class="footer-brand">
+                <a href="index.html" class="footer-logo">
+                    <img src="images/logo.jpeg" alt="Muktai Balgruha" class="logo-img footer-logo-img">
+                    <div class="logo-text">
+                        <h2 lang="en">Muktai </h2>
+                        <h2 lang="mr">मुक्ताई </h2>
+                    </div>
+                </a>
+                <p class="footer-desc" lang="en">
+                    A sanctuary of hope, providing care, education, and rehabilitation for special children since 2004.
+                </p>
+                <p class="footer-desc" lang="mr">
+                    २००४ पासून विशेष मुलांसाठी काळजी, शिक्षण आणि पुनर्वसन प्रदान करणारे आशेचे आश्रयस्थान.
+                </p>
+                
+                <div class="social-links">
+                    <a href="#" aria-label="Facebook" class="social-icon facebook">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 2.04C6.5 2.04 2 6.53 2 12.06C2 17.06 5.66 21.21 10.44 21.96V14.96H7.9V12.06H10.44V9.85C10.44 7.34 11.93 5.96 14.15 5.96C15.21 5.96 16.12 6.04 16.12 6.04V8.51H15.01C13.77 8.51 13.38 9.28 13.38 10.07V12.06H16.16L15.72 14.96H13.38V21.96C18.16 21.21 21.82 17.06 21.82 12.06C21.82 6.53 17.32 2.04 12 2.04Z"/></svg>
                     </a>
-                    <p class="footer-desc" lang="en">
-                        A sanctuary of hope, providing care, education, and rehabilitation for special children since
-                        2004.
-                    </p>
-                    <p class="footer-desc" lang="mr">
-                        २००४ पासून विशेष मुलांसाठी काळजी, शिक्षण आणि पुनर्वसन प्रदान करणारे आशेचे आश्रयस्थान.
-                    </p>
-
-                    <div class="social-links">
-                        <a href="#" aria-label="Facebook" class="social-icon facebook">
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                                <path
-                                    d="M12 2.04C6.5 2.04 2 6.53 2 12.06C2 17.06 5.66 21.21 10.44 21.96V14.96H7.9V12.06H10.44V9.85C10.44 7.34 11.93 5.96 14.15 5.96C15.21 5.96 16.12 6.04 16.12 6.04V8.51H15.01C13.77 8.51 13.38 9.28 13.38 10.07V12.06H16.16L15.72 14.96H13.38V21.96C18.16 21.21 21.82 17.06 21.82 12.06C21.82 6.53 17.32 2.04 12 2.04Z" />
-                            </svg>
-                        </a>
-                        <a href="#" aria-label="Instagram" class="social-icon instagram">
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                                <path
-                                    d="M7.8,2H16.2C19.4,2 22,4.6 22,7.8V16.2A5.8,5.8 0 0,1 16.2,22H7.8C4.6,22 2,19.4 2,16.2V7.8A5.8,5.8 0 0,1 7.8,2M7.6,4A3.6,3.6 0 0,0 4,7.6V16.4C4,18.39 5.61,20 7.6,20H16.4A3.6,3.6 0 0,0 20,16.4V7.6C20,5.61 18.39,4 16.4,4H7.6M17.25,5.5A1.25,1.25 0 0,1 18.5,6.75A1.25,1.25 0 0,1 17.25,8A1.25,1.25 0 0,1 16,6.75A1.25,1.25 0 0,1 17.25,5.5M12,7A5,5 0 0,1 17,12A5,5 0 0,1 12,17A5,5 0 0,1 7,12A5,5 0 0,1 12,7M12,9A3,3 0 0,0 9,12A3,3 0 0,0 12,15A3,3 0 0,0 15,12A3,3 0 0,0 12,9Z" />
-                            </svg>
-                        </a>
-                        <a href="#" aria-label="LinkedIn" class="social-icon linkedin">
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                                <path
-                                    d="M19 3A2 2 0 0 1 21 5V19A2 2 0 0 1 19 21H5A2 2 0 0 1 3 19V5A2 2 0 0 1 5 3H19M8.5 19V8H5.5V19H8.5M7 6.5C6.17 6.5 5.5 5.83 5.5 5C5.5 4.17 6.17 3.5 7 3.5C7.83 3.5 8.5 4.17 8.5 5C8.5 5.83 7.83 6.5 7 6.5M19 19V13.5C19 11.28 17.5 10.5 16.5 10.5C15.46 10.5 14.92 11.11 14.5 11.5V8.5H11.5V19H14.5V14.5C14.5 13.67 15.17 13 16 13C16.83 13 17.5 13.67 17.5 14.5V19H19Z" />
-                            </svg>
-                        </a>
-                        <a href="#" aria-label="YouTube" class="social-icon youtube">
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                                <path
-                                    d="M19.615 3.184c-3.604-.246-11.631-.245-15.23 0-3.897.266-4.356 2.62-4.385 8.816.029 6.185.484 8.549-4.385-8.816 3.6.245 11.626.246 15.23 0 3.897-.266 4.356-2.62 4.385-8.816-.029-6.185-.484-8.549-4.385-8.816zm-10.615 12.816v-8l8 3.993-8 4.007z" />
-                            </svg>
-                        </a>
-                    </div>
-                </div>
-
-                <div class="footer-links">
-                    <h3 lang="en">Quick Links</h3>
-                    <h3 lang="mr">महत्वाचे दुवे</h3>
-                    <ul>
-                        <li><a href="index.html"><span lang="en">Home</span><span lang="mr">मुख्य</span></a></li>
-                        <li><a href="about.html"><span lang="en">About Us</span><span lang="mr">आमच्याबद्दल</span></a>
-                        </li>
-                        <li><a href="services.html"><span lang="en">Services</span><span lang="mr">सुविधा</span></a>
-                        </li>
-                        <li><a href="team.html"><span lang="en">Our Team</span><span lang="mr">टीम</span></a></li>
-                        <li><a href="gallery.html"><span lang="en">Gallery</span><span lang="mr">गॅलरी</span></a></li>
-                        <li><a href="faq.html"><span lang="en">FAQ</span><span lang="mr">प्रश्न</span></a></li>
-                    </ul>
-                </div>
-
-                <div class="footer-contact">
-                    <h3 lang="en">Contact Us</h3>
-                    <h3 lang="mr">संपर्क साधा</h3>
-
-                    <div class="contact-item">
-                        <span class="icon">📍</span>
-                        <div>
-                            <span lang="en">Lavangi, Tal. Mangalwedha,<br>Dist. Solapur - 413319</span>
-                            <span lang="mr">लवंगी, ता. मंगळवेढा,<br>जि. सोलापूर - ४१३३१९</span>
-                        </div>
-                    </div>
-
-                    <div class="contact-item">
-                        <span class="icon">📞</span>
-                        <div>
-                            <a href="tel:+919823119909">+91 98231 19909</a>
-                        </div>
-                    </div>
-
-                    <div class="contact-item">
-                        <span class="icon">✉️</span>
-                        <div>
-                            <a href="mailto:swmuktaiksbsanstha@gmail.com"> swmuktaiksbsanstha@gmail.com</a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="footer-cta">
-                    <h3 lang="en">Visit Us</h3>
-                    <h3 lang="mr">आम्हाला भेट द्या</h3>
-                    <p style="font-size: 0.9rem; margin-bottom: 20px; color: #94a3b8; line-height: 1.6;">
-                        <span lang="en">We welcome visitors to see our work firsthand.</span>
-                        <span lang="mr">आमचे कार्य प्रत्यक्ष पाहण्यासाठी आम्ही अभ्यागतांचे स्वागत करतो.</span>
-                    </p>
-                    <a href="contact.html" class="btn-footer">
-                        <span lang="en">Get Directions →</span>
-                        <span lang="mr">दिशानिर्देश मिळवा →</span>
+                    <a href="#" aria-label="Instagram" class="social-icon instagram">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M7.8,2H16.2C19.4,2 22,4.6 22,7.8V16.2A5.8,5.8 0 0,1 16.2,22H7.8C4.6,22 2,19.4 2,16.2V7.8A5.8,5.8 0 0,1 7.8,2M7.6,4A3.6,3.6 0 0,0 4,7.6V16.4C4,18.39 5.61,20 7.6,20H16.4A3.6,3.6 0 0,0 20,16.4V7.6C20,5.61 18.39,4 16.4,4H7.6M17.25,5.5A1.25,1.25 0 0,1 18.5,6.75A1.25,1.25 0 0,1 17.25,8A1.25,1.25 0 0,1 16,6.75A1.25,1.25 0 0,1 17.25,5.5M12,7A5,5 0 0,1 17,12A5,5 0 0,1 12,17A5,5 0 0,1 7,12A5,5 0 0,1 12,7M12,9A3,3 0 0,0 9,12A3,3 0 0,0 12,15A3,3 0 0,0 15,12A3,3 0 0,0 12,9Z"/></svg>
+                    </a>
+                    <a href="#" aria-label="LinkedIn" class="social-icon linkedin">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 3A2 2 0 0 1 21 5V19A2 2 0 0 1 19 21H5A2 2 0 0 1 3 19V5A2 2 0 0 1 5 3H19M8.5 19V8H5.5V19H8.5M7 6.5C6.17 6.5 5.5 5.83 5.5 5C5.5 4.17 6.17 3.5 7 3.5C7.83 3.5 8.5 4.17 8.5 5C8.5 5.83 7.83 6.5 7 6.5M19 19V13.5C19 11.28 17.5 10.5 16.5 10.5C15.46 10.5 14.92 11.11 14.5 11.5V8.5H11.5V19H14.5V14.5C14.5 13.67 15.17 13 16 13C16.83 13 17.5 13.67 17.5 14.5V19H19Z"/></svg>
+                    </a>
+                    <a href="#" aria-label="YouTube" class="social-icon youtube">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19.615 3.184c-3.604-.246-11.631-.245-15.23 0-3.897.266-4.356 2.62-4.385 8.816.029 6.185.484 8.549 4.385 8.816 3.6.245 11.626.246 15.23 0 3.897-.266 4.356-2.62 4.385-8.816-.029-6.185-.484-8.549-4.385-8.816zm-10.615 12.816v-8l8 3.993-8 4.007z"/></svg>
                     </a>
                 </div>
-
             </div>
 
-            <div class="footer-bottom">
-                <div class="copyright">
-                    <p lang="en">© 2026 Muktai Balgruha. All Rights Reserved.</p>
-                    <p lang="mr">© 2026 मुक्ताई बालगृह. सर्वाधिकार राखीव.</p>
+            <div class="footer-links">
+                <h3 lang="en">Quick Links</h3>
+                <h3 lang="mr">महत्वाचे दुवे</h3>
+                <ul>
+                    <li><a href="index.html"><span lang="en">Home</span><span lang="mr">मुख्य</span></a></li>
+                    <li><a href="about.html"><span lang="en">About Us</span><span lang="mr">आमच्याबद्दल</span></a></li>
+                    <li><a href="services.html"><span lang="en">Services</span><span lang="mr">सुविधा</span></a></li>
+                    <li><a href="team.html"><span lang="en">Our Team</span><span lang="mr">टीम</span></a></li>
+                    <li><a href="gallery.html"><span lang="en">Gallery</span><span lang="mr">गॅलरी</span></a></li>
+                    <li><a href="faq.html"><span lang="en">FAQ</span><span lang="mr">प्रश्न</span></a></li>
+                </ul>
+            </div>
+
+            <div class="footer-contact">
+                <h3 lang="en">Contact Us</h3>
+                <h3 lang="mr">संपर्क साधा</h3>
+                
+                <div class="contact-item">
+                    <span class="icon">📍</span>
+                    <div>
+                        <span lang="en">Lavangi, Tal. Mangalwedha,<br>Dist. Solapur - 413319</span>
+                        <span lang="mr">लवंगी, ता. मंगळवेढा,<br>जि. सोलापूर - ४१३३१९</span>
+                    </div>
                 </div>
-                <div class="legal-links">
-                    <a href="#"><span lang="en">Privacy Policy</span><span lang="mr">गोपनीयता धोरण</span></a>
-                    <a href="#"><span lang="en">Terms of Use</span><span lang="mr">वापराच्या अटी</span></a>
+                
+                <div class="contact-item">
+                    <span class="icon">📞</span>
+                    <div>
+                        <a href="tel:+919823119909">+91 98231 19909</a>
+                    </div>
                 </div>
+
+                <div class="contact-item">
+                    <span class="icon">✉️</span>
+                    <div>
+                        <a href="mailto:swmuktaiksbsanstha@gmail.com"> swmuktaiksbsanstha@gmail.com</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-cta">
+                <h3 lang="en">Visit Us</h3>
+                <h3 lang="mr">आम्हाला भेट द्या</h3>
+                <p style="font-size: 0.9rem; margin-bottom: 20px; color: #94a3b8; line-height: 1.6;">
+                    <span lang="en">We welcome visitors to see our work firsthand.</span>
+                    <span lang="mr">आमचे कार्य प्रत्यक्ष पाहण्यासाठी आम्ही अभ्यागतांचे स्वागत करतो.</span>
+                </p>
+                <a href="contact.html" class="btn-footer">
+                    <span lang="en">Get Directions →</span>
+                    <span lang="mr">दिशानिर्देश मिळवा →</span>
+                </a>
+            </div>
+
+        </div>
+
+        <div class="footer-bottom">
+            <div class="copyright">
+                <p lang="en">© 2026 Muktai Balgruha. All Rights Reserved.</p>
+                <p lang="mr">© 2026 मुक्ताई बालगृह. सर्वाधिकार राखीव.</p>
+            </div>
+            <div class="legal-links">
+                <a href="#"><span lang="en">Privacy Policy</span><span lang="mr">गोपनीयता धोरण</span></a>
+                <a href="#"><span lang="en">Terms of Use</span><span lang="mr">वापराच्या अटी</span></a>
             </div>
         </div>
-    </footer>
+    </div>
+</footer>
+
+    <button class="back-to-top" onclick="scrollToTop()" aria-label="Back to top">↑</button>
 
     <script>
-        function toggleMenu() { document.getElementById('navMenu').classList.toggle('active'); }
+        // Back to Top Button Logic
+        window.addEventListener('scroll', () => {
+            const btn = document.querySelector('.back-to-top');
+            if (btn) {
+                if (window.scrollY > 300) btn.classList.add('show');
+                else btn.classList.remove('show');
+            }
+        });
 
-        function toggleLang() {
-            document.body.classList.toggle('marathi');
-            localStorage.setItem('muktai-lang', document.body.classList.contains('marathi') ? 'mr' : 'en');
+        function scrollToTop() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
         }
 
-        if (localStorage.getItem('muktai-lang') === 'en') {
-            document.body.classList.remove('marathi');
-        } else {
-            document.body.classList.add('marathi');
-        }
+        // Accordion functionality for the new sections
+        document.querySelectorAll('.accordion-header').forEach(button => {
+            button.addEventListener('click', () => {
+                const accordionItem = button.parentElement;
+                const isActive = accordionItem.classList.contains('active');
+                
+                // Close all other accordions (Optional: remove this if you want multiple to stay open)
+                document.querySelectorAll('.accordion-item').forEach(item => {
+                    item.classList.remove('active');
+                });
+
+                // Toggle the clicked one
+                if (!isActive) {
+                    accordionItem.classList.add('active');
+                }
+            });
+        });
     </script>
 </body>
 
